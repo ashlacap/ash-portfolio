@@ -136,6 +136,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Co-founded with Maya Cohen and developed the YC application strategy targeting enterprise pilots at AEG, Riot Games, Tixr, FlyQuest, and XSolla.",
       ],
       tools: ["React", "Gemini 2.5 Flash", "Google AI SDK", "AES-256 Encryption", "OneDrive API", "SharePoint", "ShotGrid"],
+      siteUrl: "https://thegrove.cloud",
     },
     valobanners: {
       tag: "Brand Marketing · Gaming",
@@ -433,6 +434,29 @@ const CaseStudyDetail = ({ slug, onBack }) => {
             ))}
           </div>
         </div>
+
+        {study.siteUrl && (
+          <div style={{ marginTop: 48 }}>
+            <a
+              href={study.siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 10,
+                fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 700,
+                color: "white", background: study.accentColor,
+                padding: "14px 28px", borderRadius: 10,
+                border: "2.5px solid #111", boxShadow: "4px 4px 0 #111",
+                textDecoration: "none",
+                transition: "box-shadow 150ms, transform 150ms",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = "6px 6px 0 #111"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = "4px 4px 0 #111"; e.currentTarget.style.transform = "translateY(0)"; }}
+            >
+              Visit thegrove.cloud ↗
+            </a>
+          </div>
+        )}
 
         {study.downloads && study.downloads.length > 0 && (
           <div style={{ marginTop: 56 }}>
