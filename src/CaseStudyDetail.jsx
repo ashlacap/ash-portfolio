@@ -113,6 +113,30 @@ const ImageCarousel = ({ title, subtitle, slides }) => {
 
 const CaseStudyDetail = ({ slug, onBack }) => {
   const studies = {
+    grove: {
+      tag: "Startup · Data Infrastructure",
+      title: "THE GROVE",
+      period: "2026 – Present",
+      role: "Co-Founder & Head of Data Infrastructure · Sole App Designer & Builder",
+      bgColor: "#0a1a0c",
+      accentColor: "#E05B12",
+      coverImage: "/grove-cover.png",
+      intro: "Co-founded and sole-built an encrypted AI data pipeline for entertainment, gaming, and live events. Built from zero to YC application.",
+      overview: "THE GROVE is a two-layer data product built for entertainment, gaming, and live events organizations. The hero product connects any file or tool users already work with and generates the next likely version of their asset with a confidence score that tells them exactly how production-ready it is. Free, immediate, no commitment required. The full pipeline adds AES-256 encrypted inter-organizational asset transfer with provenance tracking, access control, and a tamper-evident audit trail so originals are never overwritten and collaborators can only do what you explicitly permit. Co-founded with Maya Cohen.",
+      outcomes: [
+        { metric: "YC", label: "Applicant" },
+        { metric: "AES-256", label: "Encrypted pipeline" },
+        { metric: "Gemini", label: "AI-powered engine" },
+      ],
+      bullets: [
+        "Designed and built the full-stack application as the sole app developer, covering the asset pipeline UI, confidence score gauge, flexible file ingestion layer, and encrypted transfer dashboard from zero.",
+        "Integrated Google Gemini 2.5 Flash to power predictive asset generation: the pipeline ingests any file type (USD, FBX, audio stems, PDFs, CSVs, production schedules) and outputs a next-step asset with a data-completeness confidence score.",
+        "Built a zero-friction flexible submission model supporting drag-and-drop files, one-click cloud storage connections (OneDrive, SharePoint, Google Drive, Dropbox), and direct tool integrations (ShotGrid, Airtable). No reformatting required.",
+        "Architected AES-256 encrypted transfer layer with granular access control, provenance tracking, and tamper-evident audit trails for secure inter-organizational asset sharing.",
+        "Co-founded with Maya Cohen and developed the YC application strategy targeting enterprise pilots at AEG, Riot Games, Tixr, FlyQuest, and XSolla.",
+      ],
+      tools: ["React", "Gemini 2.5 Flash", "Google AI SDK", "AES-256 Encryption", "OneDrive API", "SharePoint", "ShotGrid"],
+    },
     valobanners: {
       tag: "Brand Marketing · Gaming",
       title: "VALOBANNERS",
@@ -161,7 +185,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       bgColor: "#1e2a5e",
       accentColor: "#7ecaef",
       coverImage: "/agsm-cover.png",
-      intro: "Leading integrated marketing campaigns for UCR's graduate business school student association — increasing event turnout by 40%.",
+      intro: "Leading integrated marketing campaigns for UCR's graduate business school student association, increasing event turnout by 40%.",
       overview: "As Director of PR and Marketing for the UCR AGSM Student Association, I lead all marketing efforts to promote graduate school events, programs, and community initiatives across email, social, and campus channels.",
       outcomes: [
         { metric: "40%", label: "Event turnout increase" },

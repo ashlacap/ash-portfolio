@@ -100,7 +100,7 @@ const AboutSection = () => {
             fontFamily: "'DM Sans', sans-serif", fontSize: 15,
             color: '#6b5c52', lineHeight: 1.8, marginBottom: 16, maxWidth: 520,
           }}>
-            I was born and raised in Glendale, CA, but I've called many places home — La Puente, San Diego, Yokosuka (Japan), Honolulu, Santa Clarita, and Menifee. By the time I graduated high school, I had attended eight different schools, which taught me adaptability, resilience, and how to connect with people from all walks of life.
+            I was born and raised in Glendale, CA, but I've called many places home: La Puente, San Diego, Yokosuka (Japan), Honolulu, Santa Clarita, and Menifee. By the time I graduated high school, I had attended eight different schools, which taught me adaptability, resilience, and how to connect with people from all walks of life.
           </p>
 
           <p style={{

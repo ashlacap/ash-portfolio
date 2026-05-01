@@ -53,6 +53,16 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   useReveal();
   const projects = [
   {
+    slug: 'grove',
+    tag: 'Startup · Data Infrastructure',
+    title: 'THE GROVE',
+    description: 'Co-founded and sole-built an encrypted AI data pipeline for entertainment, gaming, and live events. Integrated Gemini 2.5 Flash for predictive asset generation with a confidence scoring engine. YC applicant.',
+    bgColor: '#0a1a0c',
+    accentColor: '#E05B12',
+    featured: true,
+    imageContent: <img src="/grove-cover.png" alt="THE GROVE" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />,
+  },
+  {
     slug: 'valobanners',
     tag: 'Brand Marketing · Gaming',
     title: 'VALOBANNERS',
