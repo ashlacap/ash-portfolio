@@ -1,0 +1,586 @@
+import { useState, useEffect, useRef } from 'react'
+import Nav from './Nav'
+import Hero from './Hero'
+import AboutSection from './AboutSection'
+import CaseStudyCard from './CaseStudyCard'
+import CaseStudyDetail from './CaseStudyDetail'
+import Footer from './Footer'
+import { useTweaks, TweaksPanel, TweakSection, TweakColor, TweakToggle, TweakText, TweakRadio } from '../tweaks-panel'
+
+// ── Scroll reveal hook ────────────────────────────────────
+const useReveal = () => {
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal');
+    // Immediately show anything already in the viewport
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 40) el.classList.add('visible');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {if (e.isIntersecting) e.target.classList.add('visible');});
+    }, { threshold: 0.05 });
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  });
+};
+
+// ── Section heading ───────────────────────────────────────
+const SectionHeading = ({ label, title, subtitle, light }) =>
+<div style={{ marginBottom: 8 }}>
+    <div style={{
+    fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+    letterSpacing: '0.14em', textTransform: 'uppercase',
+    color: light ? '#ffd024' : '#d42020', marginBottom: 14
+  }}>{label}</div>
+    <h2 style={{
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 700,
+    letterSpacing: '-0.03em', lineHeight: 1.05,
+    color: light ? 'white' : '#1a1410',
+    marginBottom: subtitle ? 14 : 0
+  }}>{title}</h2>
+    {subtitle &&
+  <p style={{
+    fontFamily: "'DM Sans', sans-serif", fontSize: 16,
+    color: light ? '#8a99d8' : '#8c7a70', lineHeight: 1.65, maxWidth: 520
+  }}>{subtitle}</p>
+  }
+  </div>;
+
+
+// ── Work section ──────────────────────────────────────────
+const WorkSection = ({ onNavigate, tweaks }) => {
+  useReveal();
+  const projects = [
+  {
+    slug: 'valobanners',
+    tag: 'Brand Marketing · Gaming',
+    title: 'VALOBANNERS',
+    description: 'Built a gaming brand from the ground up, growing audience by 103% and monthly sales by 25% through integrated social, influencer, and community campaigns.',
+    bgColor: '#141b42',
+    accentColor: '#ffd024',
+    featured: true,
+    imageContent: <img src="/valobanners-cover.png" alt="VALOBANNERS" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />,
+  },
+  {
+    slug: 'agsm',
+    tag: 'Leadership · PR & Marketing',
+    title: 'AGSM Student Association',
+    description: 'Led integrated marketing campaigns across email, social, and campus channels as Director of PR and Marketing, increasing event turnout by 40%.',
+    bgColor: '#1e2a5e',
+    accentColor: '#7ecaef',
+    imageContent: <img src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+  },
+  {
+    slug: 'samsung',
+    tag: 'Agency · Social Media',
+    title: 'Social View Agency: CartZilla',
+    description: 'Fast-paced agency internship creating short-form social content for clients, supporting strategy, trend research, and campaign execution across TikTok and Instagram.',
+    bgColor: '#1a1410',
+    accentColor: '#8a99d8',
+    imageContent: <img src="/sva-cartzilla-cover.png" alt="SVA x CartZilla" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+  },
+  {
+    slug: 'liquid-death',
+    tag: 'Consumer Insights · Academic',
+    title: 'Liquid Death',
+    description: 'Analyzed 300+ consumer responses to develop data-driven brand positioning and messaging strategy targeting younger segments.',
+    bgColor: '#2d0606',
+    accentColor: '#e05050',
+    imageContent: <img src="/liquid-death-cover.webp" alt="Liquid Death" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+  },
+  {
+    slug: 'quay-australia',
+    tag: 'Integrated Marketing · Academic',
+    title: 'Quay Australia',
+    description: 'Full Gen Z go-to-market playbook: channel strategy, influencer partnerships, audience segmentation, and measurable KPIs.',
+    bgColor: '#0d1230',
+    accentColor: '#7ecaef',
+    imageContent: <img src="/quay-cover.jpg" alt="Quay Australia" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+  }];
+
+
+  return (
+    <section style={{ padding: '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+      <div className="reveal">
+        <SectionHeading
+          label="My Work"
+          title="My Work! 😊"
+          subtitle="Click on each project to view what I did." />
+        
+      </div>
+      <div className="work-grid">
+        {projects.map((p, i) =>
+        <div key={p.slug} className="reveal" style={{ transitionDelay: `${i * 80}ms`, flex: p.featured ? '1 1 100%' : '1 1 calc(50% - 10px)', minWidth: p.featured ? 'unset' : 280 }}>
+            <CaseStudyCard
+            tag={p.tag}
+            title={p.title}
+            description={p.description}
+            bgColor={p.bgColor}
+            accentColor={p.accentColor}
+            featured={p.featured}
+            imageContent={p.imageContent}
+            onClick={() => onNavigate('case-study/' + p.slug)} />
+          
+          </div>
+        )}
+      </div>
+    </section>);
+
+};
+
+// ── Side Quests section ───────────────────────────────────
+const SideQuestsSection = () =>
+<div className="side-quests-section">
+    <div className="side-quests-inner">
+
+      <div>
+        <div style={{
+        fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+        letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
+      }}>Side Quests</div>
+        <h2 style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: 38, fontWeight: 700, color: '#1a1410',
+        letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
+      }}>The experiments<br />that don't sit still.</h2>
+        <p style={{
+        fontFamily: "'DM Sans', sans-serif", fontSize: 16,
+        color: '#6b5c52', lineHeight: 1.75, maxWidth: 440, marginBottom: 28
+      }}>
+          Not every project fits a case study. Side Quests is where I keep the experiments,
+          passion projects, and things I'm figuring out in real time.
+        </p>
+        <div style={{
+        display: 'inline-flex', alignItems: 'center', gap: 10,
+        background: '#ffd024', border: '2.5px solid #111', borderRadius: 8,
+        padding: '10px 22px', boxShadow: '4px 4px 0 #111',
+        fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410'
+      }}>
+          Coming soon check back!
+        </div>
+      </div>
+    </div>
+  </div>;
+
+
+// ── Contact section ───────────────────────────────────────
+const ContactSection = ({ onContact }) =>
+<div className="contact-section">
+    <img src="/headshot-animated.png" alt="Ash Lacap"
+  style={{
+    width: 96, height: 96, borderRadius: '50%',
+    border: '3px solid #ffd024', objectFit: 'cover',
+    marginBottom: 28, boxShadow: '0 0 0 3px #111'
+  }} />
+    <h2 style={{
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, color: 'white',
+    letterSpacing: '-0.03em', marginBottom: 16
+  }}>Let's make something great.</h2>
+    <p style={{
+    fontFamily: "'DM Sans', sans-serif", fontSize: 16,
+    color: '#8a99d8', maxWidth: 400, margin: '0 auto 40px', lineHeight: 1.7
+  }}>
+      Have a project in mind? Or just want to talk marketing?
+      I'm always up for a good conversation.
+    </p>
+    <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+      <button
+      onClick={onContact}
+      style={{
+        fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600,
+        padding: '13px 32px', borderRadius: 8,
+        background: '#d42020', color: 'white',
+        border: '2.5px solid #ffd024', boxShadow: '4px 4px 0 #ffd024',
+        cursor: 'pointer', transition: 'box-shadow 120ms, transform 120ms'
+      }}
+      onMouseEnter={(e) => {e.currentTarget.style.boxShadow = '6px 6px 0 #ffd024';e.currentTarget.style.transform = 'translateY(-2px)';}}
+      onMouseLeave={(e) => {e.currentTarget.style.boxShadow = '4px 4px 0 #ffd024';e.currentTarget.style.transform = 'translateY(0)';}}>
+        Get In Touch →
+      </button>
+      <a href="https://www.linkedin.com/in/ash-lacap/" target="_blank" rel="noopener noreferrer"
+    style={{
+      fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600,
+      padding: '13px 32px', borderRadius: 8,
+      background: 'transparent', color: 'white',
+      border: '2.5px solid rgba(255,255,255,0.3)',
+      cursor: 'pointer', textDecoration: 'none',
+      transition: 'border-color 150ms'
+    }}
+    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'white'}
+    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'}>
+        LinkedIn →
+      </a>
+    </div>
+  </div>;
+
+
+// ── Contact Modal ─────────────────────────────────────────
+const ContactModal = ({ onClose }) => {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [sent, setSent] = useState(false);
+
+  const submit = (e) => {
+    e.preventDefault();
+    setSent(true);
+    setTimeout(onClose, 2000);
+  };
+
+  return (
+    <div className="modal-overlay" onClick={(e) => {if (e.target === e.currentTarget) onClose();}}>
+      <div className="modal-card">
+        {sent ?
+        <div style={{ textAlign: 'center', padding: '20px 0' }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>👋</div>
+            <h3 style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 24, color: '#1a1410', marginBottom: 8 }}>Message sent!</h3>
+            <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 15, color: '#8c7a70' }}>I'll be in touch soon.</p>
+          </div> :
+
+        <>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28 }}>
+              <div>
+                <h3 style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 24, fontWeight: 700, color: '#1a1410', marginBottom: 4 }}>Let's Connect</h3>
+                <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 14, color: '#8c7a70' }}>Drop me a message! I'll get back to you.</p>
+              </div>
+              <button onClick={onClose} style={{
+              background: '#f5f2f0', border: '2px solid #e4dfdc', borderRadius: 8,
+              width: 36, height: 36, cursor: 'pointer', fontSize: 18, color: '#6b5c52',
+              display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>×</button>
+            </div>
+            <form onSubmit={submit}>
+              <div className="form-field">
+                <label className="form-label">Name</label>
+                <input className="form-input" type="text" placeholder="Your name" required
+              value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Email</label>
+                <input className="form-input" type="email" placeholder="you@example.com" required
+              value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Message</label>
+                <textarea className="form-input" placeholder="What are you working on?" required
+              value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+              </div>
+              <button type="submit" style={{
+              width: '100%', padding: '13px', borderRadius: 8,
+              background: '#1e2a5e', color: 'white', border: '2.5px solid #111',
+              boxShadow: '4px 4px 0 #111', fontFamily: "'DM Sans',sans-serif",
+              fontSize: 15, fontWeight: 600, cursor: 'pointer',
+              transition: 'box-shadow 120ms, transform 120ms'
+            }}
+            onMouseEnter={(e) => {e.currentTarget.style.boxShadow = '6px 6px 0 #111';e.currentTarget.style.transform = 'translateY(-2px)';}}
+            onMouseLeave={(e) => {e.currentTarget.style.boxShadow = '4px 4px 0 #111';e.currentTarget.style.transform = 'translateY(0)';}}>
+                Send Message →
+              </button>
+            </form>
+          </>
+        }
+      </div>
+    </div>);
+
+};
+
+// ── Resume Page ───────────────────────────────────────────
+const ResumeSection = ({ title, children }) =>
+<div style={{ marginBottom: 48 }}>
+    <div style={{
+    display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20
+  }}>
+      <div style={{
+      fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+      letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020'
+    }}>{title}</div>
+      <div style={{ flex: 1, height: 2, background: '#e4dfdc', borderRadius: 2 }} />
+    </div>
+    {children}
+  </div>;
+
+
+const ResumeEntry = ({ org, role, period, bullets }) =>
+<div style={{ marginBottom: 28 }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+      <div>
+        <div style={{
+
+        fontSize: 17, fontWeight: 700, color: '#1a1410', marginBottom: 2, fontFamily: "\"DM Sans\""
+      }}>{org}</div>
+        <div style={{
+        fontFamily: "'DM Sans',sans-serif", fontSize: 13,
+        color: '#d42020', fontWeight: 600
+      }}>{role}</div>
+      </div>
+      <div style={{
+      fontFamily: "'DM Sans',sans-serif", fontSize: 12,
+      color: '#8c7a70', whiteSpace: 'nowrap', marginTop: 3
+    }}>{period}</div>
+    </div>
+    {bullets &&
+  <ul style={{ margin: '10px 0 0 0', paddingLeft: 18 }}>
+        {bullets.map((b, i) =>
+    <li key={i} style={{
+      fontFamily: "'DM Sans',sans-serif", fontSize: 14,
+      color: '#4a3e36', lineHeight: 1.7, marginBottom: 4
+    }}>{b}</li>
+    )}
+      </ul>
+  }
+  </div>;
+
+
+const ResumePage = () =>
+<section style={{ maxWidth: 860, margin: '0 auto', padding: '60px 48px 80px' }}>
+    {/* Header */}
+    <div style={{
+    display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
+    marginBottom: 48, paddingBottom: 32, borderBottom: '2.5px solid #111'
+  }}>
+      <div>
+        <h1 style={{
+        fontFamily: "'DM Sans',sans-serif",
+        fontSize: 52, fontWeight: 700, color: '#1a1410',
+        letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 8
+      }}>Ash Lacap</h1>
+        <div style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 13, color: '#6b5c52', fontStyle: 'italic', marginBottom: 16 }}>(she/her)</div>
+        <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          {[
+        { label: 'ashleynlacap@gmail.com', href: 'mailto:ashleynlacap@gmail.com' },
+        { label: 'linkedin.com/in/ash-lacap', href: 'https://www.linkedin.com/in/ash-lacap/' },
+        { label: 'ashlacap.com', href: 'https://ashlacap.com' },
+        { label: 'Greater Los Angeles, CA', href: null }].
+        map(({ label, href }) =>
+        href ?
+        <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 13, color: '#1e2a5e', textDecoration: 'none', borderBottom: '1px solid #b8c2ea' }}>{label}</a> :
+        <span key={label} style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 13, color: '#8c7a70' }}>{label}</span>
+        )}
+        </div>
+      </div>
+    </div>
+
+    {/* Summary */}
+    <div style={{ marginBottom: 48 }}>
+      <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 15, color: '#4a3e36', lineHeight: 1.8 }}>
+        Marketing associate with 3+ years of hands-on experience planning and executing integrated campaigns across social, content, influencer, and email channels for consumer-facing brands. Comfortable working with performance data to monitor results, adjust plans, and report findings to stakeholders. Strong cross-functional collaborator with experience managing timelines across multiple concurrent projects. MBA candidate at UC Riverside concentrating in Marketing and Business Analytics.
+      </p>
+    </div>
+
+    {/* Core Competencies */}
+    <ResumeSection title="Core Competencies">
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+        {[
+      'Integrated Marketing Campaigns', 'Omnichannel Execution', 'Campaign Planning',
+      'Consumer Insights', 'Performance Analytics', 'KPI Tracking',
+      'Cross-Functional Collaboration', 'Social Media Marketing', 'Influencer Marketing',
+      'Email & Content Strategy', 'Stakeholder Communication', 'Brand Messaging'].
+      map((c) =>
+      <span key={c} style={{
+        fontFamily: "'DM Sans',sans-serif", fontSize: 12, fontWeight: 500,
+        color: '#1e2a5e', background: '#e0e4f5',
+        padding: '6px 14px', borderRadius: 20, border: '1.5px solid #b8c2ea'
+      }}>{c}</span>
+      )}
+      </div>
+    </ResumeSection>
+
+    {/* Experience */}
+    <ResumeSection title="Experience">
+      <ResumeEntry
+      org="VALOBANNERS"
+      role="Brand Marketing Associate · Remote"
+      period="Dec 2020 – Dec 2023"
+      bullets={[
+      "Developed and executed integrated campaigns across social, influencer, and community channels, defining target audiences, messaging frameworks, and KPIs, then monitoring daily performance via TikTok Analytics and Meta Business Suite to drive a 25% increase in monthly sales.",
+      "Managed influencer partnerships end to end: coordinating outreach, briefing creators, tracking deliverables, and producing performance reports across multiple concurrent campaigns.",
+      "Grew brand audience by 103% and engagement by 58% through audience-informed campaign planning, creative iteration, and cross-platform execution across TikTok, Instagram, and Discord.",
+      "Analyzed content performance weekly to identify top-performing formats and inform future creative direction, consistently improving click-through and save rates.",
+      "Collaborated with the product team to align campaign messaging with new drops and seasonal releases, ensuring consistency across all touchpoints."]
+      } />
+    
+      <ResumeEntry
+      org="Social View Agency"
+      role="Social Media Intern · Remote"
+      period="Aug 2025 – Nov 2025"
+      bullets={[
+      "Supported integrated campaign execution across multiple client accounts in a fast-paced agency environment, managing content assets and adapting messaging to each brand's channel mix.",
+      "Tracked campaign KPIs across clients using Meta Business Suite and platform-native analytics tools, surfacing weekly insights to account managers.",
+      "Assisted in building content calendars, writing captions, and coordinating asset delivery between creative and client teams on tight turnarounds.",
+      "Contributed to client strategy decks by compiling competitive research and social listening findings."]
+      } />
+    
+      <ResumeEntry
+      org="H&R Block"
+      role="Social Media Strategist (Contract) · Remote"
+      period="Oct 2022 – Apr 2023"
+      bullets={[
+      "Planned and managed on-brand content across social channels during peak tax season, developing a content cadence that balanced educational, promotional, and community-driven posts.",
+      "Monitored performance data daily and refined posting frequency and content mix to improve reach and audience engagement over the campaign window.",
+      "Ensured brand voice consistency across all published content in alignment with H&R Block's national guidelines."]
+      } />
+    
+    </ResumeSection>
+
+    {/* Leadership */}
+    <ResumeSection title="Leadership">
+      <ResumeEntry
+      org="UCR AGSM Student Association"
+      role="Director of PR and Marketing · Riverside, CA"
+      period="May 2025 – Present"
+      bullets={[
+      "Lead integrated marketing campaigns across email, social, and campus channels to promote graduate school events and programming.",
+      "Present campaign strategy and post-event results to faculty leadership on a recurring basis, demonstrating impact through data.",
+      "Increased event turnout by 40% through targeted outreach, improved messaging, and more strategic channel selection.",
+      "Manage a small team of student volunteers, delegating tasks, reviewing content, and maintaining brand consistency across all outputs."]
+      } />
+    
+    </ResumeSection>
+
+    {/* Projects */}
+    <ResumeSection title="Projects">
+      <ResumeEntry org="Liquid Death" role="Consumer Insights & Brand Positioning" period="Jan – Mar 2025"
+    bullets={[
+    "Analyzed 300+ consumer survey responses to identify audience trends, brand perception gaps, and purchase intent signals across demographic segments.",
+    "Developed data-driven brand positioning recommendations and a messaging strategy targeting younger consumer segments, grounded in competitive landscape analysis.",
+    "Presented findings and strategic recommendations to faculty with supporting data visualizations built in Tableau and Google Slides."]
+    } />
+      <ResumeEntry org="Quay Australia" role="Gen Z Integrated Marketing Playbook" period="Jan – May 2022"
+    bullets={[
+    "Conducted primary market research and social listening to map Gen Z behavior, platform preferences, and purchase decision patterns.",
+    "Built a full go-to-market playbook covering channel strategy, influencer partnership framework, audience segmentation, and a measurable KPI model.",
+    "Delivered the playbook as a client-facing presentation, receiving strong feedback on strategic clarity and research depth."]
+    } />
+    </ResumeSection>
+
+    {/* Education */}
+    <ResumeSection title="Education">
+      <ResumeEntry org="UC Riverside A. Gary Anderson Graduate School of Management" role="MBA, Marketing & Business Analytics" period="Expected 2026"
+    bullets={["Concentrating in Marketing and Business Analytics. Active member of the AGSM Student Association, currently serving as Director of PR and Marketing."]} />
+      <ResumeEntry org="California State University, Northridge" role="BS, Marketing" period="2022"
+    bullets={["Bachelor of Science in Marketing. Built foundational knowledge in consumer behavior, brand strategy, and integrated marketing communications."]} />
+    </ResumeSection>
+
+    {/* Skills */}
+    <ResumeSection title="Skills">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        {[
+      { cat: 'Marketing', items: 'Integrated Campaigns · Influencer Marketing · Email Marketing · Social Media Strategy · Content Planning · Brand Messaging · Omnichannel Execution' },
+      { cat: 'Analytics', items: 'Meta Business Suite · TikTok Analytics · Google Analytics · Tableau · Excel · Google Sheets · KPI Tracking · Performance Reporting' },
+      { cat: 'Tools', items: 'Canva · Adobe Premiere Pro · Photoshop · Notion · Asana · Slack · PowerPoint · Google Slides' },
+      { cat: 'Platforms', items: 'TikTok · Instagram · YouTube · LinkedIn · Twitter/X · Reddit · Discord' }].
+      map(({ cat, items }) =>
+      <div key={cat} style={{ display: 'flex', gap: 16, paddingBottom: 16, borderBottom: '1px solid #f5f2f0' }}>
+            <div style={{ width: 110, flexShrink: 0, fontFamily: "'DM Sans',sans-serif", fontSize: 12, fontWeight: 700, color: '#1e2a5e', paddingTop: 2 }}>{cat}</div>
+            <div style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 14, color: '#4a3e36', lineHeight: 1.7 }}>{items}</div>
+          </div>
+      )}
+      </div>
+    </ResumeSection>
+  </section>;
+
+
+// ── Tweaks ────────────────────────────────────────────────
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentColor": "#d42020",
+  "navStyle": "bordered",
+  "showAvatar": true,
+  "heroGreeting": "Nice to meet you!"
+}/*EDITMODE-END*/;
+
+// ── Main App ──────────────────────────────────────────────
+const App = () => {
+  const [page, setPage] = useState(() => {
+    return localStorage.getItem('ash-portfolio-page') || 'home';
+  });
+  const [showContact, setShowContact] = useState(false);
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  useEffect(() => {
+    localStorage.setItem('ash-portfolio-page', page);
+    window.scrollTo({ top: 0 });
+  }, [page]);
+
+  const handleNavigate = (target) => {
+    if (target === 'contact') {setShowContact(true);return;}
+    setPage(target);
+  };
+
+  const renderBody = () => {
+    if (page.startsWith('case-study/')) {
+      const slug = page.replace('case-study/', '');
+      return <CaseStudyDetail slug={slug} onBack={() => setPage('work')} />;
+    }
+    switch (page) {
+      case 'about':
+        return (
+          <>
+            <div style={{ paddingTop: 64 }}>
+              <AboutSection />
+            </div>
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
+      case 'resume':
+        return (
+          <>
+            <div style={{ paddingTop: 64 }}>
+              <ResumePage />
+            </div>
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
+      case 'side-quests':
+        return (
+          <>
+            <div style={{ paddingTop: 80 }}>
+              <SideQuestsSection />
+            </div>
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
+      case 'work':
+        return (
+          <>
+            <div style={{ paddingTop: 64 }}>
+              <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
+            </div>
+            <SideQuestsSection />
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
+      default:
+        return (
+          <>
+            <Hero onNavigate={handleNavigate} tweaks={tweaks} />
+            <hr className="section-divider" />
+            <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
+            <SideQuestsSection />
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
+    }
+  };
+
+  return (
+    <>
+      <Nav activePage={page} onNavigate={handleNavigate} />
+      <main style={{ flex: 1, color: "rgb(37, 38, 46)" }}>
+        {renderBody()}
+      </main>
+      <Footer onNavigate={handleNavigate} />
+      {showContact && <ContactModal onClose={() => setShowContact(false)} />}
+      <TweaksPanel>
+        <TweakSection label="Colors" />
+        <TweakColor label="Accent color" value={tweaks.accentColor} onChange={(v) => setTweak('accentColor', v)} />
+        <TweakSection label="Hero" />
+        <TweakToggle label="Show avatar" value={tweaks.showAvatar} onChange={(v) => setTweak('showAvatar', v)} />
+        <TweakText label="Speech bubble" value={tweaks.heroGreeting} onChange={(v) => setTweak('heroGreeting', v)} />
+        <TweakSection label="Navigation" />
+        <TweakRadio label="Nav style" value={tweaks.navStyle} options={["bordered", "minimal"]} onChange={(v) => setTweak('navStyle', v)} />
+      </TweaksPanel>
+    </>);
+
+};
+
+export default App
