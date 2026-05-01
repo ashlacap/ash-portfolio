@@ -432,6 +432,21 @@ const ResumePage = () =>
     
     </ResumeSection>
 
+    {/* Ventures */}
+    <ResumeSection title="Ventures">
+      <ResumeEntry
+      org="THE GROVE"
+      role="Co-Founder & Head of Data Infrastructure · Sole App Designer & Builder"
+      period="Apr 2026 – Present"
+      bullets={[
+      "Co-founded an encrypted AI data pipeline for entertainment, gaming, and live events organizations with Maya Cohen, serving as the sole app designer and builder from day one.",
+      "Designed and built the full product in React, integrating Google Gemini 2.5 Flash to power predictive asset generation with a confidence scoring engine that tells users exactly how production-ready their output is.",
+      "Built a flexible ingestion layer accepting any file type (USD, FBX, audio stems, PDFs, CSVs) and cloud storage connections (OneDrive, SharePoint, Google Drive) with no reformatting required.",
+      "Architected AES-256 encrypted asset transfer with provenance tracking, granular access control, and tamper-evident audit trails for secure inter-organizational collaboration.",
+      "Developing YC application strategy targeting enterprise pilots at AEG, Riot Games, Tixr, FlyQuest, and XSolla."
+      ]} />
+    </ResumeSection>
+
     {/* Leadership */}
     <ResumeSection title="Leadership">
       <ResumeEntry
