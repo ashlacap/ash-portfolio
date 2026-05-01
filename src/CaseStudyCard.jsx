@@ -28,6 +28,11 @@ const CaseStudyCard = ({ tag, title, description, bgColor, accentColor, onClick,
         borderBottom: '2.5px solid #111',
         position: 'relative', overflow: 'hidden'
       }}>
+        <div style={{
+          position: 'absolute', inset: 0,
+          transform: hovered ? 'scale(1.05)' : 'scale(1)',
+          transition: 'transform 400ms cubic-bezier(0.22,1,0.36,1)',
+        }}>
         {imageContent ||
         <div style={{
           fontFamily: "'DM Sans', sans-serif",
@@ -36,6 +41,7 @@ const CaseStudyCard = ({ tag, title, description, bgColor, accentColor, onClick,
           letterSpacing: '-0.04em', userSelect: 'none'
         }}>{title}</div>
         }
+        </div>
         {featured &&
         <div style={{
           position: 'absolute', top: 16, right: 16,

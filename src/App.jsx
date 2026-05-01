@@ -60,7 +60,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     bgColor: '#0a1a0c',
     accentColor: '#E05B12',
     featured: true,
-    imageContent: <img src="/grove-cover.png" alt="THE GROVE" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />,
+    imageContent: <img loading="lazy" src="/grove-cover.png" alt="THE GROVE" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />,
   },
   {
     slug: 'valobanners',
@@ -70,7 +70,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     bgColor: '#141b42',
     accentColor: '#ffd024',
     featured: true,
-    imageContent: <img src="/valobanners-cover.png" alt="VALOBANNERS" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />,
+    imageContent: <img loading="lazy" src="/valobanners-cover.png" alt="VALOBANNERS" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />,
   },
   {
     slug: 'agsm',
@@ -79,7 +79,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Led integrated marketing campaigns across email, social, and campus channels as Director of PR and Marketing, increasing event turnout by 40%.',
     bgColor: '#1e2a5e',
     accentColor: '#7ecaef',
-    imageContent: <img src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+    imageContent: <img loading="lazy" src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
   },
   {
     slug: 'samsung',
@@ -88,7 +88,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Fast-paced agency internship creating short-form social content for clients, supporting strategy, trend research, and campaign execution across TikTok and Instagram.',
     bgColor: '#1a1410',
     accentColor: '#8a99d8',
-    imageContent: <img src="/sva-cartzilla-cover.png" alt="SVA x CartZilla" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+    imageContent: <img loading="lazy" src="/sva-cartzilla-cover.png" alt="SVA x CartZilla" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   },
   {
     slug: 'liquid-death',
@@ -97,7 +97,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Analyzed 300+ consumer responses to develop data-driven brand positioning and messaging strategy targeting younger segments.',
     bgColor: '#2d0606',
     accentColor: '#e05050',
-    imageContent: <img src="/liquid-death-cover.webp" alt="Liquid Death" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+    imageContent: <img loading="lazy" src="/liquid-death-cover.webp" alt="Liquid Death" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   },
   {
     slug: 'quay-australia',
@@ -106,7 +106,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Full Gen Z go-to-market playbook: channel strategy, influencer partnerships, audience segmentation, and measurable KPIs.',
     bgColor: '#0d1230',
     accentColor: '#7ecaef',
-    imageContent: <img src="/quay-cover.jpg" alt="Quay Australia" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+    imageContent: <img loading="lazy" src="/quay-cover.jpg" alt="Quay Australia" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   }];
 
 

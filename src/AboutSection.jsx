@@ -42,7 +42,7 @@ const AboutSection = () => {
               overflow: 'hidden', boxShadow: '6px 6px 0 #1e2a5e',
               position: 'relative', zIndex: 1,
             }}>
-              <img src="/photo-headshot.jpg" alt="Ash Lacap"
+              <img loading="lazy" src="/photo-headshot.jpg" alt="Ash Lacap"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
             </div>
             {/* Avatar — bottom-right of photo */}
@@ -51,7 +51,7 @@ const AboutSection = () => {
               width: 110, zIndex: 2,
               filter: 'drop-shadow(3px 3px 0 #111)',
             }}>
-              <img src="/animated-me.png" alt="" style={{ width: '100%' }} />
+              <img loading="lazy" src="/animated-me.png" alt="" style={{ width: '100%' }} />
             </div>
           </div>
 
