@@ -111,7 +111,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
 
 
   return (
-    <section style={{ padding: '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+    <section id="work" style={{ padding: '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
       <div className="reveal">
         <SectionHeading
           label="My Work"
@@ -527,14 +527,27 @@ const App = () => {
   }, [page]);
 
   const handleNavigate = (target) => {
-    if (target === 'contact') {setShowContact(true);return;}
+    if (target === 'contact') { setShowContact(true); return; }
+    if (target === 'work') {
+      const scrollToWork = () => {
+        const el = document.getElementById('work');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      };
+      if (page === 'home') {
+        scrollToWork();
+      } else {
+        setPage('home');
+        setTimeout(scrollToWork, 100);
+      }
+      return;
+    }
     setPage(target);
   };
 
   const renderBody = () => {
     if (page.startsWith('case-study/')) {
       const slug = page.replace('case-study/', '');
-      return <CaseStudyDetail slug={slug} onBack={() => setPage('work')} />;
+      return <CaseStudyDetail slug={slug} onBack={() => handleNavigate('work')} />;
     }
     switch (page) {
       case 'about':
@@ -561,16 +574,6 @@ const App = () => {
             <div style={{ paddingTop: 80 }}>
               <SideQuestsSection />
             </div>
-            <ContactSection onContact={() => setShowContact(true)} />
-          </>);
-
-      case 'work':
-        return (
-          <>
-            <div style={{ paddingTop: 64 }}>
-              <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
-            </div>
-            <SideQuestsSection />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 

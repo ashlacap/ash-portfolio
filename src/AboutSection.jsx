@@ -1,5 +1,112 @@
 // About Section
 import React, { useState, useEffect, useRef } from 'react'
+
+// Auto-plays when scrolled into view, pauses when out
+// Shows volume slider on hover — speaker icon + draggable bar
+const VideoCard = ({ src, label, style: outerStyle = {} }) => {
+  const ref = useRef(null);
+  const [volume, setVolume] = useState(0);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    video.volume = 0;
+    video.muted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleVolume = (e) => {
+    const v = parseFloat(e.target.value);
+    const video = ref.current;
+    if (!video) return;
+    video.volume = v;
+    video.muted = v === 0;
+    setVolume(v);
+  };
+
+  const toggleMute = () => {
+    const video = ref.current;
+    if (!video) return;
+    if (volume === 0) {
+      video.volume = 0.5;
+      video.muted = false;
+      setVolume(0.5);
+    } else {
+      video.volume = 0;
+      video.muted = true;
+      setVolume(0);
+    }
+  };
+
+  const icon = volume === 0 ? '🔇' : volume < 0.5 ? '🔉' : '🔊';
+
+  return (
+    <div
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      style={{
+        borderRadius: 14, border: '2.5px solid #111',
+        overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        background: '#0d0d0d', position: 'relative',
+        ...outerStyle,
+      }}
+    >
+      <video
+        ref={ref}
+        src={src}
+        muted loop playsInline preload="none"
+        style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+      />
+
+      {/* Volume bar — fades in on hover */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, right: 0,
+        padding: '10px 14px',
+        display: 'flex', alignItems: 'center', gap: 8,
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)',
+        opacity: hovering ? 1 : 0,
+        transition: 'opacity 200ms',
+      }}>
+        <button onClick={toggleMute} style={{
+          background: 'none', border: 'none', cursor: 'pointer',
+          fontSize: 18, lineHeight: 1, padding: 0, flexShrink: 0,
+        }}>
+          {icon}
+        </button>
+        <input
+          type="range" min="0" max="1" step="0.02"
+          value={volume}
+          onChange={handleVolume}
+          style={{
+            flex: 1, cursor: 'pointer',
+            accentColor: '#ffd024',
+            height: 4,
+          }}
+        />
+      </div>
+
+      {label && (
+        <div style={{
+          position: 'absolute', bottom: 10, left: 10,
+          background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)',
+          borderRadius: 6, padding: '4px 10px',
+          fontFamily: "'DM Sans', sans-serif", fontSize: 11,
+          fontWeight: 600, color: 'white', letterSpacing: '0.04em',
+        }}>{label}</div>
+      )}
+    </div>
+  );
+};
+
 const AboutSection = () => {
   const photoSlides = [
     '/photo-rocks.jpg',
@@ -182,6 +289,81 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ── Video Showcase ───────────────────────────────── */}
+      <div style={{ padding: '72px 48px 80px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+
+          {/* Video Editing */}
+          <div style={{ marginBottom: 60 }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              color: '#d42020', marginBottom: 8,
+            }}>Video Editing</div>
+            <h2 style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 32, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
+            }}>Content I've created.</h2>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 14,
+              color: '#6b5c52', lineHeight: 1.7, marginBottom: 24, maxWidth: 520,
+            }}>
+              TikToks, branded edits, and creative cuts. These autoplay as you scroll.
+            </p>
+            <div style={{ display: 'flex', gap: 80, alignItems: 'stretch', justifyContent: 'center' }}>
+              {/* Left: two stacked 16:9 videos */}
+              <div style={{ width: 380, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20   }}>
+                <VideoCard
+                  src="/video-tiktok1.mp4"
+                  label="TikTok Edit 1"
+                  style={{ width: '100%', aspectRatio: '16 / 9' }}
+                />
+                <VideoCard
+                  src="/video-edit1.mov"
+                  label="Video Edit"
+                  style={{ width: '100%', aspectRatio: '16 / 9' }}
+                />
+              </div>
+              {/* Right: portrait at natural 9:16, centered vertically */}
+              <div style={{ width: 240, flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                <VideoCard
+                  src="/video-tiktok2.mp4"
+                  label="TikTok Edit 2"
+                  style={{ width: 240, aspectRatio: '9 / 16' }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Gaming */}
+          <div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              color: '#d42020', marginBottom: 8,
+            }}>Gaming</div>
+            <h2 style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 32, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
+            }}>In my element.</h2>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 14,
+              color: '#6b5c52', lineHeight: 1.7, marginBottom: 24, maxWidth: 520,
+            }}>
+              Gaming has been a part of my life for as long as I can remember.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <VideoCard
+                src="/video-gaming1.mp4"
+                label="Gaming Clip"
+                style={{ width: '60%', aspectRatio: '16 / 9' }}
+              />
+            </div>
+          </div>
+
         </div>
       </div>
 
