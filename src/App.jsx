@@ -272,7 +272,7 @@ const ContactModal = ({ onClose }) => {
               </div>
               <div className="form-field">
                 <label className="form-label">Message</label>
-                <textarea className="form-input" placeholder="What are you working on?" required
+                <textarea className="form-input" placeholder="What do you want to chat about?" required
               value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
               </div>
               <button type="submit" style={{
