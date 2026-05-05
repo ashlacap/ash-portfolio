@@ -492,7 +492,7 @@ const ResumePage = () =>
         {[
       { cat: 'Marketing', items: 'Integrated Campaigns · Influencer Marketing · Email Marketing · Social Media Strategy · Content Planning · Brand Messaging · Omnichannel Execution' },
       { cat: 'Analytics', items: 'Meta Business Suite · TikTok Analytics · Google Analytics · Tableau · Excel · Google Sheets · KPI Tracking · Performance Reporting' },
-      { cat: 'Tools', items: 'Canva · Adobe Premiere Pro · Photoshop · Notion · Asana · Slack · PowerPoint · Google Slides' },
+      { cat: 'Tools', items: 'Canva · Adobe Premiere Pro · Photoshop · Notion · Asana · Slack · PowerPoint · Google Slides · CapCut' },
       { cat: 'Platforms', items: 'TikTok · Instagram · YouTube · LinkedIn · Twitter/X · Reddit · Discord' }].
       map(({ cat, items }) =>
       <div key={cat} style={{ display: 'flex', gap: 16, paddingBottom: 16, borderBottom: '1px solid #f5f2f0' }}>

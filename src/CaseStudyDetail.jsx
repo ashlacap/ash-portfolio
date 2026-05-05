@@ -219,7 +219,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Architected AES-256 encrypted transfer layer with granular access control, provenance tracking, and tamper-evident audit trails for secure inter-organizational asset sharing.",
         "Co-founded with Maya Cohen and developed the YC application strategy targeting enterprise pilots at AEG, Riot Games, Tixr, FlyQuest, and XSolla.",
       ],
-      tools: ["React", "Gemini 2.5 Flash", "Google AI SDK", "AES-256 Encryption", "OneDrive API", "SharePoint", "ShotGrid"],
+      tools: ["React", "Gemini 2.5 Flash", "Google AI SDK", "AES-256 Encryption", "OneDrive API", "SharePoint", "ShotGrid", "CapCut"],
       siteUrl: "https://thegrove.cloud",
     },
     valobanners: {
@@ -256,7 +256,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
           "/reversah-7.jpg",
         ],
       },
-      tools: ["TikTok Analytics", "Meta Business Suite", "Canva", "Discord", "Notion"],
+      tools: ["TikTok Analytics", "Meta Business Suite", "Canva", "Discord", "Notion", "CapCut"],
       images: [
         { src: "/valobanners-banners.gif", caption: "Product lineup: physical Valorant-inspired banners available in multiple map themes." },
         { src: "/valobanners-shop.png", caption: "E-commerce experience and order flow across desktop and mobile." },
@@ -283,7 +283,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Increased event turnout by 40% through targeted outreach, improved messaging, and more strategic channel selection.",
         "Manage a small team of student volunteers, delegating tasks, reviewing content, and maintaining brand consistency across all outputs.",
       ],
-      tools: ["Email Marketing", "Instagram", "LinkedIn", "Canva", "Google Slides"],
+      tools: ["Email Marketing", "Instagram", "LinkedIn", "Canva", "Google Slides", "CapCut"],
       reels: [
         { src: "/Student%20Association%20Reel%201.mp4", label: "Student Association Reel 1" },
         { src: "/Student%20Association%20Reel%202.mp4", label: "Student Association Reel 2" },
@@ -310,7 +310,13 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Collaborated cross-functionally with account managers and creative teams to meet client objectives.",
       ],
       coverImage: "/sva-cartzilla-cover.png",
-      tools: ["Meta Business Suite", "Canva", "Google Analytics", "Asana", "Slack"],
+      tools: ["Meta Business Suite", "Canva", "Google Analytics", "Asana", "Slack", "CapCut"],
+      reels: [
+        { src: "/CartZilla%201.mp4", label: "CartZilla Reel 1" },
+        { src: "/CartZilla%202.mp4", label: "CartZilla Reel 2" },
+        { src: "/CartZilla%203.mp4", label: "CartZilla Reel 3" },
+      ],
+      reelsCredit: { label: "@cartzillaride", url: "https://www.instagram.com/cartzillaride/" },
     },
     "liquid-death": {
       tag: "Academic Project · Consumer Insights",
@@ -530,16 +536,37 @@ const CaseStudyDetail = ({ slug, onBack }) => {
               letterSpacing: "0.14em", textTransform: "uppercase",
               color: "#d42020", marginBottom: 16,
             }}>Reels</div>
-            <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 16, flexWrap: "nowrap" }}>
               {study.reels.map((reel, i) => (
                 <VideoCard
                   key={i}
                   src={reel.src}
                   label={reel.label}
-                  style={{ flex: "1 1 300px", aspectRatio: "9 / 16", maxWidth: 360 }}
+                  style={{ flex: "1 1 0", minWidth: 0, aspectRatio: "9 / 16" }}
                 />
               ))}
             </div>
+            {study.reelsCredit && (
+              <div style={{ marginTop: 14, textAlign: "center" }}>
+                <a
+                  href={study.reelsCredit.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
+                    color: "#1e2a5e", textDecoration: "none",
+                    display: "inline-flex", alignItems: "center", gap: 6,
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.textDecoration = "underline"}
+                  onMouseLeave={e => e.currentTarget.style.textDecoration = "none"}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                  {study.reelsCredit.label}
+                </a>
+              </div>
+            )}
           </div>
         )}
 
