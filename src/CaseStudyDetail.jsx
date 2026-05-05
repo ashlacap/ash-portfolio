@@ -2,6 +2,90 @@
 // ── Image Carousel ────────────────────────────────────────
 import React, { useState, useEffect, useRef } from 'react'
 
+const VideoCard = ({ src, label, style: outerStyle = {} }) => {
+  const ref = useRef(null);
+  const [volume, setVolume] = useState(0);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    video.volume = 0;
+    video.muted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleVolume = (e) => {
+    const v = parseFloat(e.target.value);
+    const video = ref.current;
+    if (!video) return;
+    video.volume = v;
+    video.muted = v === 0;
+    setVolume(v);
+  };
+
+  const toggleMute = () => {
+    const video = ref.current;
+    if (!video) return;
+    if (volume === 0) {
+      video.volume = 0.5;
+      video.muted = false;
+      setVolume(0.5);
+    } else {
+      video.volume = 0;
+      video.muted = true;
+      setVolume(0);
+    }
+  };
+
+  return (
+    <div
+      style={{
+        position: 'relative', borderRadius: 16, overflow: 'hidden',
+        border: '2.5px solid #111', boxShadow: '4px 4px 0 #111',
+        background: '#111',
+        ...outerStyle,
+      }}
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+    >
+      <video
+        ref={ref}
+        src={src}
+        muted loop playsInline preload="none"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
+      {hovering && (
+        <div style={{
+          position: 'absolute', bottom: 12, left: 12, right: 12,
+          display: 'flex', alignItems: 'center', gap: 10,
+          background: 'rgba(0,0,0,0.6)', borderRadius: 8, padding: '8px 12px',
+        }}>
+          <button onClick={toggleMute} style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            color: 'white', fontSize: 18, padding: 0, lineHeight: 1,
+          }}>
+            {volume === 0 ? '🔇' : '🔊'}
+          </button>
+          <input
+            type="range" min="0" max="1" step="0.05"
+            value={volume} onChange={handleVolume}
+            style={{ flex: 1, accentColor: 'white' }}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
 const ImageCarousel = ({ title, subtitle, slides }) => {
   const [current, setCurrent] = React.useState(0);
   const [loaded, setLoaded] = React.useState({});
@@ -200,6 +284,10 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Manage a small team of student volunteers, delegating tasks, reviewing content, and maintaining brand consistency across all outputs.",
       ],
       tools: ["Email Marketing", "Instagram", "LinkedIn", "Canva", "Google Slides"],
+      reels: [
+        { src: "/Student%20Association%20Reel%201.mp4", label: "Student Association Reel 1" },
+        { src: "/Student%20Association%20Reel%202.mp4", label: "Student Association Reel 2" },
+      ],
     },
     samsung: {
       tag: "Agency · Social Media",
@@ -434,6 +522,26 @@ const CaseStudyDetail = ({ slug, onBack }) => {
             ))}
           </div>
         </div>
+
+        {study.reels && study.reels.length > 0 && (
+          <div style={{ marginTop: 56 }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+              letterSpacing: "0.14em", textTransform: "uppercase",
+              color: "#d42020", marginBottom: 16,
+            }}>Reels</div>
+            <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+              {study.reels.map((reel, i) => (
+                <VideoCard
+                  key={i}
+                  src={reel.src}
+                  label={reel.label}
+                  style={{ flex: "1 1 300px", aspectRatio: "9 / 16", maxWidth: 360 }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         {study.siteUrl && (
           <div style={{ marginTop: 48 }}>
