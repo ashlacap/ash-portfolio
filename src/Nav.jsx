@@ -1,7 +1,7 @@
 // Nav sticky top navigation with mobile-ready layout
 import React, { useState, useEffect, useRef } from 'react'
 
-const Nav = ({ activePage, onNavigate }) => {
+const Nav = ({ activePage, activeSection, onNavigate }) => {
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
