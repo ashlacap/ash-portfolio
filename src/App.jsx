@@ -678,7 +678,7 @@ const App = () => {
 
   return (
     <>
-      <Nav activePage={page} onNavigate={handleNavigate} />
+      <Nav activePage={page} activeSection={activeSection} onNavigate={handleNavigate} />
       <main style={{ flex: 1, color: "rgb(37, 38, 46)" }}>
         {renderBody()}
       </main>
