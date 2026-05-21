@@ -597,16 +597,16 @@ const App = () => {
 
   const handleNavigate = (target) => {
     if (target === 'contact') { setShowContact(true); return; }
-    if (target === 'work') {
-      const scrollToWork = () => {
-        const el = document.getElementById('work');
+    if (target === 'work' || target === 'side-quests') {
+      const scrollTo = () => {
+        const el = document.getElementById(target);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       };
       if (page === 'home') {
-        scrollToWork();
+        scrollTo();
       } else {
         setPage('home');
-        setTimeout(scrollToWork, 100);
+        setTimeout(scrollTo, 100);
       }
       return;
     }
