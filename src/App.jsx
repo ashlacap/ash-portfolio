@@ -144,31 +144,100 @@ const SideQuestsSection = () =>
 <div className="side-quests-section">
     <div className="side-quests-inner">
 
-      <div>
+      {/* Left: intro text */}
+      <div style={{ flexShrink: 0, maxWidth: 400 }}>
         <div style={{
-        fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
-        letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
-      }}>Side Quests</div>
+          fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+          letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
+        }}>Side Quests</div>
         <h2 style={{
-        fontFamily: "'DM Sans', sans-serif",
-        fontSize: 38, fontWeight: 700, color: '#1a1410',
-        letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
-      }}>The experiments<br />that don't sit still.</h2>
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: 38, fontWeight: 700, color: '#1a1410',
+          letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
+        }}>The experiments<br />that don't sit still.</h2>
         <p style={{
-        fontFamily: "'DM Sans', sans-serif", fontSize: 16,
-        color: '#6b5c52', lineHeight: 1.75, maxWidth: 440, marginBottom: 28
-      }}>
+          fontFamily: "'DM Sans', sans-serif", fontSize: 16,
+          color: '#6b5c52', lineHeight: 1.75, marginBottom: 0
+        }}>
           Not every project fits a case study. Side Quests is where I keep the experiments,
           passion projects, and things I'm figuring out in real time.
         </p>
+      </div>
+
+      {/* Right: project cards */}
+      <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+
+        {/* Instagram Unfollowers */}
         <div style={{
-        display: 'inline-flex', alignItems: 'center', gap: 10,
-        background: '#ffd024', border: '2.5px solid #111', borderRadius: 8,
-        padding: '10px 22px', boxShadow: '4px 4px 0 #111',
-        fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410'
-      }}>
-          Coming soon check back!
+          flex: '1 1 300px', background: 'white',
+          border: '2.5px solid #111', borderRadius: 16,
+          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        }}>
+          {/* Visual header — Instagram gradient */}
+          <div style={{
+            height: 140,
+            background: 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="6" stroke="white" strokeWidth="1.8"/>
+              <circle cx="12" cy="12" r="4.5" stroke="white" strokeWidth="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+            </svg>
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: '18px 20px 20px' }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: '#833ab4', marginBottom: 8,
+            }}>Personal Project · Web App</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
+            }}>Instagram Unfollowers</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
+              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
+            }}>
+              Find out who doesn't follow you back — no login required. Upload your Instagram data export and get instant, private results.
+            </p>
+
+            {/* Tech stack */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+              {['Next.js', 'React', 'TypeScript', 'Tailwind CSS'].map(t => (
+                <span key={t} style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
+                  color: '#4a3e36', background: '#f0ece8',
+                  padding: '4px 10px', borderRadius: 20,
+                  border: '1.5px solid #e4dfdc',
+                }}>{t}</span>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div style={{ display: 'flex', gap: 10 }}>
+              <a href="https://instagram-unfollowers-seven.vercel.app" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
+                color: 'white', background: '#833ab4',
+                padding: '9px 18px', borderRadius: 8,
+                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+                textDecoration: 'none',
+              }}>Live Site ↗</a>
+              <a href="https://github.com/ashlacap/instagram-unfollowers" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
+                color: '#1a1410', background: 'white',
+                padding: '9px 18px', borderRadius: 8,
+                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+                textDecoration: 'none',
+              }}>GitHub ↗</a>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>;
