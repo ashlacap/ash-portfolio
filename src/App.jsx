@@ -141,7 +141,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
 
 // ── Side Quests section ───────────────────────────────────
 const SideQuestsSection = () =>
-<div className="side-quests-section">
+<div id="side-quests" className="side-quests-section">
     <div className="side-quests-inner">
 
       {/* Left: intro text */}
