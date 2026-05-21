@@ -587,8 +587,25 @@ const App = () => {
   const [page, setPage] = useState(() => {
     return localStorage.getItem('ash-portfolio-page') || 'home';
   });
+  const [activeSection, setActiveSection] = useState(null);
   const [showContact, setShowContact] = useState(false);
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  useEffect(() => {
+    if (page !== 'home') { setActiveSection(null); return; }
+    const sections = ['work', 'side-quests'];
+    const observers = sections.map(id => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { threshold: 0.2 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(obs => obs && obs.disconnect());
+  }, [page]);
 
   useEffect(() => {
     localStorage.setItem('ash-portfolio-page', page);
