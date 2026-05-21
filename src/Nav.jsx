@@ -40,7 +40,7 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
 
       <ul style={{ display: 'flex', gap: 8, listStyle: 'none', margin: 0, padding: 0 }}>
         {links.map(({ label, page }) => {
-          const isActive = activePage === page || (activePage === 'home' && (page === 'work' || page === 'side-quests'));
+          const isActive = activePage === page || activeSection === page;
           return (
             <li key={page}>
               <button
