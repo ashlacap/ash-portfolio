@@ -303,7 +303,7 @@ const SideQuestsSection = () =>
 
             {/* Links */}
             <div style={{ display: 'flex', gap: 10 }}>
-              <a href="https://lnkd.in/gKTuj8uN" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://ashtronomical.vercel.app" target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 6,
                 fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
                 color: 'white', background: '#7c6af7',
