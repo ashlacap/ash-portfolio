@@ -247,7 +247,7 @@ const SideQuestsSection = () =>
           {/* Visual header — space theme */}
           <div style={{
             height: 140,
-            background: 'linear-gradient(135deg, #0a0a1a 0%, #0d1b4b 50%, #1a0a3a 100%)',
+            background: 'linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 60%, #0d0d0d 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             position: 'relative', overflow: 'hidden',
           }}>
@@ -256,13 +256,13 @@ const SideQuestsSection = () =>
               <div key={i} style={{
                 position: 'absolute', left: `${x}%`, top: `${y}%`,
                 width: i % 3 === 0 ? 3 : 2, height: i % 3 === 0 ? 3 : 2,
-                borderRadius: '50%', background: 'white', opacity: 0.7,
+                borderRadius: '50%', background: 'white', opacity: 0.6,
               }} />
             ))}
             {/* Saturn-like icon */}
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-              <circle cx="28" cy="28" r="14" fill="#7c6af7" opacity="0.9"/>
-              <ellipse cx="28" cy="28" rx="24" ry="7" stroke="white" strokeWidth="1.8" fill="none" opacity="0.6"/>
+              <circle cx="28" cy="28" r="14" fill="#333" opacity="0.9"/>
+              <ellipse cx="28" cy="28" rx="24" ry="7" stroke="white" strokeWidth="1.8" fill="none" opacity="0.5"/>
               <circle cx="28" cy="28" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
             </svg>
           </div>
@@ -272,7 +272,7 @@ const SideQuestsSection = () =>
             <div style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
               letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: '#7c6af7', marginBottom: 8,
+              color: '#1a1410', marginBottom: 8,
             }}>Personal Project · FinTech App</div>
             <div style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
@@ -286,7 +286,7 @@ const SideQuestsSection = () =>
               fontFamily: "'DM Sans', sans-serif", fontSize: 13,
               color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
             }}>
-              A space-themed budgeting app built for couples. Connects to your bank via Plaid for automatic transaction imports, shared household budgets, savings goal pacing, and spending insights.
+              A space-themed personal finance app that connects to your bank via Plaid for automatic transaction imports, shared household budgets, savings goal pacing, and spending insights.
             </p>
 
             {/* Tech stack */}
@@ -306,9 +306,9 @@ const SideQuestsSection = () =>
               <a href="https://ashtronomical.vercel.app" target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 6,
                 fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
-                color: 'white', background: '#7c6af7',
+                color: 'white', background: '#111',
                 padding: '9px 18px', borderRadius: 8,
-                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+                border: '2px solid #111', boxShadow: '3px 3px 0 #555',
                 textDecoration: 'none',
               }}>Live Site ↗</a>
             </div>
