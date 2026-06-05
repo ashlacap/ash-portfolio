@@ -238,6 +238,83 @@ const SideQuestsSection = () =>
           </div>
         </div>
 
+        {/* Ashtronomical */}
+        <div style={{
+          flex: '1 1 300px', background: 'white',
+          border: '2.5px solid #111', borderRadius: 16,
+          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        }}>
+          {/* Visual header — space theme */}
+          <div style={{
+            height: 140,
+            background: 'linear-gradient(135deg, #0a0a1a 0%, #0d1b4b 50%, #1a0a3a 100%)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            position: 'relative', overflow: 'hidden',
+          }}>
+            {/* Stars */}
+            {[[15,20],[40,60],[70,25],[85,70],[25,80],[60,45],[90,15],[50,85]].map(([x,y], i) => (
+              <div key={i} style={{
+                position: 'absolute', left: `${x}%`, top: `${y}%`,
+                width: i % 3 === 0 ? 3 : 2, height: i % 3 === 0 ? 3 : 2,
+                borderRadius: '50%', background: 'white', opacity: 0.7,
+              }} />
+            ))}
+            {/* Saturn-like icon */}
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="28" r="14" fill="#7c6af7" opacity="0.9"/>
+              <ellipse cx="28" cy="28" rx="24" ry="7" stroke="white" strokeWidth="1.8" fill="none" opacity="0.6"/>
+              <circle cx="28" cy="28" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
+            </svg>
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: '18px 20px 20px' }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: '#7c6af7', marginBottom: 8,
+            }}>Personal Project · FinTech App</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 4,
+            }}>Ashtronomical</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 12,
+              color: '#8c7a70', marginBottom: 10, fontStyle: 'italic',
+            }}>Your financial universe, mapped.</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
+              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
+            }}>
+              A space-themed budgeting app built for couples. Connects to your bank via Plaid for automatic transaction imports, shared household budgets, savings goal pacing, and spending insights.
+            </p>
+
+            {/* Tech stack */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+              {['React', 'Plaid API', 'Node.js', 'Tailwind CSS'].map(t => (
+                <span key={t} style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
+                  color: '#4a3e36', background: '#f0ece8',
+                  padding: '4px 10px', borderRadius: 20,
+                  border: '1.5px solid #e4dfdc',
+                }}>{t}</span>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div style={{ display: 'flex', gap: 10 }}>
+              <a href="https://lnkd.in/gKTuj8uN" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
+                color: 'white', background: '#7c6af7',
+                padding: '9px 18px', borderRadius: 8,
+                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+                textDecoration: 'none',
+              }}>Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>;
