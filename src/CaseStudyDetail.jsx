@@ -475,7 +475,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       {/* Hero banner */}
       <div style={{
         background: study.bgColor, borderBottom: "2.5px solid #111",
-        padding: "72px 48px 64px",
+        padding: isMobile ? "60px 20px 48px" : "72px 48px 64px",
         position: "relative", overflow: "hidden",
       }}>
         {/* Cover image background */}
