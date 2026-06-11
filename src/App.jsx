@@ -514,7 +514,7 @@ const ResumePage = () => {
       <div>
         <h1 style={{
         fontFamily: "'DM Sans',sans-serif",
-        fontSize: 52, fontWeight: 700, color: '#1a1410',
+        fontSize: isMobile ? 38 : 52, fontWeight: 700, color: '#1a1410',
         letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 8
       }}>Ash Lacap</h1>
         <div style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 13, color: '#6b5c52', fontStyle: 'italic', marginBottom: 16 }}>(she/her)</div>
