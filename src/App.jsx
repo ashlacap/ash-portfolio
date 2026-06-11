@@ -61,6 +61,7 @@ const SectionHeading = ({ label, title, subtitle, light }) =>
 // ── Work section ──────────────────────────────────────────
 const WorkSection = ({ onNavigate, tweaks }) => {
   useReveal();
+  const isMobile = useWindowWidth() < 768;
   const projects = [
   {
     slug: 'grove',
