@@ -467,9 +467,11 @@ const ResumeSection = ({ title, children }) =>
   </div>;
 
 
-const ResumeEntry = ({ org, role, period, bullets }) =>
+const ResumeEntry = ({ org, role, period, bullets }) => {
+  const isMobile = useWindowWidth() < 768;
+  return (
 <div style={{ marginBottom: 28 }}>
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4, gap: isMobile ? 4 : 0 }}>
       <div>
         <div style={{
 
@@ -482,7 +484,7 @@ const ResumeEntry = ({ org, role, period, bullets }) =>
       </div>
       <div style={{
       fontFamily: "'DM Sans',sans-serif", fontSize: 12,
-      color: '#8c7a70', whiteSpace: 'nowrap', marginTop: 3
+      color: '#8c7a70', marginTop: isMobile ? 0 : 3,
     }}>{period}</div>
     </div>
     {bullets &&
@@ -495,7 +497,9 @@ const ResumeEntry = ({ org, role, period, bullets }) =>
     )}
       </ul>
   }
-  </div>;
+  </div>
+  );
+};
 
 
 const ResumePage = () =>
