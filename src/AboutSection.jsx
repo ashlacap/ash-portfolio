@@ -389,6 +389,7 @@ const AboutSection = () => {
               fontFamily: "'DM Sans', sans-serif", fontSize: 32, fontWeight: 700,
               color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
             }}>Content I've created.</h2>
+
             <p style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 14,
               color: '#6b5c52', lineHeight: 1.7, marginBottom: 24, maxWidth: 520,
