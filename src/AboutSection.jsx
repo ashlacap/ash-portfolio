@@ -474,7 +474,7 @@ const AboutSection = () => {
               border: '2.5px solid #111', borderRadius: 16,
               overflow: 'hidden', boxShadow: '4px 4px 0 #111',
               background: '#111', position: 'relative',
-              height: 520,
+              height: isMobile ? 260 : 520,
             }}>
               {photoSlides.map((src, i) => (
                 <img key={src} src={src} alt={`Photo ${i + 1}`} style={{
