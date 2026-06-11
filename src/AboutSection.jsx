@@ -212,8 +212,8 @@ const AboutSection = () => {
 
       {/* ── Bio block ─────────────────────────────────────── */}
       <div style={{
-        padding: '100px 48px 64px',
-        display: 'flex', gap: 72, alignItems: 'flex-start',
+        padding: isMobile ? '80px 20px 48px' : '100px 48px 64px',
+        display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 40 : 72, alignItems: 'flex-start',
       }}>
         {/* Photo stack + education below */}
         <div style={{ flexShrink: 0, width: 320 }}>
