@@ -15,6 +15,7 @@ const VideoCard = ({ src, label, style: outerStyle = {} }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const prevVol = useRef(0.8);
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   useEffect(() => {
     const video = ref.current;
