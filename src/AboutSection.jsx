@@ -178,6 +178,16 @@ const VideoCard = ({ src, label, style: outerStyle = {} }) => {
   );
 };
 
+const useWindowWidth = () => {
+  const [w, setW] = useState(window.innerWidth);
+  useEffect(() => {
+    const h = () => setW(window.innerWidth);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+  return w;
+};
+
 const AboutSection = () => {
   const photoSlides = [
     '/photo-rocks.jpg',
