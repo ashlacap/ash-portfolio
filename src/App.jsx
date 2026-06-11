@@ -665,7 +665,9 @@ const ResumePage = () => {
       )}
       </div>
     </ResumeSection>
-  </section>;
+  </section>
+  );
+};
 
 
 // ── Tweaks ────────────────────────────────────────────────
