@@ -520,7 +520,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
           }}>{study.title}</h1>
 
           <p style={{
-            fontFamily: "'DM Sans', sans-serif", fontSize: 20,
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 16 : 20,
             color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 600,
             marginBottom: 40,
           }}>{study.intro}</p>
