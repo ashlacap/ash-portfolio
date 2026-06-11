@@ -220,11 +220,11 @@ const AboutSection = () => {
           {/* Photo wrapper — avatar is anchored here */}
           <div style={{ position: 'relative', width: '100%', maxWidth: 320, marginBottom: isMobile ? 36 : 56 }}>
             {/* Yellow offset */}
-            <div style={{
+            {!isMobile && <div style={{
               position: 'absolute', top: 14, left: -14,
               width: 320, height: 380, background: '#ffd024',
               border: '2.5px solid #111', borderRadius: 18, zIndex: 0,
-            }} />
+            }} />}
             {/* Photo */}
             <div style={{
               width: 320, height: 380, border: '2.5px solid #111', borderRadius: 18,
