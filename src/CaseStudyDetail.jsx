@@ -168,9 +168,20 @@ const VideoCard = ({ src, label, style: outerStyle = {} }) => {
   );
 };
 
+const useWindowWidth = () => {
+  const [w, setW] = useState(window.innerWidth);
+  useEffect(() => {
+    const h = () => setW(window.innerWidth);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+  return w;
+};
+
 const ImageCarousel = ({ title, subtitle, slides }) => {
   const [current, setCurrent] = React.useState(0);
   const [loaded, setLoaded] = React.useState({});
+  const isMobile = useWindowWidth() < 768;
 
   // Preload all images on mount
   React.useEffect(() => {
