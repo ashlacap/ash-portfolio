@@ -119,8 +119,8 @@ const VideoCard = ({ src, label, style: outerStyle = {} }) => {
         </div>
       )}
 
-      {/* Bottom control bar — shown on hover */}
-      {hovering && (
+      {/* Bottom control bar — shown on hover or when playing on touch */}
+      {(hovering || (isTouchDevice && playing)) && (
         <div
           onClick={e => e.stopPropagation()}
           style={{
