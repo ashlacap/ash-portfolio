@@ -450,7 +450,7 @@ const AboutSection = () => {
       </div>
 
       {/* ── Photography Carousel ──────────────────────────── */}
-      <div style={{ padding: '72px 48px' }}>
+      <div style={{ padding: isMobile ? '56px 20px' : '72px 48px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{
             fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
