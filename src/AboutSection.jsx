@@ -331,7 +331,7 @@ const AboutSection = () => {
             color: '#d42020', marginBottom: 12,
           }}>Fun Facts</div>
           <h2 style={{
-            fontFamily: "'DM Sans', sans-serif", fontSize: 36, fontWeight: 700,
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 26 : 36, fontWeight: 700,
             color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 40,
           }}>A little more about me.</h2>
 
