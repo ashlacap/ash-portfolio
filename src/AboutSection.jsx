@@ -322,7 +322,7 @@ const AboutSection = () => {
       {/* ── Fun Facts ─────────────────────────────────────── */}
       <div style={{
         background: '#f5f2f0', borderTop: '2.5px solid #111', borderBottom: '2.5px solid #111',
-        padding: '72px 48px',
+        padding: isMobile ? '56px 20px' : '72px 48px',
       }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{
