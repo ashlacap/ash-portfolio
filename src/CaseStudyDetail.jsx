@@ -290,6 +290,7 @@ const ImageCarousel = ({ title, subtitle, slides }) => {
 };
 
 const CaseStudyDetail = ({ slug, onBack }) => {
+  const isMobile = useWindowWidth() < 768;
   const studies = {
     grove: {
       tag: "Startup · Data Infrastructure",
