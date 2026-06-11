@@ -514,8 +514,8 @@ const CaseStudyDetail = ({ slug, onBack }) => {
 
           <h1 style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "clamp(48px, 6vw, 80px)", fontWeight: 700,
-            color: "white", letterSpacing: "-0.03em", lineHeight: 1.0,
+            fontSize: isMobile ? 32 : "clamp(48px, 6vw, 80px)", fontWeight: 700,
+            color: "white", letterSpacing: "-0.03em", lineHeight: 1.1,
             marginBottom: 20,
           }}>{study.title}</h1>
 
