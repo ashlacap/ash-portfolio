@@ -198,6 +198,7 @@ const AboutSection = () => {
     '/photo-selfie.jpg',
   ];
   const [photoCurrent, setPhotoCurrent] = React.useState(0);
+  const isMobile = useWindowWidth() < 768;
 
   React.useEffect(() => {
     photoSlides.forEach(src => { const img = new Image(); img.src = src; });
