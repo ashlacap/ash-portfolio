@@ -567,7 +567,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       </div>
 
       {/* Body content */}
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "72px 48px" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: isMobile ? "48px 20px" : "72px 48px" }}>
         <div style={{ marginBottom: 56 }}>
           <div style={{
             fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
