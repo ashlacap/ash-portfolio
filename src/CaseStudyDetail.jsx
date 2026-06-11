@@ -553,7 +553,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
             }}>
               <div style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 44, fontWeight: 700, color: "#1a1410",
+                fontSize: isMobile ? 32 : 44, fontWeight: 700, color: "#1a1410",
                 letterSpacing: "-0.04em", lineHeight: 1,
                 marginBottom: 8,
               }}>{o.metric}</div>
