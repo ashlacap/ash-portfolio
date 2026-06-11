@@ -502,8 +502,10 @@ const ResumeEntry = ({ org, role, period, bullets }) => {
 };
 
 
-const ResumePage = () =>
-<section style={{ maxWidth: 860, margin: '0 auto', padding: '60px 48px 80px' }}>
+const ResumePage = () => {
+  const isMobile = useWindowWidth() < 768;
+  return (
+<section style={{ maxWidth: 860, margin: '0 auto', padding: isMobile ? '60px 20px 60px' : '60px 48px 80px' }}>
     {/* Header */}
     <div style={{
     display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
