@@ -488,7 +488,7 @@ const AboutSection = () => {
               ))}
             </div>
             <button onClick={prevPhoto} style={{
-              position: 'absolute', left: -20, top: '50%', transform: 'translateY(-50%)',
+              position: 'absolute', left: isMobile ? 8 : -20, top: '50%', transform: 'translateY(-50%)',
               width: 44, height: 44, borderRadius: '50%',
               background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
               cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center',
