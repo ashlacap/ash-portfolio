@@ -216,9 +216,9 @@ const AboutSection = () => {
         display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 40 : 72, alignItems: 'flex-start',
       }}>
         {/* Photo stack + education below */}
-        <div style={{ flexShrink: 0, width: 320 }}>
+        <div style={{ flexShrink: 0, width: isMobile ? '100%' : 320 }}>
           {/* Photo wrapper — avatar is anchored here */}
-          <div style={{ position: 'relative', width: 320, marginBottom: 56 }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: 320, marginBottom: isMobile ? 36 : 56 }}>
             {/* Yellow offset */}
             <div style={{
               position: 'absolute', top: 14, left: -14,
