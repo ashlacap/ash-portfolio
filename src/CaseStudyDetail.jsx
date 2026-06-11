@@ -631,13 +631,13 @@ const CaseStudyDetail = ({ slug, onBack }) => {
               letterSpacing: "0.14em", textTransform: "uppercase",
               color: "#d42020", marginBottom: 16,
             }}>Reels</div>
-            <div style={{ display: "flex", gap: 16, flexWrap: "nowrap" }}>
+            <div style={{ display: "flex", gap: 16, flexWrap: "nowrap", overflowX: isMobile ? "auto" : "visible", paddingBottom: isMobile ? 8 : 0 }}>
               {study.reels.map((reel, i) => (
                 <VideoCard
                   key={i}
                   src={reel.src}
                   label={reel.label}
-                  style={{ flex: "1 1 0", minWidth: 0, aspectRatio: "9 / 16" }}
+                  style={{ flex: isMobile ? "0 0 72vw" : "1 1 0", minWidth: isMobile ? "auto" : 0, aspectRatio: "9 / 16" }}
                 />
               ))}
             </div>
