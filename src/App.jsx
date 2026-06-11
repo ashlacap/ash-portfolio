@@ -122,7 +122,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
 
 
   return (
-    <section id="work" style={{ padding: '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+    <section id="work" style={{ padding: isMobile ? '60px 20px' : '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
       <div className="reveal">
         <SectionHeading
           label="My Work"
