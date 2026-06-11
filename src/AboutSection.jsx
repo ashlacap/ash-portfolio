@@ -227,7 +227,7 @@ const AboutSection = () => {
             }} />}
             {/* Photo */}
             <div style={{
-              width: 320, height: 380, border: '2.5px solid #111', borderRadius: 18,
+              width: '100%', height: isMobile ? 280 : 380, border: '2.5px solid #111', borderRadius: 18,
               overflow: 'hidden', boxShadow: '6px 6px 0 #1e2a5e',
               position: 'relative', zIndex: 1,
             }}>
