@@ -236,8 +236,8 @@ const AboutSection = () => {
             </div>
             {/* Avatar — bottom-right of photo */}
             <div style={{
-              position: 'absolute', bottom: -28, right: -36,
-              width: 110, zIndex: 2,
+              position: 'absolute', bottom: -28, right: isMobile ? -8 : -36,
+              width: isMobile ? 80 : 110, zIndex: 2,
               filter: 'drop-shadow(3px 3px 0 #111)',
             }}>
               <img loading="lazy" src="/animated-me.png" alt="" style={{ width: '100%' }} />
