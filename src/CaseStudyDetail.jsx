@@ -543,12 +543,12 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       <div style={{
         background: study.accentColor === "#ffd024" ? "#fffbea" : "#faf8f7",
         borderBottom: "2.5px solid #111",
-        padding: "40px 48px",
+        padding: isMobile ? "32px 20px" : "40px 48px",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", gap: 0 }}>
           {study.outcomes.map((o, i) => (
             <div key={i} style={{
-              flex: 1, textAlign: "center", padding: "0 32px",
+              flex: 1, textAlign: "center", padding: isMobile ? "0 12px" : "0 32px",
               borderRight: i < study.outcomes.length - 1 ? "2px solid #e4dfdc" : "none",
             }}>
               <div style={{
