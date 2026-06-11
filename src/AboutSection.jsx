@@ -375,7 +375,7 @@ const AboutSection = () => {
       </div>
 
       {/* ── Video Showcase ───────────────────────────────── */}
-      <div style={{ padding: '72px 48px 80px' }}>
+      <div style={{ padding: isMobile ? '56px 20px 60px' : '72px 48px 80px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
 
           {/* Video Editing */}
