@@ -395,26 +395,26 @@ const AboutSection = () => {
             }}>
               TikToks, branded edits, and creative cuts. These autoplay as you scroll.
             </p>
-            <div style={{ display: 'flex', gap: 110, alignItems: 'stretch', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 20 : 110, alignItems: 'stretch', justifyContent: 'center' }}>
               {/* Left: two stacked 16:9 videos */}
-              <div style={{ width: 380, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20   }}>
+              <div style={{ width: isMobile ? '100%' : 380, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <VideoCard
                   src="/video-tiktok1.mp4"
                   label="TikTok Edit 1"
-                  style={{ width: '120%', aspectRatio: '16 / 9' }}
+                  style={{ width: '100%', aspectRatio: '16 / 9' }}
                 />
                 <VideoCard
                   src="/video-edit1.mov"
                   label="Video Edit"
-                  style={{ width: '120%', aspectRatio: '16 / 9' }}
+                  style={{ width: '100%', aspectRatio: '16 / 9' }}
                 />
               </div>
               {/* Right: portrait at natural 9:16, centered vertically */}
-              <div style={{ width: 300, flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+              <div style={{ width: isMobile ? '60%' : 300, flexShrink: 0, display: 'flex', alignItems: 'center', margin: isMobile ? '0 auto' : 0 }}>
                 <VideoCard
                   src="/video-tiktok2.mp4"
                   label="TikTok Edit 2"
-                  style={{ width: 300, aspectRatio: '9 / 16' }}
+                  style={{ width: '100%', aspectRatio: '9 / 16' }}
                 />
               </div>
             </div>
