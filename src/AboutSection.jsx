@@ -428,7 +428,7 @@ const AboutSection = () => {
               color: '#d42020', marginBottom: 8,
             }}>Gaming</div>
             <h2 style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 32, fontWeight: 700,
+              fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 24 : 32, fontWeight: 700,
               color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
             }}>In my element.</h2>
             <p style={{
