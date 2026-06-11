@@ -441,7 +441,7 @@ const AboutSection = () => {
               <VideoCard
                 src="/video-gaming1.mp4"
                 label="Gaming Clip"
-                style={{ width: '60%', aspectRatio: '16 / 9' }}
+                style={{ width: isMobile ? '100%' : '60%', aspectRatio: '16 / 9' }}
               />
             </div>
           </div>
