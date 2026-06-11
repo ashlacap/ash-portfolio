@@ -1,12 +1,29 @@
-// Footer component
-const Footer = ({ onNavigate }) =>
-<footer style={{
-  background: '#0d1230',
-  borderTop: '2.5px solid #111',
-  padding: '56px 48px 40px'
-}}>
+import React, { useState, useEffect } from 'react'
+
+const useWindowWidth = () => {
+  const [w, setW] = useState(window.innerWidth);
+  useEffect(() => {
+    const h = () => setW(window.innerWidth);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+  return w;
+};
+
+const Footer = ({ onNavigate }) => {
+  const isMobile = useWindowWidth() < 768;
+  return (
+  <footer style={{
+    background: '#0d1230',
+    borderTop: '2.5px solid #111',
+    padding: isMobile ? '48px 20px 32px' : '56px 48px 40px',
+  }}>
     <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 48 }}>
+      <div style={{
+        display: 'flex', flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between', alignItems: 'flex-start',
+        gap: isMobile ? 32 : 0, marginBottom: 48,
+      }}>
         {/* Logo + tagline */}
         <div>
           <div style={{
@@ -25,7 +42,7 @@ const Footer = ({ onNavigate }) =>
         </div>
 
         {/* Nav */}
-        <div style={{ display: 'flex', gap: 56 }}>
+        <div style={{ display: 'flex', gap: isMobile ? 40 : 56 }}>
           <div>
             <div style={{
             fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
@@ -76,7 +93,11 @@ const Footer = ({ onNavigate }) =>
 
       <div style={{ height: 1, background: '#1e2a5e', marginBottom: 24 }} />
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{
+        display: 'flex', flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'center',
+        gap: 8,
+      }}>
         <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#3a4ea8' }}>
           © 2026 Ash Lacap. All rights reserved.
         </div>
@@ -88,8 +109,9 @@ const Footer = ({ onNavigate }) =>
       </div>
       </div>
     </div>
-  </footer>;
-
+  </footer>
+  );
+};
 
 Object.assign(window, { Footer });
 
