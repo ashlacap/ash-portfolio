@@ -920,6 +920,7 @@ const App = () => {
             <div style={{ paddingTop: 80 }}>
               <SideQuestsSection />
             </div>
+            <GraphicDesignSection />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
@@ -930,6 +931,7 @@ const App = () => {
             <hr className="section-divider" />
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
             <SideQuestsSection />
+            <GraphicDesignSection />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
