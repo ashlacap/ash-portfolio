@@ -334,33 +334,74 @@ const SideQuestsSection = () =>
 // ── Graphic Design section ────────────────────────────────
 const GraphicDesignSection = () => {
   const isMobile = useWindowWidth() < 768;
-  const [lightbox, setLightbox] = useState(null); // index of open image, or null
+  const [openProject, setOpenProject] = useState(null); // project index, or null
+  const [slide, setSlide] = useState(0);                 // slide index within open project
 
-  const designs = [
-    { src: '/design-ss-gaming.jpg', title: 'Starting Soon', set: 'Gaming Stream Pack' },
-    { src: '/design-offline-gaming.jpg', title: 'Stream Offline', set: 'Gaming Stream Pack' },
-    { src: '/design-brb-gaming.jpg', title: 'Be Right Back', set: 'Gaming Stream Pack' },
-    { src: '/design-ss-minimal.jpg', title: 'Starting Soon', set: 'Minimal Mono Pack' },
-    { src: '/design-offline-minimal.jpg', title: 'Offline + Schedule', set: 'Minimal Mono Pack' },
-    { src: '/design-brb-minimal.jpg', title: 'Be Right Back', set: 'Minimal Mono Pack' },
-    { src: '/design-ss-cute.jpg', title: 'Starting Soon', set: 'Pastel Cloud Pack' },
-    { src: '/design-offline-cute.jpg', title: 'Stream Offline', set: 'Pastel Cloud Pack' },
-    { src: '/design-brb-cute.jpg', title: 'Be Right Back', set: 'Pastel Cloud Pack' },
+  const projects = [
+    {
+      title: 'Mission: Paramount',
+      category: 'Case Competition Deck',
+      blurb: 'A 12-slide transmedia strategy deck for a graduate case competition — full visual system, data viz, and a spy-thriller narrative concept.',
+      aspect: '16 / 9',
+      slides: [
+        '/design-pulse-01.jpg', '/design-pulse-02.jpg', '/design-pulse-03.jpg',
+        '/design-pulse-04.jpg', '/design-pulse-05.jpg', '/design-pulse-06.jpg',
+        '/design-pulse-07.jpg', '/design-pulse-08.jpg', '/design-pulse-09.jpg',
+        '/design-pulse-10.jpg', '/design-pulse-11.jpg', '/design-pulse-12.jpg',
+      ],
+    },
+    {
+      title: 'Student Association Merch',
+      category: 'Apparel Graphic',
+      blurb: 'Y2K-inspired promo graphic for the AGSM Student Association’s Fall 2025 merch drop.',
+      aspect: '4 / 5',
+      coverPosition: 'center',
+      slides: ['/design-merch-sa-fall25.jpg'],
+    },
+    {
+      title: 'Gaming Stream Pack',
+      category: 'Twitch Overlays',
+      blurb: 'Bold red-and-black overlay set: Starting Soon, Stream Offline, and Be Right Back.',
+      aspect: '16 / 9',
+      slides: ['/design-ss-gaming.jpg', '/design-offline-gaming.jpg', '/design-brb-gaming.jpg'],
+    },
+    {
+      title: 'Minimal Mono Pack',
+      category: 'Twitch Overlays',
+      blurb: 'Clean monochrome overlays with a stream schedule and most-recent-TikTok frame.',
+      aspect: '16 / 9',
+      slides: ['/design-ss-minimal.jpg', '/design-offline-minimal.jpg', '/design-brb-minimal.jpg'],
+    },
+    {
+      title: 'Pastel Cloud Pack',
+      category: 'Twitch Overlays',
+      blurb: 'Soft, cozy pastel overlay set with hand-drawn clouds and kawaii accents.',
+      aspect: '16 / 9',
+      slides: ['/design-ss-cute.jpg', '/design-offline-cute.jpg', '/design-brb-cute.jpg'],
+    },
   ];
 
-  // Lock body scroll while lightbox is open + allow Esc / arrow keys
+  const active = openProject !== null ? projects[openProject] : null;
+
+  const open = (i) => { setOpenProject(i); setSlide(0); };
+  const close = () => setOpenProject(null);
+  const next = () => setSlide(s => (s + 1) % active.slides.length);
+  const prev = () => setSlide(s => (s - 1 + active.slides.length) % active.slides.length);
+
+  // Lock body scroll while lightbox is open + Esc / arrow keys
   useEffect(() => {
-    if (lightbox === null) return;
+    if (openProject === null) return;
+    const len = projects[openProject].slides.length;
     const onKey = (e) => {
-      if (e.key === 'Escape') setLightbox(null);
-      if (e.key === 'ArrowRight') setLightbox(i => (i + 1) % designs.length);
-      if (e.key === 'ArrowLeft') setLightbox(i => (i - 1 + designs.length) % designs.length);
+      if (e.key === 'Escape') setOpenProject(null);
+      if (e.key === 'ArrowRight') setSlide(s => (s + 1) % len);
+      if (e.key === 'ArrowLeft') setSlide(s => (s - 1 + len) % len);
     };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prevOverflow; };
-  }, [lightbox]);
+  }, [openProject]);
 
   return (
     <section id="graphic-design" style={{
@@ -379,10 +420,10 @@ const GraphicDesignSection = () => {
         }}>Designs I've made.</h2>
         <p style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 15 : 16,
-          color: '#6b5c52', lineHeight: 1.7, marginBottom: isMobile ? 32 : 44, maxWidth: 560,
+          color: '#6b5c52', lineHeight: 1.7, marginBottom: isMobile ? 32 : 44, maxWidth: 580,
         }}>
-          A set of stream overlay packs I designed end to end — Starting Soon, Be Right Back,
-          and Offline screens across three distinct visual identities. Tap any design to view it full size.
+          Decks, apparel graphics, and stream overlay packs I've designed end to end. Tap any
+          project to flip through the full set.
         </p>
 
         {/* Grid */}
@@ -391,10 +432,10 @@ const GraphicDesignSection = () => {
           gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
           gap: isMobile ? 16 : 20,
         }}>
-          {designs.map((d, i) => (
+          {projects.map((p, i) => (
             <button
-              key={d.src}
-              onClick={() => setLightbox(i)}
+              key={p.title}
+              onClick={() => open(i)}
               style={{
                 display: 'block', padding: 0, cursor: 'pointer',
                 background: '#111', border: '2.5px solid #111', borderRadius: 14,
@@ -405,12 +446,31 @@ const GraphicDesignSection = () => {
               onMouseEnter={e => { e.currentTarget.style.boxShadow = '7px 7px 0 #111'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = '4px 4px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}
             >
-              <img
-                loading="lazy"
-                src={d.src}
-                alt={`${d.set} — ${d.title}`}
-                style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', display: 'block' }}
-              />
+              <div style={{ position: 'relative' }}>
+                <img
+                  loading="lazy"
+                  src={p.slides[0]}
+                  alt={p.title}
+                  style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: p.coverPosition || 'center', display: 'block' }}
+                />
+                {/* Slide-count badge */}
+                {p.slides.length > 1 && (
+                  <div style={{
+                    position: 'absolute', top: 10, right: 10,
+                    display: 'inline-flex', alignItems: 'center', gap: 5,
+                    background: 'rgba(17,17,17,0.85)', backdropFilter: 'blur(4px)',
+                    border: '1.5px solid rgba(255,255,255,0.25)', borderRadius: 20,
+                    padding: '4px 10px',
+                    fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700, color: 'white',
+                  }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2">
+                      <rect x="3" y="3" width="14" height="14" rx="2" />
+                      <path d="M7 21h12a2 2 0 0 0 2-2V7" />
+                    </svg>
+                    {p.slides.length}
+                  </div>
+                )}
+              </div>
               {/* Caption strip */}
               <div style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8,
@@ -418,11 +478,11 @@ const GraphicDesignSection = () => {
               }}>
                 <span style={{
                   fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700, color: '#1a1410',
-                }}>{d.title}</span>
+                }}>{p.title}</span>
                 <span style={{
                   fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 600,
                   letterSpacing: '0.04em', textTransform: 'uppercase', color: '#8c7a70', whiteSpace: 'nowrap',
-                }}>{d.set}</span>
+                }}>{p.category}</span>
               </div>
             </button>
           ))}
@@ -430,9 +490,9 @@ const GraphicDesignSection = () => {
       </div>
 
       {/* Lightbox */}
-      {lightbox !== null && (
+      {active && (
         <div
-          onClick={() => setLightbox(null)}
+          onClick={close}
           style={{
             position: 'fixed', inset: 0, zIndex: 600,
             background: 'rgba(14,18,48,0.82)',
@@ -441,7 +501,7 @@ const GraphicDesignSection = () => {
           }}
         >
           {/* Close */}
-          <button onClick={(e) => { e.stopPropagation(); setLightbox(null); }} style={{
+          <button onClick={(e) => { e.stopPropagation(); close(); }} style={{
             position: 'absolute', top: isMobile ? 12 : 24, right: isMobile ? 12 : 24,
             width: 44, height: 44, borderRadius: 10,
             background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
@@ -449,23 +509,25 @@ const GraphicDesignSection = () => {
             display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
           }}>×</button>
 
-          {/* Prev */}
-          <button onClick={(e) => { e.stopPropagation(); setLightbox(i => (i - 1 + designs.length) % designs.length); }} style={{
-            position: 'absolute', left: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
-            width: 44, height: 44, borderRadius: '50%',
-            background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
-            cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
-          }}>←</button>
+          {/* Prev (only when multi-slide) */}
+          {active.slides.length > 1 && (
+            <button onClick={(e) => { e.stopPropagation(); prev(); }} style={{
+              position: 'absolute', left: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
+              width: 44, height: 44, borderRadius: '50%',
+              background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+              cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
+            }}>←</button>
+          )}
 
           {/* Image + caption */}
           <div onClick={(e) => e.stopPropagation()} style={{
-            maxWidth: 1000, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',
+            maxWidth: 1040, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',
           }}>
             <img
-              src={designs[lightbox].src}
-              alt={`${designs[lightbox].set} — ${designs[lightbox].title}`}
+              src={active.slides[slide]}
+              alt={`${active.title} — slide ${slide + 1}`}
               style={{
-                width: '100%', maxHeight: '78vh', objectFit: 'contain',
+                width: 'auto', maxWidth: '100%', maxHeight: isMobile ? '72vh' : '78vh', objectFit: 'contain',
                 border: '2.5px solid #111', borderRadius: 14, boxShadow: '6px 6px 0 #111',
                 background: '#111', display: 'block',
               }}
@@ -474,20 +536,22 @@ const GraphicDesignSection = () => {
               marginTop: 16, textAlign: 'center',
               fontFamily: "'DM Sans', sans-serif", color: 'white',
             }}>
-              <span style={{ fontSize: 16, fontWeight: 700 }}>{designs[lightbox].title}</span>
+              <span style={{ fontSize: 16, fontWeight: 700 }}>{active.title}</span>
               <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginLeft: 10 }}>
-                {designs[lightbox].set} · {lightbox + 1} / {designs.length}
+                {active.category}{active.slides.length > 1 ? ` · ${slide + 1} / ${active.slides.length}` : ''}
               </span>
             </div>
           </div>
 
-          {/* Next */}
-          <button onClick={(e) => { e.stopPropagation(); setLightbox(i => (i + 1) % designs.length); }} style={{
-            position: 'absolute', right: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
-            width: 44, height: 44, borderRadius: '50%',
-            background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
-            cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
-          }}>→</button>
+          {/* Next (only when multi-slide) */}
+          {active.slides.length > 1 && (
+            <button onClick={(e) => { e.stopPropagation(); next(); }} style={{
+              position: 'absolute', right: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
+              width: 44, height: 44, borderRadius: '50%',
+              background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+              cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
+            }}>→</button>
+          )}
         </div>
       )}
     </section>
