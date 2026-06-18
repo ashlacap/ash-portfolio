@@ -331,6 +331,170 @@ const SideQuestsSection = () =>
   </div>;
 
 
+// ── Graphic Design section ────────────────────────────────
+const GraphicDesignSection = () => {
+  const isMobile = useWindowWidth() < 768;
+  const [lightbox, setLightbox] = useState(null); // index of open image, or null
+
+  const designs = [
+    { src: '/design-ss-gaming.jpg', title: 'Starting Soon', set: 'Gaming Stream Pack' },
+    { src: '/design-offline-gaming.jpg', title: 'Stream Offline', set: 'Gaming Stream Pack' },
+    { src: '/design-brb-gaming.jpg', title: 'Be Right Back', set: 'Gaming Stream Pack' },
+    { src: '/design-ss-minimal.jpg', title: 'Starting Soon', set: 'Minimal Mono Pack' },
+    { src: '/design-offline-minimal.jpg', title: 'Offline + Schedule', set: 'Minimal Mono Pack' },
+    { src: '/design-brb-minimal.jpg', title: 'Be Right Back', set: 'Minimal Mono Pack' },
+    { src: '/design-ss-cute.jpg', title: 'Starting Soon', set: 'Pastel Cloud Pack' },
+    { src: '/design-offline-cute.jpg', title: 'Stream Offline', set: 'Pastel Cloud Pack' },
+    { src: '/design-brb-cute.jpg', title: 'Be Right Back', set: 'Pastel Cloud Pack' },
+  ];
+
+  // Lock body scroll while lightbox is open + allow Esc / arrow keys
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightbox(null);
+      if (e.key === 'ArrowRight') setLightbox(i => (i + 1) % designs.length);
+      if (e.key === 'ArrowLeft') setLightbox(i => (i - 1 + designs.length) % designs.length);
+    };
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prevOverflow; };
+  }, [lightbox]);
+
+  return (
+    <section id="graphic-design" style={{
+      background: '#faf8f7', borderBottom: '2.5px solid #111',
+      padding: isMobile ? '56px 20px' : '80px 48px',
+    }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+          letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 14,
+        }}>Graphic Design</div>
+        <h2 style={{
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
+          letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16,
+        }}>Designs I've made.</h2>
+        <p style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 15 : 16,
+          color: '#6b5c52', lineHeight: 1.7, marginBottom: isMobile ? 32 : 44, maxWidth: 560,
+        }}>
+          A set of stream overlay packs I designed end to end — Starting Soon, Be Right Back,
+          and Offline screens across three distinct visual identities. Tap any design to view it full size.
+        </p>
+
+        {/* Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+          gap: isMobile ? 16 : 20,
+        }}>
+          {designs.map((d, i) => (
+            <button
+              key={d.src}
+              onClick={() => setLightbox(i)}
+              style={{
+                display: 'block', padding: 0, cursor: 'pointer',
+                background: '#111', border: '2.5px solid #111', borderRadius: 14,
+                overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+                transition: 'box-shadow 180ms cubic-bezier(0.22,1,0.36,1), transform 180ms cubic-bezier(0.22,1,0.36,1)',
+                position: 'relative',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '7px 7px 0 #111'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '4px 4px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            >
+              <img
+                loading="lazy"
+                src={d.src}
+                alt={`${d.set} — ${d.title}`}
+                style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', display: 'block' }}
+              />
+              {/* Caption strip */}
+              <div style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8,
+                padding: '10px 14px', background: 'white', borderTop: '2.5px solid #111', textAlign: 'left',
+              }}>
+                <span style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700, color: '#1a1410',
+                }}>{d.title}</span>
+                <span style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 600,
+                  letterSpacing: '0.04em', textTransform: 'uppercase', color: '#8c7a70', whiteSpace: 'nowrap',
+                }}>{d.set}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 600,
+            background: 'rgba(14,18,48,0.82)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: isMobile ? 16 : 48, animation: 'fadeIn 180ms ease both',
+          }}
+        >
+          {/* Close */}
+          <button onClick={(e) => { e.stopPropagation(); setLightbox(null); }} style={{
+            position: 'absolute', top: isMobile ? 12 : 24, right: isMobile ? 12 : 24,
+            width: 44, height: 44, borderRadius: 10,
+            background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+            cursor: 'pointer', fontSize: 22, lineHeight: 1, color: '#1a1410',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
+          }}>×</button>
+
+          {/* Prev */}
+          <button onClick={(e) => { e.stopPropagation(); setLightbox(i => (i - 1 + designs.length) % designs.length); }} style={{
+            position: 'absolute', left: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
+            width: 44, height: 44, borderRadius: '50%',
+            background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+            cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
+          }}>←</button>
+
+          {/* Image + caption */}
+          <div onClick={(e) => e.stopPropagation()} style={{
+            maxWidth: 1000, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center',
+          }}>
+            <img
+              src={designs[lightbox].src}
+              alt={`${designs[lightbox].set} — ${designs[lightbox].title}`}
+              style={{
+                width: '100%', maxHeight: '78vh', objectFit: 'contain',
+                border: '2.5px solid #111', borderRadius: 14, boxShadow: '6px 6px 0 #111',
+                background: '#111', display: 'block',
+              }}
+            />
+            <div style={{
+              marginTop: 16, textAlign: 'center',
+              fontFamily: "'DM Sans', sans-serif", color: 'white',
+            }}>
+              <span style={{ fontSize: 16, fontWeight: 700 }}>{designs[lightbox].title}</span>
+              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginLeft: 10 }}>
+                {designs[lightbox].set} · {lightbox + 1} / {designs.length}
+              </span>
+            </div>
+          </div>
+
+          {/* Next */}
+          <button onClick={(e) => { e.stopPropagation(); setLightbox(i => (i + 1) % designs.length); }} style={{
+            position: 'absolute', right: isMobile ? 8 : 24, top: '50%', transform: 'translateY(-50%)',
+            width: 44, height: 44, borderRadius: '50%',
+            background: 'white', border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+            cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
+          }}>→</button>
+        </div>
+      )}
+    </section>
+  );
+};
+
+
 // ── Contact section ───────────────────────────────────────
 const ContactSection = ({ onContact }) =>
 <div className="contact-section">
