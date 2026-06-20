@@ -843,7 +843,7 @@ const ResumePage = () => {
       <ResumeEntry
       org="UCR AGSM Student Association"
       role="Director of PR and Marketing · Riverside, CA"
-      period="May 2025 – Present"
+      period="May 2025 – June 2026"
       bullets={[
       "Lead integrated marketing campaigns across email, social, and campus channels to promote graduate school events and programming.",
       "Present campaign strategy and post-event results to faculty leadership on a recurring basis, demonstrating impact through data.",
@@ -871,7 +871,7 @@ const ResumePage = () => {
 
     {/* Education */}
     <ResumeSection title="Education">
-      <ResumeEntry org="UC Riverside A. Gary Anderson Graduate School of Management" role="MBA, Marketing & Business Analytics" period="Expected 2026"
+      <ResumeEntry org="UC Riverside A. Gary Anderson Graduate School of Management" role="MBA, Marketing & Business Analytics" period="2026"
     bullets={["Concentrating in Marketing and Business Analytics. Active member of the AGSM Student Association, currently serving as Director of PR and Marketing."]} />
       <ResumeEntry org="California State University, Northridge" role="BS, Marketing" period="2022"
     bullets={["Bachelor of Science in Marketing. Built foundational knowledge in consumer behavior, brand strategy, and integrated marketing communications."]} />
