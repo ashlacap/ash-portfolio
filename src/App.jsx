@@ -488,6 +488,33 @@ const GraphicDesignSection = () => {
             </button>
           ))}
         </div>
+
+        {/* Video Edit feature */}
+        <div style={{ marginTop: isMobile ? 48 : 72 }}>
+          <div style={{
+            fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 14,
+          }}>Video Editing</div>
+          <h3 style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: isMobile ? 24 : 30, fontWeight: 700, color: '#1a1410',
+            letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 12,
+          }}>FlyQuest · FLY vs SEN</h3>
+          <p style={{
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 15 : 16,
+            color: '#6b5c52', lineHeight: 1.7, marginBottom: isMobile ? 24 : 32, maxWidth: 580,
+          }}>
+            A short-form hype edit I created as part of my application to FlyQuest — beat-synced
+            cuts, motion graphics, and match footage from FLY vs SEN.
+          </p>
+          <div style={{ display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>
+            <VideoCard
+              src="/flyquest-fly-vs-sen-edit.mp4"
+              label="FLY vs SEN Edit"
+              style={{ width: isMobile ? '72%' : 300, aspectRatio: '9 / 16' }}
+            />
+          </div>
+        </div>
       </div>
 
       {/* Lightbox */}
