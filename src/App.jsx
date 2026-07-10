@@ -4,6 +4,7 @@ import Hero from './Hero'
 import AboutSection from './AboutSection'
 import CaseStudyCard from './CaseStudyCard'
 import CaseStudyDetail from './CaseStudyDetail'
+import VideoCard from './VideoCard'
 import Footer from './Footer'
 import { useTweaks, TweaksPanel, TweakSection, TweakColor, TweakToggle, TweakText, TweakRadio } from '../tweaks-panel'
 
