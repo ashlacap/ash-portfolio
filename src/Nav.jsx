@@ -29,6 +29,7 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
   const links = [
     { label: 'Work', page: 'work' },
     { label: 'Side Quests', page: 'side-quests' },
+    { label: 'Video Edits', page: 'video-edits' },
     { label: 'About', page: 'about' },
     { label: 'Resume', page: 'resume' },
   ];
