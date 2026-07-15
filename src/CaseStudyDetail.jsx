@@ -402,12 +402,6 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       ],
       coverImage: "/sva-cartzilla-cover.png",
       tools: ["Meta Business Suite", "Canva", "Google Analytics", "Asana", "Slack", "CapCut"],
-      reels: [
-        { src: "/CartZilla%201.mp4", label: "CartZilla Reel 1" },
-        { src: "/CartZilla%202.mp4", label: "CartZilla Reel 2" },
-        { src: "/CartZilla%203.mp4", label: "CartZilla Reel 3" },
-      ],
-      reelsCredit: { label: "@cartzillaride", url: "https://www.instagram.com/cartzillaride/" },
     },
     "liquid-death": {
       tag: "Academic Project · Consumer Insights",
