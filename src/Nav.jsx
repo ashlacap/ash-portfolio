@@ -13,7 +13,7 @@ const useWindowWidth = () => {
 const Nav = ({ activePage, activeSection, onNavigate }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const width = useWindowWidth();
-  const isMobile = width < 768;
+  const isMobile = width < 900;
 
   useEffect(() => {
     const closeOnScroll = () => setMenuOpen(false);
