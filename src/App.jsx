@@ -997,6 +997,15 @@ const App = () => {
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
+      case 'video-edits':
+        return (
+          <>
+            <div style={{ paddingTop: 64 }}>
+              <VideoEditsPage />
+            </div>
+            <ContactSection onContact={() => setShowContact(true)} />
+          </>);
+
       case 'resume':
         return (
           <>
