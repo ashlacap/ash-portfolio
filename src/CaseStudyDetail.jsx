@@ -379,10 +379,6 @@ const CaseStudyDetail = ({ slug, onBack }) => {
         "Manage a small team of student volunteers, delegating tasks, reviewing content, and maintaining brand consistency across all outputs.",
       ],
       tools: ["Email Marketing", "Instagram", "LinkedIn", "Canva", "Google Slides", "CapCut"],
-      reels: [
-        { src: "/Student%20Association%20Reel%201.mp4", label: "Student Association Reel 1" },
-        { src: "/Student%20Association%20Reel%202.mp4", label: "Student Association Reel 2" },
-      ],
     },
     samsung: {
       tag: "Agency · Social Media",
