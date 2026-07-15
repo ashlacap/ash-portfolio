@@ -49,7 +49,7 @@ const Footer = ({ onNavigate }) => {
             letterSpacing: '0.12em', textTransform: 'uppercase',
             color: '#3a4ea8', marginBottom: 16
           }}>Navigate</div>
-            {[['Work', 'work'], ['About', 'about'], ['Resume', 'resume']].map(([label, page]) =>
+            {[['Work', 'work'], ['Video Edits', 'video-edits'], ['About', 'about'], ['Resume', 'resume']].map(([label, page]) =>
           <div key={page} style={{ marginBottom: 10 }}>
                 <button onClick={() => onNavigate(page)} style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 400,
