@@ -213,7 +213,7 @@ const SideQuestsSection = () =>
               fontFamily: "'DM Sans', sans-serif", fontSize: 13,
               color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
             }}>
-              Find out who doesn't follow you back — no login required. Upload your Instagram data export and get instant, private results.
+              Find out who doesn't follow you back, no login required. Upload your Instagram data export and get instant, private results.
             </p>
 
             {/* Tech stack */}
