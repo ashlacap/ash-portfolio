@@ -40,7 +40,7 @@ const AboutSection = () => {
       }}>
         {/* Photo stack + education below */}
         <div style={{ flexShrink: 0, width: isMobile ? '100%' : 320 }}>
-          {/* Photo wrapper — avatar is anchored here */}
+          {/* Photo wrapper: avatar is anchored here */}
           <div style={{ position: 'relative', width: '100%', maxWidth: 320, marginBottom: isMobile ? 36 : 56 }}>
             {/* Yellow offset */}
             {!isMobile && <div style={{
@@ -57,7 +57,7 @@ const AboutSection = () => {
               <img loading="lazy" src="/photo-headshot.jpg" alt="Ash Lacap"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
             </div>
-            {/* Avatar — bottom-right of photo */}
+            {/* Avatar: bottom-right of photo */}
             <div style={{
               position: 'absolute', bottom: -28, right: isMobile ? -8 : -36,
               width: isMobile ? 80 : 110, zIndex: 2,

@@ -98,7 +98,7 @@ const VideoCard = ({ src, label, accent = 'white', style: outerStyle = {} }) => 
         style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
       />
 
-      {/* Play button overlay — shown when paused */}
+      {/* Play button overlay: shown when paused */}
       {!playing && (
         <div style={{
           position: 'absolute', inset: 0,
@@ -118,7 +118,7 @@ const VideoCard = ({ src, label, accent = 'white', style: outerStyle = {} }) => 
         </div>
       )}
 
-      {/* Bottom control bar — shown on hover or when playing on touch */}
+      {/* Bottom control bar: shown on hover or when playing on touch */}
       {(hovering || (isTouchDevice && playing)) && (
         <div
           onClick={e => e.stopPropagation()}
@@ -128,7 +128,7 @@ const VideoCard = ({ src, label, accent = 'white', style: outerStyle = {} }) => 
             background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
           }}
         >
-          {/* Vertical volume control — right side above seek bar */}
+          {/* Vertical volume control: right side above seek bar */}
           <div style={{
             position: 'absolute', right: 10, bottom: 36,
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,

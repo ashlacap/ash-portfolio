@@ -185,7 +185,7 @@ const SideQuestsSection = () =>
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
-          {/* Visual header — Instagram gradient */}
+          {/* Visual header: Instagram gradient */}
           <div style={{
             height: 140,
             background: 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
@@ -256,7 +256,7 @@ const SideQuestsSection = () =>
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
-          {/* Visual header — space theme */}
+          {/* Visual header: space theme */}
           <div style={{
             height: 140,
             background: 'linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 60%, #0d0d0d 100%)',

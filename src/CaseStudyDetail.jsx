@@ -47,7 +47,7 @@ const ImageCarousel = ({ title, subtitle, slides }) => {
         }}>{subtitle}</p>
       )}
 
-      {/* Carousel container — fixed height, crossfade */}
+      {/* Carousel container: fixed height, crossfade */}
       <div style={{ position: "relative" }}>
         <div style={{
           border: "2.5px solid #111", borderRadius: 16,

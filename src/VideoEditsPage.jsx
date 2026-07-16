@@ -1,4 +1,4 @@
-// Video Edits — a compilation of every edit, grouped by client / category
+// Video Edits: a compilation of every edit, grouped by client / category
 import React, { useState, useEffect } from 'react'
 import VideoCard from './VideoCard'
 
