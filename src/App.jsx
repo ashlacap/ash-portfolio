@@ -526,7 +526,7 @@ const GraphicDesignSection = () => {
           }}>
             <img
               src={active.slides[slide]}
-              alt={`${active.title} — slide ${slide + 1}`}
+              alt={`${active.title}, slide ${slide + 1}`}
               style={{
                 width: 'auto', maxWidth: '100%', maxHeight: isMobile ? '72vh' : '78vh', objectFit: 'contain',
                 border: '2.5px solid #111', borderRadius: 14, boxShadow: '6px 6px 0 #111',
