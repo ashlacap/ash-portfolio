@@ -47,15 +47,6 @@ const VideoEditsPage = () => {
         { src: '/Student%20Association%20Reel%202.mp4', label: 'Student Association Reel 2', o: 'p' },
       ],
     },
-    {
-      label: 'Short-Form & Personal Edits',
-      blurb: 'A mix of TikToks, branded cuts, and creative experiments spanning nearly 11 years of editing.',
-      videos: [
-        { src: '/video-tiktok1.mp4', label: 'TikTok Edit 1', o: 'l' },
-        { src: '/video-edit1.mov', label: 'Video Edit', o: 'l' },
-        { src: '/video-tiktok2.mp4', label: 'TikTok Edit 2', o: 'p' },
-      ],
-    },
   ];
 
   const total = groups.reduce((n, g) => n + g.videos.length, 0);
