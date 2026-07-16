@@ -19,7 +19,7 @@ const VideoEditsPage = () => {
   const groups = [
     {
       label: 'Gaming/Personal Edits',
-      blurb: 'Hype edits, gameplay cuts, TikToks, and creative experiments — beat-synced, motion-graphic driven work spanning esports, gaming, and personal projects.',
+      blurb: 'Hype edits, gameplay cuts, TikToks, and creative experiments. Beat-synced, motion-graphic driven work spanning esports, gaming, and personal projects.',
       videos: [
         { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', o: 'p' },
         { src: '/video-gaming1.mp4', label: 'Gaming Clip', o: 'l' },
