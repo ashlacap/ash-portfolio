@@ -18,12 +18,15 @@ const VideoEditsPage = () => {
   // o: 'p' portrait (9:16), 'l' landscape (16:9)
   const groups = [
     {
-      label: 'Esports & Gaming',
-      blurb: 'Hype edits and gameplay cuts — beat-synced, motion-graphic driven, built for the FGC and esports audience.',
+      label: 'Gaming/Personal Edits',
+      blurb: 'Hype edits, gameplay cuts, TikToks, and creative experiments — beat-synced, motion-graphic driven work spanning esports, gaming, and personal projects.',
       videos: [
         { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', o: 'p' },
         { src: '/video-gaming1.mp4', label: 'Gaming Clip', o: 'l' },
         { src: '/video-valorant-tiktok.mp4', label: 'Valorant TikTok Edit', o: 'l' },
+        { src: '/video-tiktok1.mp4', label: 'TikTok Edit 1', o: 'l' },
+        { src: '/video-edit1.mov', label: 'Video Edit', o: 'l' },
+        { src: '/video-tiktok2.mp4', label: 'TikTok Edit 2', o: 'p' },
       ],
     },
     {
