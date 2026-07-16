@@ -23,6 +23,7 @@ const VideoEditsPage = () => {
       videos: [
         { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', o: 'p' },
         { src: '/video-gaming1.mp4', label: 'Gaming Clip', o: 'l' },
+        { src: '/video-valorant-tiktok.mp4', label: 'Valorant TikTok Edit', o: 'l' },
       ],
     },
     {
