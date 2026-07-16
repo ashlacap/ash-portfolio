@@ -765,7 +765,7 @@ const ResumePage = () => {
     {/* Summary */}
     <div style={{ marginBottom: 48 }}>
       <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 15, color: '#4a3e36', lineHeight: 1.8 }}>
-        Marketing associate with 3+ years of hands-on experience planning and executing integrated campaigns across social, content, influencer, and email channels for consumer-facing brands. Comfortable working with performance data to monitor results, adjust plans, and report findings to stakeholders. Strong cross-functional collaborator with experience managing timelines across multiple concurrent projects. MBA candidate at UC Riverside concentrating in Marketing and Business Analytics.
+        Marketing associate with 4+ years of hands-on experience planning and executing integrated campaigns across social, content, influencer, and email channels for consumer-facing brands. Comfortable working with performance data to monitor results, adjust plans, and report findings to stakeholders. Strong cross-functional collaborator with experience managing timelines across multiple concurrent projects. MBA candidate at UC Riverside concentrating in Marketing and Business Analytics.
       </p>
     </div>
 
