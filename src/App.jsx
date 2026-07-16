@@ -883,6 +883,7 @@ const ResumePage = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         {[
       { cat: 'Marketing', items: 'Integrated Campaigns · Influencer Marketing · Email Marketing · Social Media Strategy · Content Planning · Brand Messaging · Omnichannel Execution' },
+      { cat: 'Partnerships', items: 'Influencer & Creator Partnerships · Partner Outreach · Brand Collaborations · Sponsorship Strategy · Creator Briefing · Deliverables Management · Contract & Rate Negotiation · Co-Marketing · Partner Reporting · Relationship Management' },
       { cat: 'Analytics', items: 'Meta Business Suite · TikTok Analytics · Google Analytics · Tableau · Excel · Google Sheets · KPI Tracking · Performance Reporting' },
       { cat: 'Tools', items: 'Canva · Adobe Premiere Pro · Photoshop · Notion · Asana · Slack · PowerPoint · Google Slides · CapCut' },
       { cat: 'Platforms', items: 'TikTok · Instagram · YouTube · LinkedIn · Twitter/X · Reddit · Discord' }].
