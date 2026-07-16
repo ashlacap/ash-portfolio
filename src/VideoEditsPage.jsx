@@ -111,7 +111,7 @@ const VideoEditsPage = () => {
             display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
             justifyContent: isMobile ? 'center' : 'flex-start', alignItems: 'flex-start',
           }}>
-            {g.videos.map((v) => (
+            {byOrientation(g.videos).map((v) => (
               <VideoCard
                 key={v.src}
                 src={v.src}
