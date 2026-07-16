@@ -342,7 +342,7 @@ const GraphicDesignSection = () => {
     {
       title: 'Mission: Paramount',
       category: 'Case Competition Deck',
-      blurb: 'A 12-slide transmedia strategy deck for a graduate case competition — full visual system, data viz, and a spy-thriller narrative concept.',
+      blurb: 'A 12-slide transmedia strategy deck for a graduate case competition, covering the full visual system, data viz, and a spy-thriller narrative concept.',
       aspect: '16 / 9',
       slides: [
         '/design-pulse-01.jpg', '/design-pulse-02.jpg', '/design-pulse-03.jpg',
