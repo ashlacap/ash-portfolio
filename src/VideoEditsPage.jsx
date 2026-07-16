@@ -61,6 +61,11 @@ const VideoEditsPage = () => {
     ? { width: isMobile ? '76%' : 250, aspectRatio: '9 / 16' }
     : { width: isMobile ? '100%' : 440, aspectRatio: '16 / 9' };
 
+  // Landscape before portrait: flex rows are as tall as their tallest item, so mixing a short
+  // 16:9 next to a tall 9:16 strands the next item below the portrait. Grouping by orientation
+  // keeps each wrapped row uniform in height.
+  const byOrientation = (vids) => [...vids].sort((a, b) => (a.o === 'l' ? 0 : 1) - (b.o === 'l' ? 0 : 1));
+
   return (
     <section style={{ maxWidth: 1100, margin: '0 auto', padding: isMobile ? '48px 20px 64px' : '72px 48px 96px' }}>
       {/* Header */}
