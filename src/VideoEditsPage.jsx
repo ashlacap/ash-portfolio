@@ -76,7 +76,7 @@ const VideoEditsPage = () => {
         fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 15 : 17,
         color: '#6b5c52', lineHeight: 1.7, marginBottom: 8, maxWidth: 620,
       }}>
-        A running compilation of my video editing work — {total} edits across esports, agency
+        A running compilation of my video editing work: {total} edits across esports, agency
         campaigns, student programming, and personal projects. Click any video to play; hover
         or tap for scrubbing and volume.
       </p>
