@@ -88,6 +88,23 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
                 </li>
               );
             })}
+            <li>
+              <a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 400,
+                  color: 'rgba(255,255,255,0.85)', background: 'none',
+                  cursor: 'pointer', padding: '6px 14px', borderRadius: 6,
+                  textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5,
+                  transition: 'color 150ms',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.color = 'white'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; }}>
+                Resume ↗
+              </a>
+            </li>
           </ul>
         )}
 
