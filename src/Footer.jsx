@@ -49,7 +49,7 @@ const Footer = ({ onNavigate }) => {
             letterSpacing: '0.12em', textTransform: 'uppercase',
             color: '#3a4ea8', marginBottom: 16
           }}>Navigate</div>
-            {[['Work', 'work'], ['Video Edits', 'video-edits'], ['About', 'about'], ['Resume', 'resume']].map(([label, page]) =>
+            {[['Work', 'work'], ['Products', 'side-quests'], ['Design', 'graphic-design'], ['Videos', 'video-edits'], ['About', 'about']].map(([label, page]) =>
           <div key={page} style={{ marginBottom: 10 }}>
                 <button onClick={() => onNavigate(page)} style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 400,
@@ -63,6 +63,16 @@ const Footer = ({ onNavigate }) => {
                 </button>
               </div>
           )}
+          <div style={{ marginBottom: 10 }}>
+            <a href="/Ash-Lacap-Resume.pdf" target="_blank" rel="noopener noreferrer" style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 400,
+              color: '#8a99d8', textDecoration: 'none', transition: 'color 150ms'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#ffd024'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#8a99d8'}>
+              Resume ↗
+            </a>
+          </div>
           </div>
 
           <div>
