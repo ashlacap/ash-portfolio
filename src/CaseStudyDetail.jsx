@@ -126,7 +126,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
   const isMobile = useWindowWidth() < 768;
   const studies = {
     grove: {
-      tag: "Startup · Data Infrastructure",
+      tag: "Startup · Brand & Marketing",
       title: "THE GROVE",
       period: "2026 – Present",
       role: "Co-Founder & Head of Marketing · Sole App Designer & Builder",
