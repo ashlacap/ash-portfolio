@@ -98,7 +98,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     slug: 'samsung',
     tag: 'Agency · Social Media',
     title: 'Social View Agency: CartZilla',
-    description: 'Fast-paced agency internship creating short-form social content for clients, supporting strategy, trend research, and campaign execution across TikTok and Instagram.',
+    description: 'Brand and social coordination across multiple client accounts, adapting messaging and short-form content to each brand\'s voice and channel mix across TikTok and Instagram.',
     bgColor: '#1a1410',
     accentColor: '#8a99d8',
     imageContent: <img loading="lazy" src="/sva-cartzilla-cover.png" alt="SVA x CartZilla" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
