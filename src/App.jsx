@@ -669,7 +669,7 @@ const VideoHighlight = ({ onNavigate }) => {
 
 // ── Contact section ───────────────────────────────────────
 const ContactSection = ({ onContact }) =>
-<div className="contact-section">
+<div id="contact" className="contact-section">
     <img src="/headshot-animated.png" alt="Ash Lacap"
   style={{
     width: 96, height: 96, borderRadius: '50%',
