@@ -170,6 +170,19 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
               </button>
             );
           })}
+          <a
+            href={resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 400,
+              color: 'rgba(255,255,255,0.85)', textDecoration: 'none',
+              padding: '12px 14px', borderRadius: 8, marginBottom: 4,
+            }}>
+            Resume ↗
+          </a>
           <button onClick={() => handleNav('contact')} style={{
             display: 'block', width: '100%', textAlign: 'center', marginTop: 8,
             fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 700,
