@@ -217,7 +217,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       tag: "Agency · Social Media",
       title: "Social View Agency",
       period: "Aug 2025 – Nov 2025",
-      role: "Social Media Intern · Remote",
+      role: "Brand & Social Media Coordinator · Remote",
       bgColor: "#1a1410",
       accentColor: "#7ecaef",
       intro: "Fast-paced agency experience supporting integrated campaign execution across a diverse portfolio of client accounts.",
