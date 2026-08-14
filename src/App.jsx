@@ -67,9 +67,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   const projects = [
   {
     slug: 'grove',
-    tag: 'Startup · Data Infrastructure',
+    tag: 'Startup · Brand & Marketing',
     title: 'THE GROVE',
-    description: 'Co-founded and sole-built an encrypted AI data pipeline for entertainment, gaming, and live events. Integrated Gemini 2.5 Flash for predictive asset generation with a confidence scoring engine. YC applicant.',
+    description: 'Co-founded an entertainment-tech startup as sole marketing lead, owning brand voice and go-to-market messaging while designing and building the full product myself. YC applicant.',
     bgColor: '#0a1a0c',
     accentColor: '#E05B12',
     featured: true,
