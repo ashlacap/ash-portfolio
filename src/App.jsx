@@ -1045,9 +1045,11 @@ const App = () => {
     window.scrollTo({ top: 0 });
   }, [page]);
 
+  const scrollSections = ['work', 'side-quests', 'graphic-design', 'video-edits', 'contact'];
+
   const handleNavigate = (target) => {
-    if (target === 'contact') { setShowContact(true); return; }
-    if (target === 'work' || target === 'side-quests') {
+    if (target === 'contact-modal') { setShowContact(true); return; }
+    if (scrollSections.includes(target)) {
       const scrollTo = () => {
         const el = document.getElementById(target);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
