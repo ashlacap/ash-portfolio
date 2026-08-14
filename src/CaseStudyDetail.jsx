@@ -194,7 +194,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       tag: "Leadership · PR & Marketing",
       title: "AGSM Student Association",
       period: "May 2025 – Present",
-      role: "Director of PR and Marketing · Riverside, CA",
+      role: "Director of PR, Marketing & Merchandising · Riverside, CA",
       bgColor: "#1e2a5e",
       accentColor: "#7ecaef",
       coverImage: "/agsm-cover.png",
