@@ -129,7 +129,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       tag: "Startup · Data Infrastructure",
       title: "THE GROVE",
       period: "2026 – Present",
-      role: "Co-Founder & Head of Data Infrastructure · Sole App Designer & Builder",
+      role: "Co-Founder & Head of Marketing · Sole App Designer & Builder",
       bgColor: "#0a1a0c",
       accentColor: "#E05B12",
       coverImage: "/grove-cover.png",
