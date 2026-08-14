@@ -158,7 +158,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       bgColor: "#141b42",
       accentColor: "#ffd024",
       intro: "Three years building a brand from the ground up inside one of gaming's most passionate communities Valorant.",
-      overview: "VALOBANNERS is a Valorant-adjacent brand built around community-driven content and creator culture. As Brand Marketing Associate, I owned the full campaign lifecycle: from audience research and channel strategy to influencer coordination and daily performance monitoring.",
+      overview: "VALOBANNERS is a Valorant-adjacent brand built around community-driven content and creator culture. As Brand & Social Media Marketing Manager, I owned the full campaign lifecycle: from audience research and channel strategy to influencer coordination and daily performance monitoring.",
       outcomes: [
         { metric: "103%", label: "Audience growth" },
         { metric: "58%", label: "Engagement increase" },
