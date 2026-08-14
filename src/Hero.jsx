@@ -144,19 +144,22 @@ const Hero = ({ onNavigate }) => {
               onMouseLeave={e => { e.currentTarget.style.boxShadow = '4px 4px 0 #b8c2ea'; e.currentTarget.style.transform = 'translateY(0)'; }}>
               About Me
             </button>
-            <button
-              onClick={() => onNavigate('resume')}
+            <a
+              href="/Ash-Lacap-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600,
-                padding: '13px 30px', borderRadius: 8,
+                padding: '13px 30px', borderRadius: 8, textDecoration: 'none',
+                display: 'inline-block',
                 background: 'transparent', color: '#1e2a5e',
                 border: '2.5px solid #111', boxShadow: '4px 4px 0 #b8c2ea',
                 cursor: 'pointer', transition: 'box-shadow 120ms, transform 120ms',
               }}
               onMouseEnter={e => { e.currentTarget.style.boxShadow = '6px 6px 0 #b8c2ea'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = '4px 4px 0 #b8c2ea'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-              Resume
-            </button>
+              Resume ↗
+            </a>
           </div>
 
           {/* Skills row */}
