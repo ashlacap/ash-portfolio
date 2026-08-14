@@ -162,18 +162,18 @@ const SideQuestsSection = () =>
         <div style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
           letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
-        }}>Side Quests</div>
+        }}>Products I've Built</div>
         <h2 style={{
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 38, fontWeight: 700, color: '#1a1410',
           letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
-        }}>The experiments<br />that don't sit still.</h2>
+        }}>Real apps,<br />shipped and live.</h2>
         <p style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 16,
           color: '#6b5c52', lineHeight: 1.75, marginBottom: 0
         }}>
-          Not every project fits a case study. Side Quests is where I keep the experiments,
-          passion projects, and things I'm figuring out in real time.
+          Beyond campaigns, I design and build full products end to end. These are live,
+          usable apps I shipped myself, from concept to code.
         </p>
       </div>
 
