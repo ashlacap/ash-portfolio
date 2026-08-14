@@ -133,7 +133,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       bgColor: "#0a1a0c",
       accentColor: "#E05B12",
       coverImage: "/grove-cover.png",
-      intro: "Co-founded and sole-built an encrypted AI data pipeline for entertainment, gaming, and live events. Built from zero to YC application.",
+      intro: "Co-founded an entertainment-tech startup as sole marketing lead, owning brand voice and go-to-market messaging, and designed and built the full product myself. Built from zero to YC application.",
       overview: "THE GROVE is a two-layer data product built for entertainment, gaming, and live events organizations. The hero product connects any file or tool users already work with and generates the next likely version of their asset with a confidence score that tells them exactly how production-ready it is. Free, immediate, no commitment required. The full pipeline adds AES-256 encrypted inter-organizational asset transfer with provenance tracking, access control, and a tamper-evident audit trail so originals are never overwritten and collaborators can only do what you explicitly permit. Co-founded with Maya Cohen.",
       outcomes: [
         { metric: "YC", label: "Applicant" },
