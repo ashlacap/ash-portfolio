@@ -154,7 +154,7 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       tag: "Brand Marketing · Gaming",
       title: "VALOBANNERS",
       period: "Dec 2020 – Dec 2023",
-      role: "Brand Marketing Associate · Remote",
+      role: "Brand & Social Media Marketing Manager · Remote",
       bgColor: "#141b42",
       accentColor: "#ffd024",
       intro: "Three years building a brand from the ground up inside one of gaming's most passionate communities Valorant.",
