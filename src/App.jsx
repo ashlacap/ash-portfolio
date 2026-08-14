@@ -1087,33 +1087,15 @@ const App = () => {
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
-      case 'resume':
-        return (
-          <>
-            <div style={{ paddingTop: 64 }}>
-              <ResumePage />
-            </div>
-            <ContactSection onContact={() => setShowContact(true)} />
-          </>);
-
-      case 'side-quests':
-        return (
-          <>
-            <div style={{ paddingTop: 80 }}>
-              <SideQuestsSection />
-            </div>
-            <GraphicDesignSection />
-            <ContactSection onContact={() => setShowContact(true)} />
-          </>);
-
       default:
         return (
           <>
             <Hero onNavigate={handleNavigate} tweaks={tweaks} />
-            <hr className="section-divider" />
+            <ResultsBand />
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
             <SideQuestsSection />
             <GraphicDesignSection />
+            <VideoHighlight onNavigate={handleNavigate} />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
