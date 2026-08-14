@@ -560,6 +560,112 @@ const GraphicDesignSection = () => {
 };
 
 
+// ── Results snapshot band ─────────────────────────────────
+const ResultsBand = () => {
+  const isMobile = useWindowWidth() < 768;
+  const stats = [
+    { metric: '103%', label: 'Audience growth', sub: 'VALOBANNERS' },
+    { metric: '58%', label: 'Engagement lift', sub: 'VALOBANNERS' },
+    { metric: '25%', label: 'Monthly sales lift', sub: 'VALOBANNERS' },
+    { metric: '40%', label: 'Event turnout increase', sub: 'AGSM' },
+    { metric: '300+', label: 'Consumer responses analyzed', sub: 'Liquid Death' },
+  ];
+  return (
+    <section style={{
+      background: '#1e2a5e', borderTop: '2.5px solid #111', borderBottom: '2.5px solid #111',
+      padding: isMobile ? '40px 20px' : '52px 48px',
+    }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+          letterSpacing: '0.14em', textTransform: 'uppercase', color: '#ffd024',
+          marginBottom: isMobile ? 24 : 32, textAlign: isMobile ? 'center' : 'left',
+        }}>Results at a glance</div>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(5, 1fr)',
+          gap: isMobile ? 24 : 20,
+        }}>
+          {stats.map((s) => (
+            <div key={s.metric + s.label} style={{ textAlign: isMobile ? 'center' : 'left' }}>
+              <div style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: isMobile ? 34 : 44, fontWeight: 700, color: 'white',
+                letterSpacing: '-0.04em', lineHeight: 1, marginBottom: 8,
+              }}>{s.metric}</div>
+              <div style={{
+                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600,
+                color: '#c3ccf0', lineHeight: 1.4, marginBottom: 4,
+              }}>{s.label}</div>
+              <div style={{
+                fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600,
+                letterSpacing: '0.06em', textTransform: 'uppercase', color: '#7385cc',
+              }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ── Video highlight (curated, inline) ─────────────────────
+const VideoHighlight = ({ onNavigate }) => {
+  const isMobile = useWindowWidth() < 768;
+  // Curated cross-section: esports flagship, agency client, leadership reel
+  const clips = [
+    { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', tag: 'Esports' },
+    { src: '/CartZilla%201.mp4', label: 'CartZilla Reel', tag: 'Agency · SVA' },
+    { src: '/Student%20Association%20Reel%201.mp4', label: 'Student Association Reel', tag: 'Leadership · AGSM' },
+  ];
+  return (
+    <section id="video-edits" style={{ padding: isMobile ? '60px 20px' : '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+      <div style={{
+        fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+        letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 14,
+      }}>Video Editing</div>
+      <div style={{
+        display: 'flex', flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'flex-end',
+        gap: 16, marginBottom: isMobile ? 28 : 36,
+      }}>
+        <h2 style={{
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
+          letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 560,
+        }}>Short-form content that performs.</h2>
+        <button onClick={() => onNavigate('video-edits')} style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 700,
+          color: '#1e2a5e', background: 'white',
+          padding: '10px 20px', borderRadius: 8,
+          border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+          cursor: 'pointer', whiteSpace: 'nowrap',
+          transition: 'box-shadow 120ms, transform 120ms',
+        }}
+        onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+        onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+          View all edits →
+        </button>
+      </div>
+      <div style={{
+        display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
+        justifyContent: isMobile ? 'center' : 'flex-start',
+      }}>
+        {clips.map((c) => (
+          <div key={c.src} style={{ width: isMobile ? '76%' : 260 }}>
+            <VideoCard src={c.src} label={c.label} accent="#ffd024" style={{ width: '100%', aspectRatio: '9 / 16' }} />
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+              letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8c7a70',
+              marginTop: 10, textAlign: isMobile ? 'center' : 'left',
+            }}>{c.tag}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 // ── Contact section ───────────────────────────────────────
 const ContactSection = ({ onContact }) =>
 <div className="contact-section">
