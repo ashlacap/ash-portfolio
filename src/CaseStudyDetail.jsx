@@ -239,7 +239,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
       tag: "Marketing Analytics · Academic",
       title: "Hot Wheels Racing Game",
       period: "Jan – Mar 2025",
-      role: "MGT 257: Marketing Strategy · UC Riverside",
+      role: "MGT 251: Marketing Analytics · UC Riverside",
       bgColor: "#4a4a4a",
       accentColor: "#ffd11a",
       coverImage: "/hot-wheels-logo.jpg",
