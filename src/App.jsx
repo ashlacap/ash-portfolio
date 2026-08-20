@@ -1274,6 +1274,7 @@ const App = () => {
             <HonorsBand />
             <SideQuestsSection onNavigate={handleNavigate} />
             <VideoHighlight onNavigate={handleNavigate} />
+            <ToolboxSection />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
 
