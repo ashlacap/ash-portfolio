@@ -103,24 +103,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     accentColor: '#7ecaef',
     imageContent: <img loading="lazy" src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
   },
-  {
-    slug: 'hot-wheels',
-    tag: 'Marketing Analytics · Academic',
-    title: 'Hot Wheels Racing Game',
-    description: 'Designed player surveys and analyzed behavioral data to segment players (casual, whale, seasonal), forecasting ARPU impact to recommend tailored battle pass pricing backed by retention cohorts and engagement curves.',
-    bgColor: '#4a4a4a',
-    accentColor: '#e01a2b',
-    imageContent: <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-  },
-  {
-    slug: 'quay-australia',
-    tag: 'Integrated Marketing · Academic',
-    title: 'Quay Australia',
-    description: 'Full Gen Z go-to-market playbook: channel strategy, influencer partnerships, audience segmentation, and measurable KPIs.',
-    bgColor: '#0d1230',
-    accentColor: '#7ecaef',
-    imageContent: <img loading="lazy" src="/quay-cover.jpg" alt="Quay Australia" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-  }];
+  ];
 
 
   return (
