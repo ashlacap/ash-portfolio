@@ -696,7 +696,7 @@ const ToolboxSection = () => {
         <div style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
           letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 12,
-        }}>My Toolkit</div>
+        }}>Technical Toolkit</div>
         <h2 style={{
           fontFamily: "'DM Sans', sans-serif",
           fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
