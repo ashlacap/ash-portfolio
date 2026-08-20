@@ -257,6 +257,8 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
         "Built retention cohorts and engagement curves to validate the recommendations, grounding the strategy in projected player behavior rather than assumption.",
       ],
       tools: ["Survey Design", "Player Segmentation", "ARPU Forecasting", "Retention Cohorts", "Tableau", "Excel"],
+      siteUrl: "https://canva.link/h5uvhwtq934b9rb",
+      siteLabel: "View the Deck ↗",
     },
     "quay-australia": {
       tag: "Academic Project · Integrated Marketing",
