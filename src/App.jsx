@@ -67,7 +67,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   const projects = [
   {
     slug: 'valobanners',
-    tag: 'Data Analyst · LiveOps · Gaming',
+    tag: 'Marketing Analyst · LiveOps · Gaming',
     title: 'VALOBANNERS',
     description: 'Built Mixpanel and Tableau dashboards tracking 15+ core game KPIs, ran 12+ A/B tests monthly, and used SQL + Python analysis to drive an 18% YoY ARPU lift and 25% retention improvement.',
     bgColor: '#141b42',
@@ -102,7 +102,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
       <div className="reveal">
         <SectionHeading
           label="Selected Work"
-          title="Data-driven marketing work."
+          title="Business Analytics Work."
           subtitle="Roles where I turned analytics into measurable growth. Click any project for the full story." />
         
       </div>
