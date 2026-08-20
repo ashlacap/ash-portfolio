@@ -173,10 +173,9 @@ const SideQuestsSection = ({ onNavigate }) =>
           <div style={{
             height: 200, position: 'relative', overflow: 'hidden',
             background: '#4a4a4a', borderBottom: '2.5px solid #111',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
             <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game"
-              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
           </div>
 
           {/* Content */}
