@@ -102,7 +102,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
       <div className="reveal">
         <SectionHeading
           label="Selected Work"
-          title="Business Analytics Work."
+          title="Data Analytics"
           subtitle="Roles where I turned analytics into measurable growth. Click any project for the full story." />
         
       </div>
