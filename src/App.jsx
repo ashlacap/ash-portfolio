@@ -757,7 +757,7 @@ const ToolboxSection = () => {
               display: 'inline-block',
               transform: open ? 'rotate(180deg)' : 'none',
               transition: 'transform 300ms ease',
-            }}>↓</span>
+            }}>↑</span>
           </div>
         </button>
 
