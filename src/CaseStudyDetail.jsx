@@ -194,8 +194,9 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       title: "H&R Block",
       period: "Sep 2021 – Apr 2022",
       role: "Data Analyst · Contract · Remote",
-      bgColor: "#0a3d2e",
+      bgColor: "#006940",
       accentColor: "#5ec8a0",
+      coverImage: "/hr-block-logo.webp",
       intro: "Performance analytics during peak tax season: BigQuery, SQL, and statistical A/B testing that moved acquisition costs the right direction.",
       overview: "As a contract Data Analyst supporting H&R Block's peak-season marketing, I built the data extraction and monitoring pipelines behind campaign optimization, then ran statistical A/B tests on messaging that measurably lowered acquisition costs and raised conversion.",
       outcomes: [
