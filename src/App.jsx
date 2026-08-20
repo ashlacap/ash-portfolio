@@ -208,33 +208,14 @@ const SideQuestsSection = ({ onNavigate }) =>
               ))}
             </div>
 
-            {/* Links */}
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <button
-                onClick={() => onNavigate('case-study/hot-wheels')}
-                style={viewWorkBtnStyle}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                View My Work →
-              </button>
-              <a
-                href="https://canva.link/h5uvhwtq934b9rb"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
-                  color: '#1a1410', background: 'white',
-                  padding: '9px 18px', borderRadius: 8,
-                  border: '2px solid #111', boxShadow: '3px 3px 0 #111',
-                  textDecoration: 'none', cursor: 'pointer',
-                  transition: 'box-shadow 120ms, transform 120ms',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                View Deck ↗
-              </a>
-            </div>
+            {/* Link */}
+            <button
+              onClick={() => onNavigate('case-study/hot-wheels')}
+              style={viewWorkBtnStyle}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              View My Work →
+            </button>
           </div>
         </div>
 
