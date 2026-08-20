@@ -129,7 +129,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
       tag: "Marketing Analyst · LiveOps · Gaming",
       title: "VALOBANNERS",
       period: "May 2022 – Aug 2024",
-      role: "Data Analyst, LiveOps · Valorant Merchandising · Remote",
+      role: "Marketing Analyst, LiveOps · Valorant Merchandising · Remote",
       bgColor: "#141b42",
       accentColor: "#ffd024",
       intro: "Turning player behavior data into product decisions for a Valorant merchandising and LiveOps operation.",
