@@ -1084,7 +1084,6 @@ const App = () => {
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
             <HonorsBand />
             <SideQuestsSection />
-            <GraphicDesignSection />
             <VideoHighlight onNavigate={handleNavigate} />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
