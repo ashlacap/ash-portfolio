@@ -1120,7 +1120,10 @@ const App = () => {
   const renderBody = () => {
     if (page.startsWith('case-study/')) {
       const slug = page.replace('case-study/', '');
-      return <CaseStudyDetail slug={slug} onBack={() => handleNavigate('work')} />;
+      const inProjects = slug === 'agsm' || slug === 'hot-wheels';
+      const backTarget = inProjects ? 'side-quests' : 'work';
+      const backLabel = inProjects ? 'Back to Projects' : 'Back to Work';
+      return <CaseStudyDetail slug={slug} backLabel={backLabel} onBack={() => handleNavigate(backTarget)} />;
     }
     switch (page) {
       case 'about':
