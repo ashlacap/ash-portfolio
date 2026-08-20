@@ -1204,6 +1204,7 @@ const App = () => {
             <Hero onNavigate={handleNavigate} tweaks={tweaks} />
             <ResultsBand />
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
+            <HonorsBand />
             <SideQuestsSection />
             <GraphicDesignSection />
             <VideoHighlight onNavigate={handleNavigate} />
