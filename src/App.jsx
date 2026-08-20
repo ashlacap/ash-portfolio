@@ -565,11 +565,11 @@ const GraphicDesignSection = () => {
 const ResultsBand = () => {
   const isMobile = useWindowWidth() < 768;
   const stats = [
-    { metric: '103%', label: 'Audience growth', sub: 'VALOBANNERS' },
-    { metric: '58%', label: 'Engagement lift', sub: 'VALOBANNERS' },
-    { metric: '25%', label: 'Monthly sales lift', sub: 'VALOBANNERS' },
-    { metric: '40%', label: 'Event turnout increase', sub: 'AGSM' },
-    { metric: '300+', label: 'Consumer responses analyzed', sub: 'Liquid Death' },
+    { metric: '+18%', label: 'YoY ARPU growth', sub: 'VALOBANNERS' },
+    { metric: '+13%', label: 'User conversion (A/B)', sub: 'Social View Agency' },
+    { metric: '−22%', label: 'Cost-per-acquisition', sub: 'H&R Block' },
+    { metric: '+68%', label: 'YoY conversion rate', sub: 'H&R Block' },
+    { metric: '27+', label: 'KPIs tracked in dashboards', sub: 'Across roles' },
   ];
   return (
     <section style={{
