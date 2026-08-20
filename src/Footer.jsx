@@ -37,7 +37,7 @@ const Footer = ({ onNavigate }) => {
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 14, color: '#5e71c4', lineHeight: 1.5, maxWidth: 240
         }}>
-            Data analytics. A/B testing. Insights that drive growth.
+            Data Analytics that drive growth and revenue.
           </div>
         </div>
 
