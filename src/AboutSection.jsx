@@ -126,7 +126,7 @@ const AboutSection = () => {
             fontFamily: "'DM Sans', sans-serif", fontSize: 15,
             color: '#6b5c52', lineHeight: 1.8, marginBottom: 32, maxWidth: 520,
           }}>
-            I earned my B.S. in Marketing from California State University, Northridge, and I'm now a second-year MBA candidate at the University of California, Riverside, where I serve as the Director of Public Relations and Marketing for our Student Association.
+            I earned my B.S. in Marketing from California State University, Northridge, and I'm now a second-year MBA candidate at the University of California, Riverside, concentrating in Marketing and Business Analytics, where I serve as the Director of Marketing & Public Relations for our Student Association.
           </p>
 
           {/* Skill tags */}
