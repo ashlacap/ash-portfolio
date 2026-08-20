@@ -1013,7 +1013,7 @@ const App = () => {
 
   useEffect(() => {
     if (page !== 'home') { setActiveSection(null); return; }
-    const sections = ['work', 'side-quests', 'graphic-design', 'video-edits'];
+    const sections = ['work', 'side-quests', 'video-edits'];
     const observers = sections.map(id => {
       const el = document.getElementById(id);
       if (!el) return null;
