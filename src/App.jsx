@@ -725,7 +725,7 @@ const ToolboxSection = () => {
               transform: open ? 'translateY(-26px)' : 'translateY(0)',
               transition: 'transform 420ms cubic-bezier(0.34,1.45,0.5,1)',
             }}>
-              {/* lid body — sits flush on top of the base when closed */}
+              {/* lid body: sits flush on top of the base when closed */}
               <rect x="14" y="40" width="272" height="36" rx="9" fill="#d42020" stroke="#111" strokeWidth="4" />
               {/* highlight strip */}
               <rect x="14" y="40" width="272" height="15" rx="9" fill="#e8352f" stroke="#111" strokeWidth="4" />
