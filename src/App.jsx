@@ -135,8 +135,17 @@ const WorkSection = ({ onNavigate, tweaks }) => {
 
 };
 
-// ── Side Quests section ───────────────────────────────────
-const SideQuestsSection = () =>
+// ── Personal Projects section ─────────────────────────────
+const viewWorkBtnStyle = {
+  display: 'inline-flex', alignItems: 'center', gap: 6,
+  fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
+  color: 'white', background: '#1e2a5e',
+  padding: '9px 18px', borderRadius: 8,
+  border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+  cursor: 'pointer', transition: 'box-shadow 120ms, transform 120ms',
+};
+
+const SideQuestsSection = ({ onNavigate }) =>
 <div id="side-quests" className="side-quests-section">
     <div className="side-quests-inner">
 
@@ -145,13 +154,13 @@ const SideQuestsSection = () =>
         <div style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
           letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
-        }}>Products I've Built</div>
+        }}>Personal Projects</div>
         <p style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 16,
           color: '#6b5c52', lineHeight: 1.75, marginBottom: 0, marginTop: 4
         }}>
           Beyond campaigns, I build and ship things end to end, from a data platform
-          I designed and coded myself to analytics-driven product strategy.
+          I designed and coded myself to analytics-driven product and leadership work.
         </p>
       </div>
 
