@@ -168,7 +168,7 @@ const Hero = ({ onNavigate }) => {
             display: 'flex', gap: 10, marginTop: 52, flexWrap: 'wrap',
             justifyContent: isMobile ? 'center' : 'flex-start',
           }}>
-            {['Brand Strategy', 'Digital Marketing', 'Campaign Planning', 'Content', 'Social Media', 'Gaming'].map(s => (
+            {['SQL', 'Tableau', 'A/B Testing', 'Mixpanel', 'Brand Strategy', 'Social Media'].map(s => (
               <span key={s} style={{
                 fontFamily: "'DM Sans', sans-serif", fontSize: 12, fontWeight: 500,
                 color: '#6b5c52', background: '#f5f2f0',
