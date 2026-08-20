@@ -133,7 +133,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
       bgColor: "#141b42",
       accentColor: "#ffd024",
       intro: "Turning player behavior data into product decisions for a Valorant merchandising and LiveOps operation.",
-      overview: "As Data Analyst on the LiveOps team, I built the analytics infrastructure that told the team what to build and price next. I tracked core game and merchandise KPIs, ran a rigorous A/B testing program, and translated player behavior into feature and roadmap decisions, from battle pass structures to seasonal merchandise drops.",
+      overview: "As Marketing Analyst on the LiveOps team, I built the analytics infrastructure that told the team what to build and price next. I tracked core game and merchandise KPIs, ran a rigorous A/B testing program, and translated player behavior into feature and roadmap decisions, from battle pass structures to seasonal merchandise drops.",
       outcomes: [
         { metric: "+18%", label: "YoY ARPU growth" },
         { metric: "+25%", label: "Player retention" },
