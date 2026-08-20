@@ -713,7 +713,16 @@ const ToolboxSection = () => {
             width: isMobile ? 250 : 320,
           }}
         >
-          <svg viewBox="0 0 300 150" width="100%" style={{ display: 'block', overflow: 'visible' }}>
+          <style>{`
+            @keyframes toolboxFloat {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-10px); }
+            }
+          `}</style>
+          <svg viewBox="0 0 300 150" width="100%" style={{
+            display: 'block', overflow: 'visible',
+            animation: open ? 'none' : 'toolboxFloat 4s ease-in-out infinite',
+          }}>
             {/* ── Base (bottom half of the box) ── */}
             <rect x="14" y="74" width="272" height="66" rx="10" fill="#d42020" stroke="#111" strokeWidth="4" />
             {/* clasps on the base front */}
