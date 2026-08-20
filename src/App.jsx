@@ -66,42 +66,42 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   const isMobile = useWindowWidth() < 768;
   const projects = [
   {
-    slug: 'grove',
-    tag: 'Startup · Brand & Marketing',
-    title: 'THE GROVE',
-    description: 'Co-founded an entertainment-tech startup as sole marketing lead, owning brand voice and go-to-market messaging while designing and building the full product myself. YC applicant.',
-    bgColor: '#0a1a0c',
-    accentColor: '#E05B12',
-    featured: true,
-    imageContent: <img loading="lazy" src="/grove-cover.png" alt="THE GROVE" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />,
-  },
-  {
     slug: 'valobanners',
-    tag: 'Brand Marketing · Gaming',
+    tag: 'Data Analyst · LiveOps · Gaming',
     title: 'VALOBANNERS',
-    description: 'Built a gaming brand from the ground up, growing audience by 103% and monthly sales by 25% through integrated social, influencer, and community campaigns.',
+    description: 'Built Mixpanel and Tableau dashboards tracking 15+ core game KPIs, ran 12+ A/B tests monthly, and used SQL + Python analysis to drive an 18% YoY ARPU lift and 25% retention improvement.',
     bgColor: '#141b42',
     accentColor: '#ffd024',
     featured: true,
     imageContent: <img loading="lazy" src="/valobanners-cover.png" alt="VALOBANNERS" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />,
   },
   {
+    slug: 'samsung',
+    tag: 'Business Intelligence · Agency',
+    title: 'Social View Agency',
+    description: 'As Business Intelligence MBA Intern, designed A/B tests with SQL and Tableau that lifted user conversion +13%, and built automated dashboards tracking 12+ campaign KPIs to speed optimization decisions by 50%.',
+    bgColor: '#1a1410',
+    accentColor: '#8a99d8',
+    featured: true,
+    imageContent: <img loading="lazy" src="/sva-cartzilla-cover.png" alt="Social View Agency" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+  },
+  {
+    slug: 'hr-block',
+    tag: 'Data Analyst · Performance',
+    title: 'H&R Block',
+    description: 'Wrote BigQuery + SQL to extract campaign and user behavior data at scale, and ran statistical A/B tests on email and landing pages that cut cost-per-acquisition 22% and lifted conversion 68% YoY.',
+    bgColor: '#0a3d2e',
+    accentColor: '#5ec8a0',
+    imageContent: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', fontFamily: "'DM Sans', sans-serif", fontSize: 44, fontWeight: 700, color: 'rgba(255,255,255,0.14)', letterSpacing: '-0.04em' }}>H&amp;R BLOCK</div>
+  },
+  {
     slug: 'agsm',
-    tag: 'Leadership · PR & Marketing',
+    tag: 'Leadership · Marketing & PR',
     title: 'AGSM Student Association',
-    description: 'Led integrated marketing campaigns across email, social, and campus channels as Director of PR and Marketing, increasing event turnout by 40%.',
+    description: 'As Director of Marketing & Public Relations, rebuilt the content strategy across social, email, and PR to grow engagement and event turnout 40%, leading a team of 10+ with a unified brand identity.',
     bgColor: '#1e2a5e',
     accentColor: '#7ecaef',
     imageContent: <img loading="lazy" src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
-  },
-  {
-    slug: 'samsung',
-    tag: 'Agency · Social Media',
-    title: 'Social View Agency: CartZilla',
-    description: 'Brand and social coordination across multiple client accounts, adapting messaging and short-form content to each brand\'s voice and channel mix across TikTok and Instagram.',
-    bgColor: '#1a1410',
-    accentColor: '#8a99d8',
-    imageContent: <img loading="lazy" src="/sva-cartzilla-cover.png" alt="SVA x CartZilla" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   },
   {
     slug: 'liquid-death',
