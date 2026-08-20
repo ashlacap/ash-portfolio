@@ -776,11 +776,10 @@ const ToolboxSection = () => {
             <rect x="44" y="92" width="16" height="24" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
             <rect x="240" y="92" width="16" height="24" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
 
-            {/* ── Lid (hinges up from its back edge) ── */}
+            {/* ── Lid (lifts straight up when open) ── */}
             <g style={{
-              transformOrigin: '18px 74px',
-              transform: open ? 'rotate(-115deg)' : 'rotate(0deg)',
-              transition: 'transform 520ms cubic-bezier(0.34,1.3,0.5,1)',
+              transform: open ? 'translateY(-26px)' : 'translateY(0)',
+              transition: 'transform 420ms cubic-bezier(0.34,1.45,0.5,1)',
             }}>
               {/* lid body — sits flush on top of the base when closed */}
               <rect x="14" y="40" width="272" height="36" rx="9" fill="#d42020" stroke="#111" strokeWidth="4" />
@@ -791,10 +790,6 @@ const ToolboxSection = () => {
               {/* latch tab (meets the base seam when closed) */}
               <rect x="138" y="64" width="24" height="16" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
             </g>
-
-            {/* hinge rivets at the back corners */}
-            <circle cx="18" cy="74" r="4" fill="#111" />
-            <circle cx="282" cy="74" r="4" fill="#111" />
           </svg>
 
           {/* Prompt label on the base */}
