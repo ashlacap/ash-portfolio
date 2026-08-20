@@ -92,7 +92,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Wrote BigQuery + SQL to extract campaign and user behavior data at scale, and ran statistical A/B tests on email and landing pages that cut cost-per-acquisition 22% and lifted conversion 68% YoY.',
     bgColor: '#ffffff',
     accentColor: '#00a651',
-    imageContent: <img loading="lazy" src="/hr-block-logo.png" alt="H&R Block" style={{ width: '62%', height: '62%', objectFit: 'contain', margin: 'auto' }} />
+    imageContent: <img loading="lazy" src="/hr-block-logo.webp" alt="H&R Block" style={{ width: '62%', height: '62%', objectFit: 'contain', margin: 'auto' }} />
   },
   {
     slug: 'agsm',
