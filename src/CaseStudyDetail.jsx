@@ -316,7 +316,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
             }}
             onMouseEnter={e => { e.currentTarget.style.color = "white"; e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}
             onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.6)"; e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}>
-            ← Back to Work
+            ← {backLabel}
           </button>
 
           <div style={{
