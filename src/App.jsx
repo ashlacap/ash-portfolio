@@ -217,23 +217,19 @@ const SideQuestsSection = () =>
           </div>
         </div>
 
-        {/* Instagram Unfollowers */}
+        {/* Hot Wheels Racing Game */}
         <div style={{
           flex: '1 1 300px', background: 'white',
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
-          {/* Visual header: Instagram gradient */}
+          {/* Visual header: Hot Wheels logo */}
           <div style={{
-            height: 140,
-            background: 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            height: 140, position: 'relative', overflow: 'hidden',
+            background: '#4a4a4a', borderBottom: '2.5px solid #111',
           }}>
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="20" height="20" rx="6" stroke="white" strokeWidth="1.8"/>
-              <circle cx="12" cy="12" r="4.5" stroke="white" strokeWidth="1.8"/>
-              <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
-            </svg>
+            <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
           </div>
 
           {/* Content */}
@@ -241,22 +237,22 @@ const SideQuestsSection = () =>
             <div style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
               letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: '#833ab4', marginBottom: 8,
-            }}>Personal Project · Web App</div>
+              color: '#c8102e', marginBottom: 8,
+            }}>Marketing Analytics · Academic</div>
             <div style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
               color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
-            }}>Instagram Unfollowers</div>
+            }}>Hot Wheels Racing Game</div>
             <p style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 13,
               color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
             }}>
-              Find out who doesn't follow you back, no login required. Upload your Instagram data export and get instant, private results.
+              A data-driven monetization and retention strategy for a Hot Wheels racing game. Segmented players by behavior, forecasted ARPU by cohort, and validated tailored battle pass pricing with retention curves.
             </p>
 
             {/* Tech stack */}
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-              {['Next.js', 'React', 'TypeScript', 'Tailwind CSS'].map(t => (
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 0 }}>
+              {['Player Segmentation', 'ARPU Forecasting', 'Retention Cohorts', 'Survey Design'].map(t => (
                 <span key={t} style={{
                   fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
                   color: '#4a3e36', background: '#f0ece8',
@@ -264,103 +260,6 @@ const SideQuestsSection = () =>
                   border: '1.5px solid #e4dfdc',
                 }}>{t}</span>
               ))}
-            </div>
-
-            {/* Links */}
-            <div style={{ display: 'flex', gap: 10 }}>
-              <a href="https://instagram-unfollowers-seven.vercel.app" target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 6,
-                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
-                color: 'white', background: '#833ab4',
-                padding: '9px 18px', borderRadius: 8,
-                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
-                textDecoration: 'none',
-              }}>Live Site ↗</a>
-              <a href="https://github.com/ashlacap/instagram-unfollowers" target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 6,
-                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
-                color: '#1a1410', background: 'white',
-                padding: '9px 18px', borderRadius: 8,
-                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
-                textDecoration: 'none',
-              }}>GitHub ↗</a>
-            </div>
-          </div>
-        </div>
-
-        {/* Ashtronomical */}
-        <div style={{
-          flex: '1 1 300px', background: 'white',
-          border: '2.5px solid #111', borderRadius: 16,
-          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
-        }}>
-          {/* Visual header: space theme */}
-          <div style={{
-            height: 140,
-            background: 'linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 60%, #0d0d0d 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            position: 'relative', overflow: 'hidden',
-          }}>
-            {/* Stars */}
-            {[[15,20],[40,60],[70,25],[85,70],[25,80],[60,45],[90,15],[50,85]].map(([x,y], i) => (
-              <div key={i} style={{
-                position: 'absolute', left: `${x}%`, top: `${y}%`,
-                width: i % 3 === 0 ? 3 : 2, height: i % 3 === 0 ? 3 : 2,
-                borderRadius: '50%', background: 'white', opacity: 0.6,
-              }} />
-            ))}
-            {/* Saturn-like icon */}
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-              <circle cx="28" cy="28" r="14" fill="#333" opacity="0.9"/>
-              <ellipse cx="28" cy="28" rx="24" ry="7" stroke="white" strokeWidth="1.8" fill="none" opacity="0.5"/>
-              <circle cx="28" cy="28" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-            </svg>
-          </div>
-
-          {/* Content */}
-          <div style={{ padding: '18px 20px 20px' }}>
-            <div style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
-              letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: '#1a1410', marginBottom: 8,
-            }}>Personal Project · FinTech App</div>
-            <div style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
-              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 4,
-            }}>Ashtronomical</div>
-            <div style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 12,
-              color: '#8c7a70', marginBottom: 10, fontStyle: 'italic',
-            }}>Your financial universe, mapped.</div>
-            <p style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
-              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
-            }}>
-              A space-themed personal finance app that connects to your bank via Plaid for automatic transaction imports, shared household budgets, savings goal pacing, and spending insights.
-            </p>
-
-            {/* Tech stack */}
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-              {['React', 'Plaid API', 'Node.js', 'Tailwind CSS'].map(t => (
-                <span key={t} style={{
-                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
-                  color: '#4a3e36', background: '#f0ece8',
-                  padding: '4px 10px', borderRadius: 20,
-                  border: '1.5px solid #e4dfdc',
-                }}>{t}</span>
-              ))}
-            </div>
-
-            {/* Links */}
-            <div style={{ display: 'flex', gap: 10 }}>
-              <a href="https://ashtronomical.vercel.app" target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 6,
-                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
-                color: 'white', background: '#111',
-                padding: '9px 18px', borderRadius: 8,
-                border: '2px solid #111', boxShadow: '3px 3px 0 #555',
-                textDecoration: 'none',
-              }}>Live Site ↗</a>
             </div>
           </div>
         </div>
