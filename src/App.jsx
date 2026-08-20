@@ -1223,7 +1223,6 @@ const App = () => {
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
             <HonorsBand />
             <SideQuestsSection onNavigate={handleNavigate} />
-            <VideoHighlight onNavigate={handleNavigate} />
             <ToolboxSection />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
