@@ -458,7 +458,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
               onMouseEnter={e => { e.currentTarget.style.boxShadow = "6px 6px 0 #111"; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = "4px 4px 0 #111"; e.currentTarget.style.transform = "translateY(0)"; }}
             >
-              Visit thegrove.cloud ↗
+              {study.siteLabel || "Visit thegrove.cloud ↗"}
             </a>
           </div>
         )}
