@@ -158,6 +158,69 @@ const SideQuestsSection = ({ onNavigate }) =>
       {/* Right: project cards */}
       <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: 20 }}>
 
+        {/* Hot Wheels Racing Game (featured) */}
+        <div style={{
+          flex: '1 1 100%', background: 'white',
+          border: '2.5px solid #111', borderRadius: 16,
+          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        }}>
+          {/* Visual header: Hot Wheels logo */}
+          <div style={{
+            height: 200, position: 'relative', overflow: 'hidden',
+            background: '#4a4a4a', borderBottom: '2.5px solid #111',
+          }}>
+            <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+            <div style={{
+              position: 'absolute', top: 14, right: 14,
+              background: '#ffd024', border: '2px solid #111', borderRadius: 4,
+              padding: '4px 12px', boxShadow: '2px 2px 0 #111',
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1a1410',
+            }}>Featured</div>
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: '24px 28px 26px' }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: '#c8102e', marginBottom: 8,
+            }}>Marketing Analytics · Academic</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 26, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 10,
+            }}>Hot Wheels Racing Game</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 15,
+              color: '#6b5c52', lineHeight: 1.65, marginBottom: 16, maxWidth: 640,
+            }}>
+              A data-driven monetization and retention strategy for a Hot Wheels racing game. Segmented players by behavior, forecasted ARPU by cohort, and validated tailored battle pass pricing with retention curves and engagement analysis.
+            </p>
+
+            {/* Tech stack */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 18 }}>
+              {['Player Segmentation', 'ARPU Forecasting', 'Retention Cohorts', 'Survey Design'].map(t => (
+                <span key={t} style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
+                  color: '#4a3e36', background: '#f0ece8',
+                  padding: '4px 10px', borderRadius: 20,
+                  border: '1.5px solid #e4dfdc',
+                }}>{t}</span>
+              ))}
+            </div>
+
+            {/* Link */}
+            <button
+              onClick={() => onNavigate('case-study/hot-wheels')}
+              style={viewWorkBtnStyle}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              View My Work →
+            </button>
+          </div>
+        </div>
+
         {/* THE GROVE */}
         <div style={{
           flex: '1 1 300px', background: 'white',
