@@ -753,11 +753,7 @@ const ToolboxSection = () => {
             display: 'inline-flex', alignItems: 'center', gap: 6,
           }}>
             {open ? 'Click to close' : 'Click here to view my tools'}
-            <span style={{
-              display: 'inline-block',
-              transform: open ? 'rotate(180deg)' : 'none',
-              transition: 'transform 300ms ease',
-            }}>↑</span>
+            <span style={{ display: 'inline-block' }}>↑</span>
           </div>
         </button>
 
