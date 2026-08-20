@@ -127,9 +127,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     <section id="work" style={{ padding: isMobile ? '60px 20px' : '80px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
       <div className="reveal">
         <SectionHeading
-          label="My Work"
-          title="My Work! 😊"
-          subtitle="Click on each project to view what I did." />
+          label="Selected Work"
+          title="Data-driven marketing work."
+          subtitle="Roles where I turned analytics into measurable growth. Click any project for the full story." />
         
       </div>
       <div className="work-grid">
