@@ -119,7 +119,7 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
             }}
             onMouseEnter={e => { e.currentTarget.style.background = '#f5f2f0'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-            Say Hi!
+            Say Hi
           </button>
         ) : (
           <button
@@ -189,7 +189,7 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
             border: '2px solid rgba(255,255,255,0.4)',
             cursor: 'pointer',
           }}>
-            Say Hi!
+            Say Hi
           </button>
         </div>
       )}
