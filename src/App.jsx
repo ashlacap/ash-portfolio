@@ -146,9 +146,14 @@ const SideQuestsSection = ({ onNavigate }) =>
           fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
           letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
         }}>Personal Projects</div>
+        <h2 style={{
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: 38, fontWeight: 700, color: '#1a1410',
+          letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
+        }}>Passion meets analytics.</h2>
         <p style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 16,
-          color: '#6b5c52', lineHeight: 1.75, marginBottom: 0, marginTop: 4
+          color: '#6b5c52', lineHeight: 1.75, marginBottom: 0
         }}>
           Beyond campaigns, I build and ship things end to end, from a data platform
           I designed and coded myself to analytics-driven product and leadership work.
