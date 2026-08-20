@@ -110,7 +110,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     description: 'Designed player surveys and analyzed behavioral data to segment players (casual, whale, seasonal), forecasting ARPU impact to recommend tailored battle pass pricing backed by retention cohorts and engagement curves.',
     bgColor: '#ffffff',
     accentColor: '#e01a2b',
-    imageContent: <img loading="lazy" src="/hot-wheels-logo.png" alt="Hot Wheels Racing Game" style={{ width: '78%', height: '78%', objectFit: 'contain', margin: 'auto' }} />
+    imageContent: <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game" style={{ width: '78%', height: '78%', objectFit: 'contain', margin: 'auto' }} />
   },
   {
     slug: 'quay-australia',
