@@ -744,18 +744,19 @@ const VideoHighlight = ({ onNavigate }) => {
           fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
           letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 560,
         }}>Short-form content that performs.</h2>
-        <button onClick={() => onNavigate('video-edits')} style={{
+        <a href="https://www.tiktok.com/@lumpiugh" target="_blank" rel="noopener noreferrer" style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 700,
           color: '#1e2a5e', background: 'white',
           padding: '10px 20px', borderRadius: 8,
           border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
-          cursor: 'pointer', whiteSpace: 'nowrap',
+          cursor: 'pointer', whiteSpace: 'nowrap', textDecoration: 'none',
+          display: 'inline-block',
           transition: 'box-shadow 120ms, transform 120ms',
         }}
         onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
         onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-          View all edits →
-        </button>
+          See more ↗
+        </a>
       </div>
       <div style={{
         display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
