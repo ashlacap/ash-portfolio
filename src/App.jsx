@@ -175,7 +175,7 @@ const SideQuestsSection = ({ onNavigate }) =>
             background: '#4a4a4a', borderBottom: '2.5px solid #111',
           }}>
             <img loading="lazy" src="/hot-wheels-logo.jpg" alt="Hot Wheels Racing Game"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 7.5%' }} />
           </div>
 
           {/* Content */}
@@ -719,6 +719,122 @@ const VideoHighlight = ({ onNavigate }) => {
             }}>{c.tag}</div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+};
+
+// ── Toolbox (interactive) ─────────────────────────────────
+const ToolboxSection = () => {
+  const isMobile = useWindowWidth() < 768;
+  const [open, setOpen] = useState(false);
+
+  const tools = [
+    { name: 'Python', icon: '🐍' },
+    { name: 'Google Colab', icon: '🔬' },
+    { name: 'SQL (MySQL)', icon: '🗄️' },
+    { name: 'Tableau', icon: '📊' },
+    { name: 'Claude', icon: '🤖' },
+    { name: 'VS Code', icon: '💻' },
+    { name: 'GitHub', icon: '🐙' },
+    { name: 'Vercel', icon: '▲' },
+    { name: 'Mixpanel', icon: '📈' },
+    { name: 'Excel', icon: '📗' },
+    { name: 'Google Analytics', icon: '📉' },
+  ];
+
+  return (
+    <section style={{
+      background: '#faf8f7', borderTop: '2.5px solid #111',
+      padding: isMobile ? '56px 20px 64px' : '80px 48px 96px',
+    }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+          letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 12,
+        }}>My Toolkit</div>
+        <h2 style={{
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
+          letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: isMobile ? 28 : 36,
+        }}>Tools of the trade.</h2>
+
+        {/* Toolbox */}
+        <button
+          onClick={() => setOpen(o => !o)}
+          aria-expanded={open}
+          style={{
+            position: 'relative', display: 'inline-block',
+            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+            width: isMobile ? 240 : 300,
+          }}
+        >
+          {/* Lid (rotates up when open) */}
+          <svg viewBox="0 0 300 90" width="100%" style={{
+            display: 'block', margin: '0 auto -2px',
+            transformOrigin: '50% 100%',
+            transform: open ? 'translateY(-6px) rotate(-8deg)' : 'none',
+            transition: 'transform 360ms cubic-bezier(0.34,1.4,0.5,1)',
+          }}>
+            {/* handle */}
+            <rect x="120" y="6" width="60" height="16" rx="8" fill="none" stroke="#111" strokeWidth="4" />
+            {/* lid body */}
+            <rect x="8" y="20" width="284" height="52" rx="10" fill="#d42020" stroke="#111" strokeWidth="4" />
+            <rect x="8" y="20" width="284" height="20" rx="10" fill="#e8352f" stroke="#111" strokeWidth="4" />
+            {/* latch */}
+            <rect x="138" y="52" width="24" height="18" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
+          </svg>
+
+          {/* Box base */}
+          <svg viewBox="0 0 300 120" width="100%" style={{ display: 'block', margin: '0 auto' }}>
+            <rect x="8" y="6" width="284" height="104" rx="12" fill="#d42020" stroke="#111" strokeWidth="4" />
+            {/* tray line */}
+            <rect x="8" y="6" width="284" height="26" rx="12" fill="#b81a1a" stroke="#111" strokeWidth="4" />
+            {/* clasps */}
+            <rect x="40" y="40" width="18" height="26" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
+            <rect x="242" y="40" width="18" height="26" rx="3" fill="#ffd024" stroke="#111" strokeWidth="3" />
+          </svg>
+
+          {/* Prompt label on the box */}
+          <div style={{
+            position: 'absolute', left: 0, right: 0, bottom: isMobile ? 22 : 28,
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 12 : 13, fontWeight: 700,
+            color: 'white', letterSpacing: '0.01em', pointerEvents: 'none',
+            textShadow: '0 1px 2px rgba(0,0,0,0.4)', padding: '0 20px',
+          }}>
+            {open ? 'Click to close' : 'Click here to view my tools'}
+          </div>
+        </button>
+
+        {/* Revealed tools */}
+        <div style={{
+          overflow: 'hidden',
+          maxHeight: open ? 600 : 0,
+          opacity: open ? 1 : 0,
+          transition: 'max-height 420ms ease, opacity 320ms ease',
+          marginTop: open ? 32 : 0,
+        }}>
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', gap: isMobile ? 10 : 14,
+            justifyContent: 'center', maxWidth: 760, margin: '0 auto',
+          }}>
+            {tools.map((t, i) => (
+              <div key={t.name} style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: 'white', border: '2.5px solid #111', borderRadius: 12,
+                boxShadow: '3px 3px 0 #111', padding: '10px 16px',
+                transform: open ? 'translateY(0)' : 'translateY(12px)',
+                opacity: open ? 1 : 0,
+                transition: `transform 360ms cubic-bezier(0.34,1.4,0.5,1) ${i * 45}ms, opacity 300ms ease ${i * 45}ms`,
+              }}>
+                <span style={{ fontSize: 18, lineHeight: 1 }}>{t.icon}</span>
+                <span style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410',
+                }}>{t.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
