@@ -104,13 +104,13 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     imageContent: <img loading="lazy" src="/agsm-cover.png" alt="AGSM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
   },
   {
-    slug: 'liquid-death',
-    tag: 'Consumer Insights · Academic',
-    title: 'Liquid Death',
-    description: 'Analyzed 300+ consumer responses to develop data-driven brand positioning and messaging strategy targeting younger segments.',
-    bgColor: '#2d0606',
-    accentColor: '#e05050',
-    imageContent: <img loading="lazy" src="/liquid-death-cover.webp" alt="Liquid Death" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+    slug: 'hot-wheels',
+    tag: 'Marketing Analytics · Academic',
+    title: 'Hot Wheels Racing Game',
+    description: 'Designed player surveys and analyzed behavioral data to segment players (casual, whale, seasonal), forecasting ARPU impact to recommend tailored battle pass pricing backed by retention cohorts and engagement curves.',
+    bgColor: '#ffffff',
+    accentColor: '#e01a2b',
+    imageContent: <img loading="lazy" src="/hot-wheels-logo.png" alt="Hot Wheels Racing Game" style={{ width: '78%', height: '78%', objectFit: 'contain', margin: 'auto' }} />
   },
   {
     slug: 'quay-australia',
