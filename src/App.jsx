@@ -285,7 +285,7 @@ const SideQuestsSection = ({ onNavigate }) =>
             background: '#1e2a5e', borderBottom: '2.5px solid #111',
           }}>
             <img loading="lazy" src="/agsm-cover.png" alt="AGSM Student Association"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
           </div>
 
           {/* Content */}
