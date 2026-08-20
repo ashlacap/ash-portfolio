@@ -676,15 +676,19 @@ const ToolboxSection = () => {
   const tools = [
     { name: 'Python', icon: '🐍' },
     { name: 'Google Colab', icon: '🔬' },
-    { name: 'SQL (MySQL)', icon: '🗄️' },
+    { name: 'SQL (MySQL, BigQuery)', icon: '🗄️' },
     { name: 'Tableau', icon: '📊' },
-    { name: 'Claude', icon: '🤖' },
-    { name: 'VS Code', icon: '💻' },
-    { name: 'GitHub', icon: '🐙' },
-    { name: 'Vercel', icon: '▲' },
     { name: 'Mixpanel', icon: '📈' },
     { name: 'Excel', icon: '📗' },
     { name: 'Google Analytics', icon: '📉' },
+    { name: 'Meta Analytics', icon: '📘' },
+    { name: 'TikTok Analytics', icon: '🎵' },
+  ];
+  const devTools = [
+    { name: 'VS Code', icon: '💻' },
+    { name: 'GitHub', icon: '🐙' },
+    { name: 'Vercel', icon: '▲' },
+    { name: 'Claude', icon: '🤖' },
   ];
 
   return (
