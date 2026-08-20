@@ -37,7 +37,7 @@ const Footer = ({ onNavigate }) => {
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 14, color: '#5e71c4', lineHeight: 1.5, maxWidth: 240
         }}>
-            Gen Z marketing. Social strategy. Community-first campaigns.
+            Data analytics. A/B testing. Insights that drive growth.
           </div>
         </div>
 
