@@ -747,7 +747,7 @@ const ToolboxSection = () => {
           </div>
         </button>
 
-        {/* Revealed tools — spill out of the box */}
+        {/* Revealed tools: spill out of the box */}
         <div style={{
           overflow: 'hidden',
           maxHeight: open ? 600 : 0,
