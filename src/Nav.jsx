@@ -29,7 +29,6 @@ const Nav = ({ activePage, activeSection, onNavigate }) => {
   const links = [
     { label: 'Work', page: 'work' },
     { label: 'Projects', page: 'side-quests' },
-    { label: 'Videos', page: 'video-edits' },
     { label: 'About', page: 'about' },
   ];
   const resumeHref = '/Ash-Lacap-Resume.pdf';
