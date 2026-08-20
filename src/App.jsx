@@ -669,6 +669,56 @@ const ResultsBand = () => {
   );
 };
 
+// ── Honors & awards ───────────────────────────────────────
+const HonorsBand = () => {
+  const isMobile = useWindowWidth() < 768;
+  const honors = [
+    { org: 'Microsoft Xbox', year: 'Mar 2026', title: 'Xbox Gaming For Everyone Scholarship', desc: 'Granted $3K by Xbox G4E to attend the GDC Festival of Gaming.', emoji: '🎮' },
+    { org: 'Paramount', year: 'Feb 2026', title: 'Paramount Media & Entertainment Case Competition', desc: 'First UCR team to ever reach the National Finals, finishing as National Semifinalist.', emoji: '🏆' },
+    { org: 'UC Riverside', year: '2026', title: 'AAPI Recognition Celebration', desc: 'Honored by UCR for embodying AAPI excellence.', emoji: '🌟' },
+  ];
+  return (
+    <section id="honors" style={{ padding: isMobile ? '56px 20px' : '72px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+      <div style={{
+        fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+        letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d42020', marginBottom: 14,
+      }}>Honors & Awards</div>
+      <h2 style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: isMobile ? 28 : 38, fontWeight: 700, color: '#1a1410',
+        letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: isMobile ? 28 : 40,
+      }}>Recognition along the way.</h2>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+        gap: isMobile ? 16 : 20,
+      }}>
+        {honors.map((h) => (
+          <div key={h.title} style={{
+            background: 'white', border: '2.5px solid #111', borderRadius: 16,
+            boxShadow: '4px 4px 0 #111', padding: '22px 22px 24px',
+            display: 'flex', flexDirection: 'column',
+          }}>
+            <div style={{ fontSize: 30, marginBottom: 14 }}>{h.emoji}</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.1em', textTransform: 'uppercase', color: '#8c7a70', marginBottom: 8,
+            }}>{h.org} · {h.year}</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 17, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.02em', lineHeight: 1.25, marginBottom: 8,
+            }}>{h.title}</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
+              color: '#6b5c52', lineHeight: 1.6, margin: 0,
+            }}>{h.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 // ── Video highlight (curated, inline) ─────────────────────
 const VideoHighlight = ({ onNavigate }) => {
   const isMobile = useWindowWidth() < 768;
