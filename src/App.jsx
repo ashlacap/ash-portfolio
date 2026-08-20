@@ -1032,7 +1032,7 @@ const App = () => {
     window.scrollTo({ top: 0 });
   }, [page]);
 
-  const scrollSections = ['work', 'side-quests', 'graphic-design', 'video-edits', 'contact'];
+  const scrollSections = ['work', 'side-quests', 'video-edits', 'contact'];
 
   const handleNavigate = (target) => {
     if (target === 'contact-modal') { setShowContact(true); return; }
