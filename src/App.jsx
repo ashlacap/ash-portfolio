@@ -278,62 +278,6 @@ const SideQuestsSection = ({ onNavigate }) =>
           </div>
         </div>
 
-        {/* AGSM Student Association */}
-        <div style={{
-          flex: '1 1 300px', background: 'white',
-          border: '2.5px solid #111', borderRadius: 16,
-          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
-        }}>
-          {/* Visual header: AGSM cover */}
-          <div style={{
-            height: 140, position: 'relative', overflow: 'hidden',
-            background: '#1e2a5e', borderBottom: '2.5px solid #111',
-          }}>
-            <img loading="lazy" src="/agsm-cover.png" alt="AGSM Student Association"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
-          </div>
-
-          {/* Content */}
-          <div style={{ padding: '18px 20px 20px' }}>
-            <div style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
-              letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: '#3a6ea5', marginBottom: 8,
-            }}>Leadership · Marketing & PR</div>
-            <div style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
-              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
-            }}>AGSM Student Association</div>
-            <p style={{
-              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
-              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
-            }}>
-              As Director of Marketing & Public Relations, rebuilt the content strategy across social, email, and PR to grow engagement and event turnout 40%, leading a team of 10+ with a unified brand identity.
-            </p>
-
-            {/* Tech stack */}
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-              {['Content Strategy', 'Team Leadership', 'Brand Identity', 'Video & Design'].map(t => (
-                <span key={t} style={{
-                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
-                  color: '#4a3e36', background: '#f0ece8',
-                  padding: '4px 10px', borderRadius: 20,
-                  border: '1.5px solid #e4dfdc',
-                }}>{t}</span>
-              ))}
-            </div>
-
-            {/* Link */}
-            <button
-              onClick={() => onNavigate('case-study/agsm')}
-              style={viewWorkBtnStyle}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-              View My Work →
-            </button>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>;
