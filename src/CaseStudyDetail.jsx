@@ -122,7 +122,7 @@ const ImageCarousel = ({ title, subtitle, slides }) => {
   );
 };
 
-const CaseStudyDetail = ({ slug, onBack }) => {
+const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
   const isMobile = useWindowWidth() < 768;
   const studies = {
     valobanners: {
