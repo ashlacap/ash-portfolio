@@ -90,9 +90,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     tag: 'Data Analyst · Performance',
     title: 'H&R Block',
     description: 'Wrote BigQuery + SQL to extract campaign and user behavior data at scale, and ran statistical A/B tests on email and landing pages that cut cost-per-acquisition 22% and lifted conversion 68% YoY.',
-    bgColor: '#ffffff',
-    accentColor: '#00a651',
-    imageContent: <img loading="lazy" src="/hr-block-logo.webp" alt="H&R Block" style={{ width: '62%', height: '62%', objectFit: 'contain', margin: 'auto' }} />
+    bgColor: '#006940',
+    accentColor: '#5ec8a0',
+    imageContent: <img loading="lazy" src="/hr-block-logo.webp" alt="H&R Block" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   },
   {
     slug: 'agsm',
