@@ -180,6 +180,65 @@ const SideQuestsSection = () =>
       {/* Right: project cards */}
       <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: 20 }}>
 
+        {/* THE GROVE */}
+        <div style={{
+          flex: '1 1 300px', background: 'white',
+          border: '2.5px solid #111', borderRadius: 16,
+          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        }}>
+          {/* Visual header: Grove cover */}
+          <div style={{
+            height: 140, position: 'relative', overflow: 'hidden',
+            background: '#0a1a0c', borderBottom: '2.5px solid #111',
+          }}>
+            <img loading="lazy" src="/grove-cover.png" alt="THE GROVE"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: '18px 20px 20px' }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: '#2f7d4f', marginBottom: 8,
+            }}>Startup · Co-Founder & Builder</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
+            }}>THE GROVE</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
+              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
+            }}>
+              An AI data platform for entertainment, gaming, and live events. I co-founded it and designed and built the full product myself, from an AI asset pipeline to an encrypted transfer layer. YC applicant.
+            </p>
+
+            {/* Tech stack */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+              {['React', 'Gemini 2.5 Flash', 'AES-256', 'Google AI SDK'].map(t => (
+                <span key={t} style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
+                  color: '#4a3e36', background: '#f0ece8',
+                  padding: '4px 10px', borderRadius: 20,
+                  border: '1.5px solid #e4dfdc',
+                }}>{t}</span>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div style={{ display: 'flex', gap: 10 }}>
+              <a href="https://thegrove.cloud" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 700,
+                color: 'white', background: '#1a4d2e',
+                padding: '9px 18px', borderRadius: 8,
+                border: '2px solid #111', boxShadow: '3px 3px 0 #111',
+                textDecoration: 'none',
+              }}>Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+
         {/* Instagram Unfollowers */}
         <div style={{
           flex: '1 1 300px', background: 'white',
