@@ -110,7 +110,7 @@ const Hero = ({ onNavigate }) => {
             color: '#6b5c52', lineHeight: 1.75,
             maxWidth: isMobile ? '100%' : 440, marginBottom: 40,
           }}>
-            Creative marketer specializing in Gen Z engagement, social strategy, and community-driven campaigns.
+            Marketing analyst and strategist who turns data into growth, blending SQL, A/B testing, and dashboards with brand and social expertise.
           </p>
 
           <div style={{
