@@ -736,14 +736,19 @@ const ToolboxSection = () => {
             </g>
           </svg>
 
-          {/* Prompt label on the base */}
+          {/* Prompt label below the toolbox */}
           <div style={{
-            position: 'absolute', left: 0, right: 0, bottom: isMobile ? '9%' : '9%',
-            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 12 : 13, fontWeight: 700,
-            color: 'white', letterSpacing: '0.01em', pointerEvents: 'none',
-            textShadow: '0 1px 2px rgba(0,0,0,0.4)', padding: '0 20px',
+            marginTop: 16,
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, fontWeight: 700,
+            color: '#1a1410', letterSpacing: '0.01em',
+            display: 'inline-flex', alignItems: 'center', gap: 6,
           }}>
             {open ? 'Click to close' : 'Click here to view my tools'}
+            <span style={{
+              display: 'inline-block',
+              transform: open ? 'rotate(180deg)' : 'none',
+              transition: 'transform 300ms ease',
+            }}>↓</span>
           </div>
         </button>
 
