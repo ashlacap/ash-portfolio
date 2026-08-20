@@ -110,7 +110,7 @@ const Hero = ({ onNavigate }) => {
             color: '#6b5c52', lineHeight: 1.75,
             maxWidth: isMobile ? '100%' : 440, marginBottom: 40,
           }}>
-            Data analyst and UC Riverside MBA who turns data into growth, blending SQL, A/B testing, and dashboards with deep gaming expertise.
+            Data Analyst and UC Riverside MBA who transforms data into growth, blending SQL, A/B testing, and dashboards with deep gaming expertise.
           </p>
 
           <div style={{
