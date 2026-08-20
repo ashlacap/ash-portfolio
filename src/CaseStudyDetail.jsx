@@ -241,7 +241,6 @@ const CaseStudyDetail = ({ slug, onBack }) => {
       role: "MGT 257: Marketing Strategy · UC Riverside",
       bgColor: "#111318",
       accentColor: "#e01a2b",
-      coverImage: "/hot-wheels-logo.jpg",
       intro: "A data-driven monetization and retention strategy for a Hot Wheels racing game, built on player segmentation and forecasted ARPU.",
       overview: "For MGT 257: Marketing Strategy, I designed the analytics behind a Hot Wheels racing game's live-service model. I surveyed players, segmented them by behavior, and forecasted the ARPU impact of tailored battle pass pricing, then validated each recommendation with retention cohorts and engagement curves.",
       outcomes: [
