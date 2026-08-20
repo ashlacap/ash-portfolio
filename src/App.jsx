@@ -1157,7 +1157,7 @@ const App = () => {
             <ResultsBand />
             <WorkSection onNavigate={handleNavigate} tweaks={tweaks} />
             <HonorsBand />
-            <SideQuestsSection />
+            <SideQuestsSection onNavigate={handleNavigate} />
             <VideoHighlight onNavigate={handleNavigate} />
             <ContactSection onContact={() => setShowContact(true)} />
           </>);
