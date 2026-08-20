@@ -131,7 +131,7 @@ const AboutSection = () => {
 
           {/* Skill tags */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-            {['Integrated Campaigns', 'Influencer Marketing', 'Social Strategy', 'Performance Analytics', 'Brand Messaging', 'Email and Content'].map(s => (
+            {['Data Visualization', 'A/B Testing', 'SQL & Python', 'Performance Analytics', 'Brand Strategy', 'Social Strategy'].map(s => (
               <span key={s} style={{
                 fontFamily: "'DM Sans', sans-serif", fontSize: 12, fontWeight: 500,
                 color: '#1e2a5e', background: '#e0e4f5',
