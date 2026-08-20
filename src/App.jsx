@@ -808,7 +808,7 @@ const ContactSection = ({ onContact }) =>
     fontFamily: "'DM Sans', sans-serif", fontSize: 16,
     color: '#8a99d8', maxWidth: 400, margin: '0 auto 40px', lineHeight: 1.7
   }}>
-      Have a project in mind? Or just want to talk marketing?
+      Have a project in mind? Or just want to talk data?
       I'm always up for a good conversation.
     </p>
     <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
