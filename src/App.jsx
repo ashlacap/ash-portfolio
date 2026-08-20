@@ -179,21 +179,21 @@ const SideQuestsSection = () =>
               fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
               letterSpacing: '0.12em', textTransform: 'uppercase',
               color: '#2f7d4f', marginBottom: 8,
-            }}>Startup · Co-Founder & Builder</div>
+            }}>Startup · Data Analytics · USC Accelerator</div>
             <div style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
               color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
-            }}>THE GROVE</div>
+            }}>GROVE.CLOUD</div>
             <p style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: 13,
               color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
             }}>
-              An AI data platform for entertainment, gaming, and live events. I co-founded it and designed and built the full product myself, from an AI asset pipeline to an encrypted transfer layer. YC applicant.
+              Selected into a competitive USC startup accelerator, I built the data ingestion architecture that extracts and processes game and entertainment telemetry in Python, then wrote SQL and Python to transform raw data into the metrics and KPI tracking that informed product roadmap decisions.
             </p>
 
             {/* Tech stack */}
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-              {['React', 'Gemini 2.5 Flash', 'AES-256', 'Google AI SDK'].map(t => (
+              {['Python', 'SQL', 'Data Ingestion', 'KPI Tracking'].map(t => (
                 <span key={t} style={{
                   fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
                   color: '#4a3e36', background: '#f0ece8',
