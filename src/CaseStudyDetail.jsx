@@ -126,25 +126,25 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
   const isMobile = useWindowWidth() < 768;
   const studies = {
     valobanners: {
-      tag: "Marketing Analyst · LiveOps · Gaming",
+      tag: "Marketing Manager · Merchandising · Gaming",
       title: "VALOBANNERS",
-      period: "May 2022 – Aug 2024",
-      role: "Marketing Analyst, LiveOps · Valorant Merchandising · Remote",
+      period: "Aug 2021 – Aug 2024",
+      role: "Marketing Manager, Merchandising · Valorant Merchandising · Remote",
       bgColor: "#141b42",
       accentColor: "#ffd024",
-      intro: "Turning player behavior data into product decisions for a Valorant merchandising and LiveOps operation.",
-      overview: "As Marketing Analyst on the LiveOps team, I built the analytics infrastructure that told the team what to build and price next. I tracked core game and merchandise KPIs, ran a rigorous A/B testing program, and translated player behavior into feature and roadmap decisions, from battle pass structures to seasonal merchandise drops.",
+      intro: "Created and led the marketing function for a Valorant merchandising brand, turning social analytics into growth and senior-leadership recommendations.",
+      overview: "I created and led the marketing function for VALOBANNERS from the ground up, starting as Marketing Coordinator and growing into Marketing Manager. Over three years I built brand guidelines, tracked performance across every platform, and transformed social analytics into data-rich insights that shaped both marketing decisions and business strategy.",
       outcomes: [
-        { metric: "+18%", label: "YoY ARPU growth" },
-        { metric: "+25%", label: "Player retention" },
-        { metric: "95%", label: "Data accuracy" },
+        { metric: "18-25%", label: "QoQ follower growth" },
+        { metric: "+25%", label: "Monthly sales lift" },
+        { metric: "40+", label: "KPIs tracked" },
       ],
       bullets: [
-        "Built Mixpanel and Tableau dashboards tracking 15+ core game KPIs (retention cohorts, ARPU, churn rate, event performance, economy health), enabling the LiveOps team to identify optimization opportunities and implement data-driven feature adjustments.",
-        "Wrote SQL queries to extract player behavior data and built Python scripts to automate weekly performance analysis; identified engagement trends and monetization opportunities that informed 8+ feature optimizations, reducing decision cycles by 40% and contributing to 18% YoY ARPU growth.",
-        "Designed and executed A/B tests on battle pass reward structures and in-game events, analyzing player behavior data to improve retention by 25% and ARPU by 18%, informing product roadmap decisions for senior leadership.",
-        "Collaborated with design and product teams to implement game telemetry tracking, establishing data collection standards and validation processes; improved data accuracy by 95% and enabled 12+ rigorous A/B tests monthly that previously lacked reliable validation infrastructure.",
-        "Designed and executed A/B tests for seasonal merchandise drop campaigns, analyzing customer behavior data to improve follower retention by 25% and ARPU by 18%, informing product roadmap decisions for senior leadership.",
+        "Created and led the marketing function, which heavily supported business growth and new partnerships.",
+        "Drove measurable follower growth across client accounts, achieving 18-25% quarter-over-quarter growth through strategic content planning and campaign execution that balanced brand consistency with platform-specific content optimization.",
+        "Transformed social analytics into data-rich insights and delivered recommendations to senior leadership, resulting in a 25% increase in monthly sales and turning social momentum into direct commercial outcomes.",
+        "As Marketing Coordinator, built brand guidelines and ensured all teams understood how best to meet them, providing marketing insights and support across projects.",
+        "Optimized campaign performance by tracking 40+ KPIs across platform analytics dashboards, generating weekly performance reports that enabled client engagement rates of 4-6% on TikTok and 2-3% on Instagram.",
       ],
       coverImage: "/valobanners-cover.png",
       carousel: {
