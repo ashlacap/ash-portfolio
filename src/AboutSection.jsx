@@ -198,6 +198,47 @@ const AboutSection = () => {
         </div>
       </div>
 
+      {/* ── Video Editing Showcase ──────────────────────────── */}
+      <div style={{ padding: isMobile ? '56px 20px' : '72px 48px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{
+            fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+            letterSpacing: '0.14em', textTransform: 'uppercase',
+            color: '#d42020', marginBottom: 8,
+          }}>Video Editing</div>
+          <h2 style={{
+            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 24 : 32, fontWeight: 700,
+            color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
+          }}>Short-form content that performs.</h2>
+          <p style={{
+            fontFamily: "'DM Sans', sans-serif", fontSize: 14,
+            color: '#6b5c52', lineHeight: 1.7, marginBottom: 28, maxWidth: 560,
+          }}>
+            Nearly a decade of editing, from esports hype cuts to agency client work. A few favorites below.
+          </p>
+
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
+            justifyContent: isMobile ? 'center' : 'flex-start',
+          }}>
+            {[
+              { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', tag: 'Esports' },
+              { src: '/CartZilla%201.mp4', label: 'CartZilla Reel', tag: 'Agency · SVA' },
+              { src: '/Student%20Association%20Reel%201.mp4', label: 'Student Association Reel', tag: 'Leadership · AGSM' },
+            ].map((c) => (
+              <div key={c.src} style={{ width: isMobile ? '76%' : 260 }}>
+                <VideoCard src={c.src} label={c.label} accent="#ffd024" style={{ width: '100%', aspectRatio: '9 / 16' }} />
+                <div style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
+                  letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8c7a70',
+                  marginTop: 10, textAlign: isMobile ? 'center' : 'left',
+                }}>{c.tag}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ── Photography Carousel ──────────────────────────── */}
       <div style={{ padding: isMobile ? '56px 20px' : '72px 48px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
