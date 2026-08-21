@@ -249,7 +249,7 @@ const SideQuestsSection = ({ onNavigate }) =>
               fontFamily: "'DM Sans', sans-serif", fontSize: 13,
               color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
             }}>
-              Selected into a competitive USC startup accelerator, I built the data ingestion architecture that extracts and processes game and entertainment telemetry in Python, then wrote SQL and Python to transform raw data into the metrics and KPI tracking that informed product roadmap decisions.
+              Selected into a competitive USC startup accelerator, I built the data ingestion architecture that extracts and processes interactive gaming telemetry in Python, then wrote SQL and Python to transform raw data into the metrics and KPI tracking that informed product roadmap decisions.
             </p>
 
             {/* Tech stack */}
