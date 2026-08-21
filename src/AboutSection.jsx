@@ -262,7 +262,7 @@ const AboutSection = () => {
 
       {/* ── Photography Carousel ──────────────────────────── */}
       <div style={{ padding: isMobile ? '56px 20px' : '72px 48px' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{
             fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
             letterSpacing: '0.14em', textTransform: 'uppercase',
