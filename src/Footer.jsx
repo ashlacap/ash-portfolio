@@ -37,7 +37,7 @@ const Footer = ({ onNavigate }) => {
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 14, color: '#5e71c4', lineHeight: 1.5, maxWidth: 240
         }}>
-            Data Analytics that inform business decisions and drive player engagement.
+            Built with Claude and matcha 💚
           </div>
         </div>
 
