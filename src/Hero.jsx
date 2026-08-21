@@ -129,7 +129,7 @@ const Hero = ({ onNavigate }) => {
               }}
               onMouseEnter={e => { e.currentTarget.style.boxShadow = '6px 6px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = '4px 4px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-              See the Work →
+              See My Work →
             </button>
             <button
               onClick={() => onNavigate('about')}
