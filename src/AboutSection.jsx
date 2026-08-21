@@ -240,7 +240,7 @@ const AboutSection = () => {
 
           <div style={{
             display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
-            justifyContent: isMobile ? 'center' : 'flex-start',
+            justifyContent: 'center',
           }}>
             {[
               { src: '/flyquest-fly-vs-sen-edit.mp4', label: 'FlyQuest · FLY vs SEN', tag: 'Esports' },
