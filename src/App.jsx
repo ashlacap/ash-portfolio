@@ -67,9 +67,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   const projects = [
   {
     slug: 'valobanners',
-    tag: 'Marketing Analyst · LiveOps · Gaming',
+    tag: 'Marketing Manager · Merchandising · Gaming',
     title: 'VALOBANNERS',
-    description: 'Built Mixpanel and Tableau dashboards tracking 15+ core game KPIs, ran 12+ A/B tests monthly, and used SQL + Python analysis to drive an 18% YoY ARPU lift and 25% retention improvement.',
+    description: 'Created and led the marketing function for a Valorant merchandising brand, driving 18-25% quarter-over-quarter follower growth and turning social analytics into leadership recommendations that lifted monthly sales 25%.',
     bgColor: '#141b42',
     accentColor: '#ffd024',
     featured: true,
@@ -77,9 +77,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   },
   {
     slug: 'samsung',
-    tag: 'Business Intelligence · Agency',
+    tag: 'Marketing Strategy & Analytics · Agency',
     title: 'Social View Agency',
-    description: 'As Business Intelligence MBA Intern, designed A/B tests with SQL and Tableau that lifted user conversion +13%, and built automated dashboards tracking 12+ campaign KPIs to speed optimization decisions by 50%.',
+    description: 'As Marketing Strategy & Analytics MBA Intern, built product launch campaigns for the viral CartZilla brand and analyzed 200+ social posts against sales data to identify content opportunities and guide business intelligence.',
     bgColor: '#1a1410',
     accentColor: '#8a99d8',
     featured: true,
@@ -87,9 +87,9 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   },
   {
     slug: 'hr-block',
-    tag: 'Data Analyst · Performance',
+    tag: 'Data Analyst · Performance Marketing',
     title: 'H&R Block',
-    description: 'Wrote BigQuery + SQL to extract campaign and user behavior data at scale, and ran statistical A/B tests on email and landing pages that cut cost-per-acquisition 22% and lifted conversion 68% YoY.',
+    description: 'Designed and executed A/B tests on email and landing page messaging, visualizing marketing analytics in Python/SQL to inform business decisions that cut cost-per-lead 15% and lifted conversion 68% YoY.',
     bgColor: '#006940',
     accentColor: '#5ec8a0',
     imageContent: <img loading="lazy" src="/hr-block-logo.webp" alt="H&R Block" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
