@@ -566,7 +566,7 @@ const HonorsBand = () => {
   const honors = [
     { org: 'Microsoft Xbox', year: 'Mar 2026', title: 'Xbox Gaming For Everyone Scholarship', desc: 'Granted $3K by Xbox G4E to attend the GDC Festival of Gaming.', emoji: '🎮' },
     { org: 'Paramount', year: 'Feb 2026', title: 'Paramount Media & Entertainment Case Competition', desc: 'First UCR team to ever reach the National Finals, finishing as National Semifinalist.', emoji: '🏆' },
-    { org: 'UC Riverside', year: '2026', title: 'AAPI Recognition Celebration', desc: 'Honored by UCR for embodying AAPI excellence.', emoji: '🌟' },
+    { org: 'UC Riverside', year: '2026', title: 'AAPI Recognition Celebration', desc: 'Honored by UCR for embodying AAPI excellence, academic achievement and leadership.', emoji: '🌟' },
   ];
   return (
     <section id="honors" style={{ padding: isMobile ? '56px 20px' : '72px 48px', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
