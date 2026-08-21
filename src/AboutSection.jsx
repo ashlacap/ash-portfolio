@@ -1,5 +1,6 @@
 // About Section
 import React, { useState, useEffect } from 'react'
+import VideoCard from './VideoCard'
 
 const useWindowWidth = () => {
   const [w, setW] = useState(window.innerWidth);
