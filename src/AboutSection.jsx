@@ -70,7 +70,7 @@ const AboutSection = () => {
           {/* Education cards */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              { degree: 'MBA, Marketing and Business Analytics', school: 'University of California, Riverside · Expected 2026' },
+              { degree: 'MBA, Marketing and Business Analytics', school: 'University of California, Riverside · 2026' },
               { degree: 'BS, Marketing', school: 'California State University, Northridge · 2022' },
             ].map(e => (
               <div key={e.school} style={{
