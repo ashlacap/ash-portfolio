@@ -160,7 +160,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
           "/reversah-7.jpg",
         ],
       },
-      tools: ["SQL", "Python", "Mixpanel", "Tableau", "A/B Testing", "Game Telemetry"],
+      tools: ["Campaign Strategy", "Social Analytics", "Brand Guidelines", "KPI Dashboards", "Meta Business Suite"],
       images: [
         { src: "/valobanners-banners.gif", caption: "Product lineup: physical Valorant-inspired banners available in multiple map themes." },
         { src: "/valobanners-shop.png", caption: "E-commerce experience and order flow across desktop and mobile." },
