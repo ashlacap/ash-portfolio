@@ -685,7 +685,6 @@ const ToolboxSection = () => {
     { name: 'Claude Code', icon: '🤖' },
     { name: 'GitHub', icon: '🐙' },
     { name: 'Vercel', icon: '▲' },
-    { name: 'Claude', icon: '🤖' },
   ];
 
   return (
