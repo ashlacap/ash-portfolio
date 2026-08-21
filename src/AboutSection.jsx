@@ -206,16 +206,37 @@ const AboutSection = () => {
             letterSpacing: '0.14em', textTransform: 'uppercase',
             color: '#d42020', marginBottom: 8,
           }}>Video Editing</div>
-          <h2 style={{
-            fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 24 : 32, fontWeight: 700,
-            color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
-          }}>Short-form content that performs.</h2>
-          <p style={{
-            fontFamily: "'DM Sans', sans-serif", fontSize: 14,
-            color: '#6b5c52', lineHeight: 1.7, marginBottom: 28, maxWidth: 560,
+          <div style={{
+            display: 'flex', flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'flex-end',
+            gap: 16, marginBottom: isMobile ? 20 : 28,
           }}>
-            Nearly a decade of editing, from esports hype cuts to agency client work. A few favorites below.
-          </p>
+            <div>
+              <h2 style={{
+                fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 24 : 32, fontWeight: 700,
+                color: '#1a1410', letterSpacing: '-0.03em', marginBottom: 8,
+              }}>Short-form content that performs.</h2>
+              <p style={{
+                fontFamily: "'DM Sans', sans-serif", fontSize: 14,
+                color: '#6b5c52', lineHeight: 1.7, maxWidth: 560, marginBottom: 0,
+              }}>
+                Nearly a decade of editing, from esports hype cuts to agency client work. A few favorites below.
+              </p>
+            </div>
+            <a href="https://www.tiktok.com/@lumpiugh" target="_blank" rel="noopener noreferrer" style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 700,
+              color: '#1e2a5e', background: 'white',
+              padding: '10px 20px', borderRadius: 8,
+              border: '2.5px solid #111', boxShadow: '3px 3px 0 #111',
+              cursor: 'pointer', whiteSpace: 'nowrap', textDecoration: 'none',
+              display: 'inline-block',
+              transition: 'box-shadow 120ms, transform 120ms',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+            onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              See more ↗
+            </a>
+          </div>
 
           <div style={{
             display: 'flex', flexWrap: 'wrap', gap: isMobile ? 16 : 24,
