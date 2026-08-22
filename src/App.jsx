@@ -790,9 +790,14 @@ const ToolboxSection = () => {
                     opacity: open ? 1 : 0,
                     transition: `transform 420ms cubic-bezier(0.34,1.5,0.5,1) ${delay}ms, opacity 300ms ease ${delay}ms`,
                   }}>
-                    <span style={{ fontSize: 18, lineHeight: 1 }}>{t.icon}</span>
+                    <span style={{
+                      fontSize: 18, lineHeight: '18px', width: 18, height: 18,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      flexShrink: 0,
+                    }}>{t.icon}</span>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410',
+                      lineHeight: '18px',
                     }}>{t.name}</span>
                   </div>
                 );
