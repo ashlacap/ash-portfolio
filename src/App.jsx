@@ -170,11 +170,11 @@ const SideQuestsSection = ({ onNavigate }) =>
       </div>
 
       {/* Project cards: 3 across */}
-      <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+      <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 20, justifyContent: 'center' }}>
 
         {/* Hot Wheels Racing Game */}
         <div style={{
-          flex: '1 1 300px', background: 'white',
+          flex: '1 1 260px', maxWidth: 360, background: 'white',
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
@@ -230,7 +230,7 @@ const SideQuestsSection = ({ onNavigate }) =>
 
         {/* THE GROVE */}
         <div style={{
-          flex: '1 1 300px', background: 'white',
+          flex: '1 1 260px', maxWidth: 360, background: 'white',
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
@@ -289,7 +289,7 @@ const SideQuestsSection = ({ onNavigate }) =>
 
         {/* Liquid Death */}
         <div style={{
-          flex: '1 1 300px', background: 'white',
+          flex: '1 1 260px', maxWidth: 360, background: 'white',
           border: '2.5px solid #111', borderRadius: 16,
           overflow: 'hidden', boxShadow: '4px 4px 0 #111',
         }}>
