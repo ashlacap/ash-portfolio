@@ -287,6 +287,62 @@ const SideQuestsSection = ({ onNavigate }) =>
           </div>
         </div>
 
+        {/* Liquid Death */}
+        <div style={{
+          flex: '1 1 300px', background: 'white',
+          border: '2.5px solid #111', borderRadius: 16,
+          overflow: 'hidden', boxShadow: '4px 4px 0 #111',
+        }}>
+          {/* Visual header: Liquid Death cover */}
+          <div style={{
+            height: 140, position: 'relative', overflow: 'hidden',
+            background: '#2d0606', borderBottom: '2.5px solid #111',
+          }}>
+            <img loading="lazy" src="/liquid-death-cover.webp" alt="Liquid Death"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: '18px 20px 20px' }}>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: '#e05050', marginBottom: 8,
+            }}>Academic · Consumer Insights</div>
+            <div style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 20, fontWeight: 700,
+              color: '#1a1410', letterSpacing: '-0.025em', marginBottom: 8,
+            }}>Liquid Death</div>
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: 13,
+              color: '#6b5c52', lineHeight: 1.65, marginBottom: 14,
+            }}>
+              Analyzed 300+ consumer survey responses to identify key market segments and developed a full advertising and promotion strategy rooted in Liquid Death's punk-rock, anti-corporate identity.
+            </p>
+
+            {/* Tech stack */}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+              {['Consumer Insights', 'Survey Research', 'Tableau', 'Brand Positioning'].map(t => (
+                <span key={t} style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 500,
+                  color: '#4a3e36', background: '#f0ece8',
+                  padding: '4px 10px', borderRadius: 20,
+                  border: '1.5px solid #e4dfdc',
+                }}>{t}</span>
+              ))}
+            </div>
+
+            {/* Link */}
+            <button
+              onClick={() => onNavigate('case-study/liquid-death')}
+              style={viewWorkBtnStyle}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '5px 5px 0 #111'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '3px 3px 0 #111'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              View My Work →
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>;
