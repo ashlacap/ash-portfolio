@@ -67,7 +67,7 @@ const WorkSection = ({ onNavigate, tweaks }) => {
   const projects = [
   {
     slug: 'valobanners',
-    tag: 'Marketing Manager · Merchandising · Entertainment',
+    tag: 'Marketing Manager · Merchandising · Gaming',
     title: 'VALOBANNERS',
     description: 'Created and led the marketing function for a Valorant merchandising brand, driving 18-25% quarter-over-quarter follower growth and turning social analytics into leadership recommendations that lifted monthly sales 25%.',
     bgColor: '#141b42',
