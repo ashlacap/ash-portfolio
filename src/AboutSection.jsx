@@ -15,7 +15,6 @@ const useWindowWidth = () => {
 const AboutSection = () => {
   const photoSlides = [
     '/photo-rocks.jpg',
-    '/photo-pool.jpg',
     '/photo-fire.png',
     '/photo-concert.png',
     '/photo-gaming.jpg',
