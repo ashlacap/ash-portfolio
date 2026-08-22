@@ -803,13 +803,12 @@ const ToolboxSection = () => {
                     transition: `transform 420ms cubic-bezier(0.34,1.5,0.5,1) ${delay}ms, opacity 300ms ease ${delay}ms`,
                   }}>
                     <span style={{
-                      fontSize: 26, lineHeight: '26px', width: 26, height: 26,
+                      width: 20, height: 20,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       flexShrink: 0,
                     }}>{t.icon}</span>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410',
-                      lineHeight: '26px',
                     }}>{t.name}</span>
                   </div>
                 );
