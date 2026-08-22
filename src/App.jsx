@@ -94,6 +94,15 @@ const WorkSection = ({ onNavigate, tweaks }) => {
     accentColor: '#5ec8a0',
     imageContent: <img loading="lazy" src="/hr-block-logo.webp" alt="H&R Block" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
   },
+  {
+    slug: 'agsm',
+    tag: 'Leadership · Marketing & PR',
+    title: 'AGSM Student Association',
+    description: 'As Director of Marketing & Public Relations, rebuilt the content strategy across social, email, and PR to grow engagement and event turnout 40%, leading a team of 10+ with a unified brand identity.',
+    bgColor: '#1e2a5e',
+    accentColor: '#7ecaef',
+    imageContent: <img loading="lazy" src="/agsm-cover.png" alt="AGSM Student Association" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }} />
+  },
   ];
 
 
