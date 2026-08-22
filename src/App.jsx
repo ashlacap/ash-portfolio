@@ -149,8 +149,8 @@ const SideQuestsSection = ({ onNavigate }) =>
 <div id="side-quests" className="side-quests-section">
     <div className="side-quests-inner">
 
-      {/* Left: intro text */}
-      <div style={{ flexShrink: 0, maxWidth: 400 }}>
+      {/* Intro text */}
+      <div style={{ maxWidth: 640 }}>
         <div style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 700,
           letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a6400', marginBottom: 14
@@ -169,8 +169,8 @@ const SideQuestsSection = ({ onNavigate }) =>
         </p>
       </div>
 
-      {/* Right: project cards */}
-      <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+      {/* Project cards: 3 across */}
+      <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 20 }}>
 
         {/* Hot Wheels Racing Game */}
         <div style={{
