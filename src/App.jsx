@@ -768,8 +768,8 @@ const ToolboxSection = () => {
 
         {/* Revealed tools: spill out of the box */}
         <div style={{
-          overflow: 'hidden',
-          maxHeight: open ? 600 : 0,
+          overflow: open ? 'visible' : 'hidden',
+          maxHeight: open ? 1200 : 0,
           transition: 'max-height 460ms ease',
           marginTop: open ? 28 : 0,
         }}>
