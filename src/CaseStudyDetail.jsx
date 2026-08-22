@@ -126,7 +126,7 @@ const CaseStudyDetail = ({ slug, onBack, backLabel = "Back to Work" }) => {
   const isMobile = useWindowWidth() < 768;
   const studies = {
     valobanners: {
-      tag: "Marketing Manager · Merchandising · Entertainment",
+      tag: "Marketing Manager · Merchandising · Gaming",
       title: "VALOBANNERS",
       period: "Aug 2021 – Aug 2024",
       role: "Marketing Manager, Merchandising · Valorant Merchandising · Remote",
