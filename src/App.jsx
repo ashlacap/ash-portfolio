@@ -795,9 +795,9 @@ const ToolboxSection = () => {
                 const delay = 180 + (rowIdx === 0 ? i : tools.length + i) * 55;
                 return (
                   <div key={t.name} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 9,
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
                     background: 'white', border: '2.5px solid #111', borderRadius: 12,
-                    boxShadow: '3px 3px 0 #111', padding: '12px 18px',
+                    boxShadow: '3px 3px 0 #111', padding: '10px 16px',
                     transform: open ? 'translateY(0) scale(1)' : 'translateY(-28px) scale(0.85)',
                     opacity: open ? 1 : 0,
                     transition: `transform 420ms cubic-bezier(0.34,1.5,0.5,1) ${delay}ms, opacity 300ms ease ${delay}ms`,
