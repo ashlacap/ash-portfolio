@@ -159,13 +159,13 @@ const SideQuestsSection = ({ onNavigate }) =>
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 38, fontWeight: 700, color: '#1a1410',
           letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 16
-        }}>Analytics for Gaming</h2>
+        }}>Analytics for Entertainment</h2>
         <p style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: 16,
           color: '#6b5c52', lineHeight: 1.75, marginBottom: 0
         }}>
-          I live and breathe gaming, so I'm always looking for new opportunities to apply
-          my data analytics skills to the gaming ecosystem. Take a look!
+          I live and breathe entertainment, so I'm always looking for new opportunities to apply
+          my data analytics skills to the entertainment ecosystem. Take a look!
         </p>
       </div>
 
