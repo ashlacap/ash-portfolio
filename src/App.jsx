@@ -682,30 +682,18 @@ const ToolboxSection = () => {
   const isMobile = useWindowWidth() < 768;
   const [open, setOpen] = useState(false);
 
-  const iconProps = { width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none', stroke: '#111', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
-  const icons = {
-    python: <svg {...iconProps}><path d="M12 2c-1.5 0-2.5.5-2.5 2v2h5v1H6.5C5 7 4 8.5 4 11s1 4 2.5 4H9v-2c0-1.5 1-2.5 2.5-2.5h4c1.5 0 2.5-1 2.5-2.5V4c0-1.5-1-2-2.5-2h-3.5Z" /><path d="M12 22c1.5 0 2.5-.5 2.5-2v-2h-5v-1h8c1.5 0 2.5-1.5 2.5-4s-1-4-2.5-4H15v2c0 1.5-1 2.5-2.5 2.5h-4C7 13.5 6 14.5 6 16v4c0 1.5 1 2 2.5 2H12Z" /><circle cx="9.5" cy="5" r=".6" fill="#111" /><circle cx="14.5" cy="19" r=".6" fill="#111" /></svg>,
-    sql: <svg {...iconProps}><ellipse cx="12" cy="5" rx="7" ry="3" /><path d="M5 5v14c0 1.66 3.13 3 7 3s7-1.34 7-3V5" /><path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" /></svg>,
-    meta: <svg {...iconProps}><rect x="3" y="3" width="18" height="18" rx="4" /><path d="M7 15c1.5-4 2.8-6 4-6s1.5 2 2 4 1 3.5 2.2 3.5S17 14.5 17 11" /></svg>,
-    googleAnalytics: <svg {...iconProps}><path d="M4 20V10M12 20V4M20 20v-6" /></svg>,
-    excel: <svg {...iconProps}><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 8l8 8M16 8l-8 8" /></svg>,
-    adobe: <svg {...iconProps}><path d="M12 4 4 20h5l3-7 3 7h5L12 4Z" /></svg>,
-    claude: <svg {...iconProps}><circle cx="12" cy="12" r="9" /><path d="M8 10c0-1.5 1.5-3 4-3s4 1.5 4 3-1.5 2-4 3-4 1.5-4 3 1.5 3 4 3 4-1.5 4-3" /></svg>,
-    github: <svg {...iconProps}><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.5v-1.9c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5C19.13 20.5 22 16.7 22 12.2 22 6.58 17.52 2 12 2Z" /></svg>,
-    vercel: <svg {...iconProps}><path d="M12 3 22 21H2L12 3Z" /></svg>,
-  };
   const tools = [
-    { name: 'Python', icon: icons.python },
-    { name: 'SQL', icon: icons.sql },
-    { name: 'Meta Business Suite', icon: icons.meta },
-    { name: 'Google Analytics', icon: icons.googleAnalytics },
-    { name: 'Excel', icon: icons.excel },
-    { name: 'Adobe Creative Cloud', icon: icons.adobe },
+    { name: 'Python', icon: '🐍' },
+    { name: 'SQL', icon: '🗄️' },
+    { name: 'Meta Business Suite', icon: '📘' },
+    { name: 'Google Analytics', icon: '📉' },
+    { name: 'Excel', icon: '📗' },
+    { name: 'Adobe Creative Cloud', icon: '🎨' },
   ];
   const devTools = [
-    { name: 'Claude Code', icon: icons.claude },
-    { name: 'GitHub', icon: icons.github },
-    { name: 'Vercel', icon: icons.vercel },
+    { name: 'Claude Code', icon: '🤖' },
+    { name: 'GitHub', icon: '🐙' },
+    { name: 'Vercel', icon: '▲' },
   ];
 
   return (
