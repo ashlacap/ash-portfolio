@@ -783,21 +783,21 @@ const ToolboxSection = () => {
                 const delay = 180 + (rowIdx === 0 ? i : tools.length + i) * 55;
                 return (
                   <div key={t.name} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                    display: 'inline-flex', alignItems: 'center', gap: 9,
                     background: 'white', border: '2.5px solid #111', borderRadius: 12,
-                    boxShadow: '3px 3px 0 #111', padding: '10px 16px',
+                    boxShadow: '3px 3px 0 #111', padding: '12px 18px',
                     transform: open ? 'translateY(0) scale(1)' : 'translateY(-28px) scale(0.85)',
                     opacity: open ? 1 : 0,
                     transition: `transform 420ms cubic-bezier(0.34,1.5,0.5,1) ${delay}ms, opacity 300ms ease ${delay}ms`,
                   }}>
                     <span style={{
-                      fontSize: 18, lineHeight: '18px', width: 18, height: 18,
+                      fontSize: 26, lineHeight: '26px', width: 26, height: 26,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       flexShrink: 0,
                     }}>{t.icon}</span>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: '#1a1410',
-                      lineHeight: '18px',
+                      lineHeight: '26px',
                     }}>{t.name}</span>
                   </div>
                 );
